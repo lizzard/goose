@@ -13,15 +13,13 @@ release to "/Users/ehenry/dev/inform7/goose/Goose.materials/Release"
 storyfile leafname "Office Goose.gblorb"
 storyfile "/Users/ehenry/dev/inform7/goose/Goose.inform/Build/output.ulx" include
 ifiction "/Users/ehenry/dev/inform7/goose/Goose.inform/Metadata.iFiction" include
-cover "/Applications/Inform.app/Contents/Resources/Internal/Miscellany/Cover.jpg"
-picture 1 "/Applications/Inform.app/Contents/Resources/Internal/Miscellany/Cover.jpg"
-release file "/Applications/Inform.app/Contents/Resources/Internal/Miscellany/Cover.jpg"
-release file "/Applications/Inform.app/Contents/Resources/Internal/Miscellany/Small Cover.jpg"
+cover "/Users/ehenry/dev/inform7/goose/Goose.materials/Cover.jpg"
+picture 1 "/Users/ehenry/dev/inform7/goose/Goose.materials/Cover.jpg"
 
 ! Placeholder variables
 
 placeholder [IFID] = "DD12A67A-698C-4117-AC89-763288B49A46"
-placeholder [RELEASE] = "1"
+placeholder [RELEASE] = "3"
 placeholder [YEAR] = "2019"
 placeholder [TITLE] = "Office Goose"
 placeholder [AUTHOR] = "Lizzard"
@@ -48,7 +46,6 @@ template path "/Applications/Inform.app/Contents/Resources/Internal/Templates"
 css
 website "Standard"
 status instruction ||&nbsp;<a href="source:story.ni#line10"><img border=0 src=inform:/doc_images/Reveal.tif></a>||
-status alternative ||Using 'Release along with cover art', to provide something more distinctive than the default artwork above&nbsp;<a href=inform:/doc403.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with a file of "Such-and-Such" called "whatever.pdf"', perhaps to add a manual, or a welcoming note&nbsp;<a href=inform:/doc401.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with the source text'&nbsp;<a href=inform:/doc412.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with a solution'&nbsp;<a href=inform:/doc411.html><img border=0 src=inform:/doc_images/help.png></a>||

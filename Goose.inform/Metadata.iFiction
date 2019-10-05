@@ -15,11 +15,17 @@
             <language>en</language>
             <group>Inform</group>
         </bibliographic>
+        <cover>
+            <format>jpg</format>
+            <height>228</height>
+            <width>216</width>
+            <description>The cover art.</description>
+        </cover>
         <releases>
             <attached>
                 <release>
                     <releasedate>2019-10-05</releasedate>
-                    <version>1</version>
+                    <version>3</version>
                     <compiler>Inform 7</compiler>
                     <compilerversion>6M62</compilerversion>
                 </release>
@@ -32,8 +38,9 @@
         </colophon>
         <glulx>
             <serial>191005</serial>
-            <release>1</release>
+            <release>3</release>
             <compiler>Inform 7 build 6M62</compiler>
+            <coverpicture>1</coverpicture>
         </glulx>
     </story>
 </ifindex>
