@@ -7,6 +7,8 @@ The release number is 1.
 The story description is "It's a beautiful day in the office, and you are a horrible goose." 
 The story creation year is 2019.
 
+Release along with an interpreter.
+
 use serial comma;
 
 use scoring;
@@ -78,7 +80,7 @@ Carry out pecking:
 		
 Section 2 - The Office
 
-An Open-plan office is a room. The description is "A large room with narrow hallways running between grey-walled cubicles."
+An Open-plan office is a room. The description is "A large room with narrow hallways running between grey-walled cubicles. Exits lead east, west, and south."
 
 A potted palm is an object in an open-plan office. The description of a potted palm is "A large indoor plant with luxuriant fronds."
 
@@ -92,8 +94,11 @@ After taking a potted palm for the first time:
 	increment the score;
 	
 After pecking a potted palm:
-	say "Some dirt spills out from the plant pot.";
+	say "Dirt spills out. How satisfying. You could probably pick up the whole plant.";
+	now the description of a potted palm is "A torn up potted plant, on its side with dirt spilling out.";
+	now the printed name of a potted palm is "torn-up potted palm, lying sideways";
 	now spilled dirt is in the location of the player;
+
 
 After pecking the printer for the first time:
 	say "Some sheets of paper fly out of the printer and across the room.";
@@ -102,8 +107,7 @@ After pecking the printer for the first time:
 	increment the score;
 
 
-
-An Office kitchen is east of an open-plan office. The description is "This mini kitchen has tasty snacks and bad coffee."
+An Office kitchen is east of an open-plan office. The description is "This mini kitchen has tasty snacks and bad coffee. The main office is just to the east."
 
 A pod-based coffee maker is a device in an office kitchen. It is fixed in place. The description is "This sturdy machine is ready to make you a bitter cup of plastic swill."
 
@@ -144,7 +148,7 @@ After pecking a cup of coffee:
 		now the description of a project manager is "A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.";
 
 
-A Conference room is west of an open-plan office. The description is "A large board room with chairs arranged around a central table."
+A Conference room is west of an open-plan office. The description is "A large board room with chairs arranged around a central table. Through the open door, you can see the main office."
 
 A project manager is a person in a conference room. The description of a project manager is "A geeky looking person, concentrating deeply."
 
@@ -165,7 +169,7 @@ After pecking an ipad for the first time:
 	say "The conference call participants all start talking at once!";
 	say "Someone yells, 'STOP THAT GOOSE!' and starts to chase you!";
 	now the printed name of an ipad is "battered and scratched ipad";
-	now the printed name of a project manager is "flustered geek, chasing you around the room.";
+	now the printed name of a project manager is "flustered geek, chasing you around the room";
 	now the description of a project manager is "A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.";
 	increment the score;
 	
@@ -173,7 +177,7 @@ Instead of pecking a video camera:
 	say "You leap several feet in the air but fail to peck the video camera.";
 
 
-A Cubicle is south of an open-plan office. The description is "An adjustable standing/sitting desk dominates this spacious cubicle."
+A Cubicle is south of an open-plan office. The description is "An adjustable standing/sitting desk dominates this spacious cubicle. The main office is just to the north."
 
 An adjustable desk is a supporter in a cubicle. It is fixed in place. The description is "A beautiful ergonomic desk, adjustable with electronic controls."
 
@@ -183,13 +187,20 @@ After pecking an adjustable desk for the first time:
 	now the description of an adjustable desk is "An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.";
 	increment the score;
 	
-A tattered copy of Design Patterns is on the adjustable desk. Understand "book" as a tattered copy of Design Patterns. 
+A tattered copy of Design Patterns is on the adjustable desk. Understand "book" as a tattered copy of Design Patterns. The description is "This book looks absolutely delicious! Maybe you should take it!"
 	
 After taking a tattered copy of Design Patterns for the first time:
 	now the printed name of a tattered copy of Design Patterns is "book with the cover torn off";
 	now the description of a tattered copy of Design Patterns is "A book with the cover torn off, covered in goose spit.";
 	now little bits of chewed up paper is in the location of the player;
 	increment the score;
+	
+After pecking a tattered copy of Design Patterns for the first time:
+	say "Tasty! You could pick up the whole book and carry it around!";
+	now the printed name of a tattered copy of Design Patterns is "book with the cover torn off";
+	now the description of a tattered copy of Design Patterns is "A book with the cover torn off, covered in goose spit.";
+	now little bits of chewed up paper is in the location of the player;
+
 	
 
 Some spilled dirt is an object. 
