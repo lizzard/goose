@@ -13,7 +13,7 @@ use serial comma;
 
 use scoring;
 
-the maximum score is 9;
+the maximum score is 10;
 
 When play begins:
     now the left hand status line is
@@ -21,7 +21,7 @@ When play begins:
     now the right hand status line is "Score: [score]". 
 
 Every turn:
-	if the score is greater than 8:
+	if the score is greater than 9:
 		say "Congratulations! You are the most horrible of horrible geese.";
 		say "This start-up office will never be the same.";
 		say "You run outside, ready to wreak mayhem on the rest of the world!";
@@ -207,6 +207,14 @@ After pecking a tattered copy of Design Patterns for the first time:
 	now little bits of chewed up paper is in the location of the player;
 
 	
+A laptop is an object on the the adjustable desk. The description is "A laptop with several windows open, showing some code."
+
+After pecking a laptop for the first time:
+	say "Your beak mashes the keys and cracks the screen.";
+	now the printed name of a laptop is "broken laptop";
+	now the description of a laptop is "A broken laptop, with messed-up text scrolling through its flickering windows on a cracked screen.";
+	increment the score;
+
 
 Some spilled dirt is an object. 
 Some little bits of chewed up paper is an object.
