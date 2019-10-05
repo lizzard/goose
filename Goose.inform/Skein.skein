@@ -10,6 +10,7 @@
 Goose
 An Interactive Fiction by lizzard
 Release 1 / Serial number 191005 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD
+It's a beautiful day in the office, and you are a horrible goose.
 
 Open-plan office
 A large room with narrow hallways running between grey-walled cubicles.
@@ -18,13 +19,76 @@ You can see a potted palm and a printer here.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
-        <children><child nodeId="node-1239"></child>
+        <children><child nodeId="node-1433"></child>
+            <child nodeId="node-1468"></child>
+            <child nodeId="node-1239"></child>
             <child nodeId="node-1248"></child>
+            <child nodeId="node-1498"></child>
             <child nodeId="node-1312"></child>
             <child nodeId="node-1306"></child>
+            <child nodeId="node-1436"></child>
+            <child nodeId="node-1491"></child>
             <child nodeId="node-1244"></child>
             <child nodeId="node-1326"></child>
+            <child nodeId="node-1434"></child>
         </children>
+    </item>
+    <item nodeId="node-1434">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Conference room
+A large board room with chairs arranged around a central table.
+
+You can see a project manager, an ipad, and a video camera here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1448"></child>
+            <child nodeId="node-1435"></child>
+            <child nodeId="node-1450"></child>
+        </children>
+    </item>
+    <item nodeId="node-1450">
+        <command xml:space="preserve">peck ipad</command>
+        <result xml:space="preserve">You jab your beak at the ipad.
+
+A huge picture of a plump goose fills the conference room screen.
+The conference call participants all start talking at once!
+Someone yells, "STOP THAT GOOSE!" and starts to chase you!
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1451"></child>
+        </children>
+    </item>
+    <item nodeId="node-1451">
+        <command xml:space="preserve">peck ipad</command>
+        <result xml:space="preserve">You jab your beak at the battered and scratched ipad.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1435">
+        <command xml:space="preserve">peck camera</command>
+        <result xml:space="preserve">You leap several feet in the air but fail to peck the video camera.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1448">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Open-plan office
+A large room with narrow hallways running between grey-walled cubicles.
+
+You can see a potted palm and a printer here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-1326">
         <command xml:space="preserve">take printer</command>
@@ -226,7 +290,8 @@ You can see some spilled dirt and a printer here.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
-        <children><child nodeId="node-1281"></child>
+        <children><child nodeId="node-1443"></child>
+            <child nodeId="node-1281"></child>
         </children>
     </item>
     <item nodeId="node-1281">
@@ -374,6 +439,39 @@ You can see some little bits of chewed up paper, a tattered copy of Design Patte
     <item nodeId="node-1305">
         <command xml:space="preserve">peck paper</command>
         <result xml:space="preserve">I only understood you as far as wanting to peck.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1443">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying: 
+  an orn-up potted palm, lying sideways (in your beak)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1444"></child>
+        </children>
+    </item>
+    <item nodeId="node-1444">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+Dragging your prize behind you is difficult, but you manage it.
+
+Conference room
+A large board room with chairs arranged around a central table.
+
+You can see a project manager, an ipad, and a video camera here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1445"></child>
+        </children>
+    </item>
+    <item nodeId="node-1445">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying: 
+  an orn-up potted palm, lying sideways (in your beak)
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -535,12 +633,140 @@ You can see some spilled dirt and a printer here.
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
     </item>
+    <item nodeId="node-1491">
+        <command xml:space="preserve">score</command>
+        <result xml:space="preserve">You have so far scored 0 out of a possible 9, in 1 turn.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1492"></child>
+        </children>
+    </item>
+    <item nodeId="node-1492">
+        <command xml:space="preserve">honk</command>
+        <result xml:space="preserve">HONK!!!!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1493"></child>
+        </children>
+    </item>
+    <item nodeId="node-1493">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Conference room
+A large board room with chairs arranged around a central table.
+
+You can see a project manager, an ipad, and a video camera here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1494"></child>
+        </children>
+    </item>
+    <item nodeId="node-1494">
+        <command xml:space="preserve">honk</command>
+        <result xml:space="preserve">HONK!!!!
+
+Startled, a hapless office worker looks up in alarm.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1495"></child>
+        </children>
+    </item>
+    <item nodeId="node-1495">
+        <command xml:space="preserve">peck ipad</command>
+        <result xml:space="preserve">You jab your beak at the ipad.
+
+A huge picture of a plump goose fills the conference room screen.
+The conference call participants all start talking at once!
+Someone yells, "STOP THAT GOOSE!" and starts to chase you!
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1496"></child>
+        </children>
+    </item>
+    <item nodeId="node-1496">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Conference room
+A large board room with chairs arranged around a central table.
+
+You can see a flustered geek, chasing you around the room., a battered and scratched ipad, and a video camera here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1436">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Cubicle
+An adjustable standing/sitting desk dominates this spacious cubicle.
+
+You can see an adjustable desk (on which is a tattered copy of Design Patterns) here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1437"></child>
+        </children>
+    </item>
+    <item nodeId="node-1437">
+        <command xml:space="preserve">peck desk</command>
+        <result xml:space="preserve">You jab your beak at the adjustable desk.
+
+The desk starts going up and down at random.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1438"></child>
+        </children>
+    </item>
+    <item nodeId="node-1438">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Cubicle
+An adjustable standing/sitting desk dominates this spacious cubicle.
+
+You can see a broken adjustable desk (on which is a tattered copy of Design Patterns) here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1439"></child>
+        </children>
+    </item>
+    <item nodeId="node-1439">
+        <command xml:space="preserve">take book</command>
+        <result xml:space="preserve">You jab your beak at it.
+
+Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1440"></child>
+        </children>
+    </item>
+    <item nodeId="node-1440">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Cubicle
+An adjustable standing/sitting desk dominates this spacious cubicle.
+
+You can see a broken adjustable desk here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
     <item nodeId="node-1306">
         <command xml:space="preserve">peck printer</command>
         <result xml:space="preserve">You jab your beak at the printer.
 The printer switches on.
 
 Some sheets of paper fly out of the printer and across the room.
+
+[Your score has just gone up by one point.]
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -624,7 +850,68 @@ You can see some spilled dirt, some sheets of paper, an a torn-up potted palm, l
     </item>
     <item nodeId="node-1307">
         <command xml:space="preserve">peck palm</command>
-        <result xml:space="preserve">I only understood you as far as wanting to peck.
+        <result xml:space="preserve">You jab your beak at the potted palm.
+
+Some dirt spills out from the plant pot.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1454"></child>
+        </children>
+    </item>
+    <item nodeId="node-1454">
+        <command xml:space="preserve">take palm</command>
+        <result xml:space="preserve">You jab your beak at it.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1455"></child>
+        </children>
+    </item>
+    <item nodeId="node-1455">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Conference room
+A large board room with chairs arranged around a central table.
+
+You can see a project manager, an ipad, and a video camera here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1456"></child>
+        </children>
+    </item>
+    <item nodeId="node-1456">
+        <command xml:space="preserve">peck ipad</command>
+        <result xml:space="preserve">You jab your beak at the ipad.
+
+A huge picture of a plump goose fills the conference room screen.
+The conference call participants all start talking at once!
+Someone yells, "STOP THAT GOOSE!" and starts to chase you!
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1457"></child>
+        </children>
+    </item>
+    <item nodeId="node-1457">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying: 
+  a torn-up potted palm, lying sideways (in your beak)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1458"></child>
+        </children>
+    </item>
+    <item nodeId="node-1458">
+        <command xml:space="preserve">drop palm</command>
+        <result xml:space="preserve">Dropped.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -765,7 +1052,33 @@ Someone yells, "STOP THAT GOOSE!" and starts to chase you!
         <result xml:space="preserve">Conference room
 A large board room with chairs arranged around a central table.
 
-You can see a flustered geek, chasing you around the room., an a battered and scratched ipad, and a video camera here.
+You can see a flustered geek, chasing you around the room., a battered and scratched ipad, and a video camera here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1431"></child>
+        </children>
+    </item>
+    <item nodeId="node-1431">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Conference room
+A large board room with chairs arranged around a central table.
+
+You can see a flustered geek, chasing you around the room., a battered and scratched ipad, and a video camera here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1432"></child>
+        </children>
+    </item>
+    <item nodeId="node-1432">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Open-plan office
+A large room with narrow hallways running between grey-walled cubicles.
+
+You can see some sheets of paper, a potted palm, and a dented printer here.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -936,6 +1249,55 @@ You can see a potted palm and a printer here.
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
     </item>
+    <item nodeId="node-1498">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Open-plan office
+A large room with narrow hallways running between grey-walled cubicles.
+
+You can see a potted palm and a printer here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1499"></child>
+        </children>
+    </item>
+    <item nodeId="node-1499">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Office kitchen
+This mini kitchen has tasty snacks and bad coffee.
+
+You can see a pod-based coffee maker, a sink, and a purple-haired developer here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1500"></child>
+        </children>
+    </item>
+    <item nodeId="node-1500">
+        <command xml:space="preserve">peck developer</command>
+        <result xml:space="preserve">You jab your beak at the purple-haired developer.
+
+The developer shrieks in rage. She comes at you ready to kill.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1501"></child>
+        </children>
+    </item>
+    <item nodeId="node-1501">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Office kitchen
+This mini kitchen has tasty snacks and bad coffee.
+
+You can see Puddles of spilled coffee, an empty coffee cup, a pod-based coffee maker, a sink, and a purple-haired developer trying to catch you here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
     <item nodeId="node-1248">
         <command xml:space="preserve">i</command>
         <result xml:space="preserve">You are carrying nothing.
@@ -979,7 +1341,8 @@ Taken.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
-        <children><child nodeId="node-1240"></child>
+        <children><child nodeId="node-1463"></child>
+            <child nodeId="node-1240"></child>
         </children>
     </item>
     <item nodeId="node-1240">
@@ -1020,6 +1383,383 @@ Office kitchen
 This mini kitchen has tasty snacks and bad coffee.
 
 You can see a pod based coffee maker, a sink and a purple-haired developer here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1463">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Office kitchen
+This mini kitchen has tasty snacks and bad coffee.
+
+You can see a pod-based coffee maker, a sink, and a purple-haired developer here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1464"></child>
+        </children>
+    </item>
+    <item nodeId="node-1464">
+        <command xml:space="preserve">honk</command>
+        <result xml:space="preserve">HONK!!!!
+
+Startled, the person looks up in alarm.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1468">
+        <command xml:space="preserve">flap</command>
+        <result xml:space="preserve">You flap your wings, menacing everything in the near vicinity.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1469"></child>
+        </children>
+    </item>
+    <item nodeId="node-1469">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Conference room
+A large board room with chairs arranged around a central table.
+
+You can see a project manager, an ipad, and a video camera here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1470"></child>
+        </children>
+    </item>
+    <item nodeId="node-1470">
+        <command xml:space="preserve">flap</command>
+        <result xml:space="preserve">You flap your wings, menacing everything in the near vicinity.
+
+Everyone in the room starts in surprise.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1471"></child>
+        </children>
+    </item>
+    <item nodeId="node-1471">
+        <command xml:space="preserve">honk</command>
+        <result xml:space="preserve">HONK!!!!
+
+Startled, a hapless office worker looks up in alarm.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1472"></child>
+        </children>
+    </item>
+    <item nodeId="node-1472">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Conference room
+A large board room with chairs arranged around a central table.
+
+You can see a project manager, an ipad, and a video camera here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1473"></child>
+        </children>
+    </item>
+    <item nodeId="node-1473">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Open-plan office
+A large room with narrow hallways running between grey-walled cubicles.
+
+You can see a potted palm and a printer here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1474"></child>
+        </children>
+    </item>
+    <item nodeId="node-1474">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Office kitchen
+This mini kitchen has tasty snacks and bad coffee.
+
+You can see a pod-based coffee maker, a sink, and a purple-haired developer here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1475"></child>
+        </children>
+    </item>
+    <item nodeId="node-1475">
+        <command xml:space="preserve">peck cup</command>
+        <result xml:space="preserve">You jab your beak at the cup of coffee.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1476"></child>
+        </children>
+    </item>
+    <item nodeId="node-1476">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Office kitchen
+This mini kitchen has tasty snacks and bad coffee.
+
+You can see a pod-based coffee maker, a sink, and a purple-haired developer here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1433">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Office kitchen
+This mini kitchen has tasty snacks and bad coffee.
+
+You can see a pod-based coffee maker, a sink, and a purple-haired developer here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1481"></child>
+            <child nodeId="node-1478"></child>
+            <child nodeId="node-1503"></child>
+            <child nodeId="node-1484"></child>
+        </children>
+    </item>
+    <item nodeId="node-1484">
+        <command xml:space="preserve">x developer</command>
+        <result xml:space="preserve">The purple-haired developer is carrying a cup of coffee.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1489"></child>
+        </children>
+    </item>
+    <item nodeId="node-1489">
+        <command xml:space="preserve">peck cup</command>
+        <result xml:space="preserve">You jab your beak at the cup of coffee.
+
+Hot coffee spills all over the developer. She yells and drops the cup.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1490"></child>
+        </children>
+    </item>
+    <item nodeId="node-1490">
+        <command xml:space="preserve">x developer</command>
+        <result xml:space="preserve">The purple-haired developer is carrying nothing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1503">
+        <command xml:space="preserve">peck developer</command>
+        <result xml:space="preserve">You jab your beak at the purple-haired developer.
+
+The developer shrieks in rage. She comes at you ready to kill.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1504"></child>
+        </children>
+    </item>
+    <item nodeId="node-1504">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Office kitchen
+This mini kitchen has tasty snacks and bad coffee.
+
+You can see puddles of spilled coffee, an empty coffee cup, a pod-based coffee maker, a sink, and a purple-haired developer trying to catch you here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1505"></child>
+        </children>
+    </item>
+    <item nodeId="node-1505">
+        <command xml:space="preserve">peck sink</command>
+        <result xml:space="preserve">You jab your beak at the sink.
+The sink switches on.
+
+The faucet cracks. Water sprays all over!
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1506"></child>
+        </children>
+    </item>
+    <item nodeId="node-1506">
+        <command xml:space="preserve">peck coffee</command>
+        <result xml:space="preserve">Which do you mean, puddles of spilled coffee, the empty coffee cup, or the pod-based coffee maker?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1507"></child>
+        </children>
+    </item>
+    <item nodeId="node-1507">
+        <command xml:space="preserve">peck coffee maker</command>
+        <result xml:space="preserve">You jab your beak at the pod-based coffee maker.
+The pod-based coffee maker switches on.
+
+Coffee sprays out of the coffee maker!
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1508"></child>
+        </children>
+    </item>
+    <item nodeId="node-1508">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Office kitchen
+This mini kitchen has tasty snacks and bad coffee.
+
+You can see puddles of spilled coffee, puddles of water, an empty coffee cup, a pod-based coffee maker, a sink, and a purple-haired developer trying to catch you here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1509"></child>
+        </children>
+    </item>
+    <item nodeId="node-1509">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Open-plan office
+A large room with narrow hallways running between grey-walled cubicles.
+
+You can see a potted palm and a printer here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1510"></child>
+        </children>
+    </item>
+    <item nodeId="node-1510">
+        <command xml:space="preserve">peck printer</command>
+        <result xml:space="preserve">You jab your beak at the printer.
+The printer switches on.
+
+Some sheets of paper fly out of the printer and across the room.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1511"></child>
+        </children>
+    </item>
+    <item nodeId="node-1511">
+        <command xml:space="preserve">take palm</command>
+        <result xml:space="preserve">You jab your beak at it.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1512"></child>
+        </children>
+    </item>
+    <item nodeId="node-1512">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Conference room
+A large board room with chairs arranged around a central table.
+
+You can see a project manager, an ipad, and a video camera here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1513"></child>
+        </children>
+    </item>
+    <item nodeId="node-1513">
+        <command xml:space="preserve">peck ipad</command>
+        <result xml:space="preserve">You jab your beak at the ipad.
+
+A huge picture of a plump goose fills the conference room screen.
+The conference call participants all start talking at once!
+Someone yells, "STOP THAT GOOSE!" and starts to chase you!
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1514"></child>
+        </children>
+    </item>
+    <item nodeId="node-1514">
+        <command xml:space="preserve">drop palm</command>
+        <result xml:space="preserve">Dropped.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1515"></child>
+        </children>
+    </item>
+    <item nodeId="node-1515">
+        <command xml:space="preserve">peck manager</command>
+        <result xml:space="preserve">You jab your beak at the flustered geek, chasing you around the room..
+
+You jab her in the butt, feeling a deep sense of satisfaction.
+"OUCH!!! HEY!!!"
+The project manager leaps up from her chair!
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1478">
+        <command xml:space="preserve">peck coffee</command>
+        <result xml:space="preserve">(the pod-based coffee maker)
+You jab your beak at the pod-based coffee maker.
+The pod-based coffee maker switches on.
+
+Coffee sprays out of the coffee maker!
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1479"></child>
+        </children>
+    </item>
+    <item nodeId="node-1479">
+        <command xml:space="preserve">peck cup</command>
+        <result xml:space="preserve">You jab your beak at the cup of coffee.
+
+Hot coffee spills all over the developer. She yells and drops the cup.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1481">
+        <command xml:space="preserve">look developer</command>
+        <result xml:space="preserve">You see nothing special about the purple-haired developer.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1482"></child>
+        </children>
+    </item>
+    <item nodeId="node-1482">
+        <command xml:space="preserve">peck cup</command>
+        <result xml:space="preserve">You jab your beak at the cup of coffee.
+
+Hot coffee spills all over the developer. She yells and drops the cup.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>

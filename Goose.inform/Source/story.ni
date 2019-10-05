@@ -2,16 +2,33 @@
 
 use serial comma;
 
+use scoring;
+
+the maximum score is 9;
+
+When play begins:
+    now the left hand status line is
+        "[the player's surroundings]";
+    now the right hand status line is "Score: [score]". 
+
+Every turn:
+	if the score is greater than 8:
+		say "Congratulations! You are the most horrible of horrible geese.";
+		say "This start-up office will never be the same.";
+		say "You run outside, ready to wreak mayhem on the rest of the world!";
+		end the story finally.
+
 The carrying capacity of the player is 1.
+
+After printing the banner text, say "It's a beautiful day in the office, and you are a horrible goose.";
+
+Section 1 - Rules for the goose
 
 The description of the player is "You're large, you're white, and you're waddling."
 
 Before going to any room:
 	say "You waddle over with deadly purpose." ;
-	unless the player carries nothing:
-		say "Dragging stuff behind you.";
 
-	
 Before taking:
 	say "You jab your beak at it.";
 	if the player is carrying anything:
@@ -20,20 +37,25 @@ Before taking:
 Instead of taking an object which is fixed in place:
 	say "It's too big. Maybe you could peck it instead.";
 		
-
 Honking is an action applying to nothing. Understand "honk" as honking. 
 
 Carry out honking:
 		say "HONK!!!!";
 		
+After honking:
+	if  more than one person is in the location of the player:
+		say "Startled, a hapless office worker looks up in alarm.";
+				
 Flapping is an action applying to nothing. Understand "flap" as flapping. 
 
+After flapping:
+	if  more than one person is in the location of the player:
+		say "Everyone in the room starts in surprise.";
+		
 Carry out flapping:
 		say "You flap your wings, menacing everything in the near vicinity.";
 
 Pecking is an action applying to one thing. Understand "peck [something]" as pecking. 
-
-
 		
 Carry out pecking:
 	say "You jab your beak at [the noun].";
@@ -47,6 +69,7 @@ Carry out pecking:
 
 			
 		
+Section 2 - The Office
 
 An Open-plan office is a room. The description is "A large room with narrow hallways running between grey-walled cubicles."
 
@@ -54,72 +77,124 @@ A potted palm is an object in an open-plan office.
 
 The printer is a device in an open-plan office. It is fixed in place.
 
+
+After taking a potted palm for the first time:
+	now the description of a potted palm is "A torn up potted plant, on its side with dirt spilling out.";
+	now the printed name of a potted palm is "torn-up potted palm, lying sideways";
+	now spilled dirt is in the location of the player;
+	increment the score;
+	
+After pecking a potted palm:
+	say "Some dirt spills out from the plant pot.";
+	now spilled dirt is in the location of the player;
+
+After pecking the printer for the first time:
+	say "Some sheets of paper fly out of the printer and across the room.";
+	now the printed name of the printer is "dented printer";
+	now some sheets of paper is in the location of the player;
+	increment the score;
+
+
+
 An Office kitchen is east of an open-plan office. The description is "This mini kitchen has tasty snacks and bad coffee."
 
 A pod-based coffee maker is a device in an office kitchen. It is fixed in place.
 
 A sink is a device in an office kitchen. It is fixed in place.
 
-A cup of coffee is an object.
+A cup of coffee is an object. 
 
 A purple-haired developer is a person. She is in an office kitchen. A purple-haired developer is carrying a cup of coffee.
+
+Instead of examining a purple-haired developer:
+    say "[The noun] is carrying [a list of things carried by the noun]." 
+
+After pecking a pod-based coffee maker for the first time:
+	say "Coffee sprays out of the coffee maker!";
+	now puddles of spilled coffee is in the location of the player;
+	increment the score;
+
+After pecking a sink for the first time:
+	say "The faucet cracks. Water sprays all over!";
+	now puddles of water is in the location of the player;
+	increment the score;
+	
+After pecking a purple-haired developer for the first time:
+	say "The developer shrieks in rage. She comes at you ready to kill.";
+	now the printed name of a purple-haired developer is "purple-haired developer trying to catch you";
+	now the cup of coffee is in the location of the player;
+	now puddles of coffee is in the location of the player;
+	now the printed name of the cup of coffee is "empty coffee cup";
+	increment the score;
+
+After pecking a cup of coffee:
+	if the cup of coffee is carried by the developer:
+		say "Hot coffee spills all over the developer. She yells and drops the cup.";
+		now the cup of coffee is in the location of the player;
+		now puddles of coffee is in the location of the player;
+		now the printed name of the cup of coffee is "empty coffee cup";
+		now the printed name of a project manager is "wet, scalded geek, chasing you around the room.";
+		now the description of a project manager is "A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.";
 
 
 A Conference room is west of an open-plan office. The description is "A large board room with chairs arranged around a central table."
 
 A project manager is a person in a conference room. The description of a project manager is "A geeky looking person, concentrating deeply."
 
+After pecking a project manager for the first time:
+	say "You peck her in the butt, feeling a deep sense of satisfaction.";
+	say "'OUCH!!! HEY!!!'";
+	say "The project manager leaps up from her chair!";
+	now the printed name of a project manager is "flustered geek, chasing you around the room";
+	now the description of a project manager is "A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.";
+	increment the score;
 
 An ipad is an object in a conference room. It is fixed in place. The description of an ipad is "An ipad with an interface to control a video conference."
 
-A video camera is an object in a conference room.
+A video camera is an object in a conference room. It is fixed in place.
 
-
-
-A Cubicle is south of an open-plan office. The description is "An adjustable standing/sitting desk dominates this spacious cubicle."
-
-An adjustable desk is a supporter in a cubicle. 
-
-A tattered copy of Design Patterns is on the adjustable desk. Understand "book" as a tattered copy of Design Patterns.
-
-
-After pecking an ipad:
-	say "A huge picture of a honking goose fills the conference room screen.";
+After pecking an ipad for the first time:
+	say "A huge picture of a plump goose fills the conference room screen.";
 	say "The conference call participants all start talking at once!";
 	say "Someone yells, 'STOP THAT GOOSE!' and starts to chase you!";
 	now the printed name of an ipad is "battered and scratched ipad";
 	now the printed name of a project manager is "flustered geek, chasing you around the room.";
 	now the description of a project manager is "A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.";
+	increment the score;
 	
+Instead of pecking a video camera:
+	say "You leap several feet in the air but fail to peck the video camera.";
 
-After taking a potted palm:
-	now the description of a potted palm is "A torn up potted plant, on its side with dirt spilling out.";
-	now the printed name of a potted palm is "orn-up potted palm, lying sideways";
-	now spilled dirt is in the location of the player;
+
+A Cubicle is south of an open-plan office. The description is "An adjustable standing/sitting desk dominates this spacious cubicle."
+
+An adjustable desk is a supporter in a cubicle. It is fixed in place.
+
+After pecking an adjustable desk for the first time:
+	say "The desk starts going up and down at random.";
+	now the printed name of an adjustable desk is "broken adjustable desk";
+	now the description of an adjustable desk is "An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.";
+	increment the score;
 	
-After pecking a potted palm:
-	now the description of a potted palm is "A torn up potted plant, on its side with dirt spilling out.";
-	now the printed name of a potted palm is "torn-up potted palm, lying sideways";
-	now spilled dirt is in the location of the player;
+A tattered copy of Design Patterns is on the adjustable desk. Understand "book" as a tattered copy of Design Patterns.
 	
-After dropping a tattered copy of Design Patterns:	now the printed name of a tattered copy of Design Patterns is "book with the cover torn off";
+After taking a tattered copy of Design Patterns for the first time:
+	now the printed name of a tattered copy of Design Patterns is "book with the cover torn off";
 	now the description of a tattered copy of Design Patterns is "A book with the cover torn off, covered in goose spit.";
 	now little bits of chewed up paper is in the location of the player;
-	
-After pecking the printer:
-	say "Some sheets of paper fly out of the printer and across the room.";
-	now the printed name of the printer is "dented printer";
-	now some sheets of paper is in the location of the player.
+	increment the score;
 	
 
 Some spilled dirt is an object. 
 Some little bits of chewed up paper is an object.
 Some sheets of paper is an object.
+puddles of spilled coffee is an object.
+puddles of water is an object.
 
+Section 3 - Overly complex inventory rules
 
-
-
-[Adds taglines to your inventory for particular things] 		
+[Adds taglines to your inventory for particular things] 
+		
 The print standard inventory rule is not listed in any rulebook. 		
 Carry out taking inventory (this is the new print inventory rule):
 	say "You are carrying: [line break]";

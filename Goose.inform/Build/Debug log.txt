@@ -14,7 +14,7 @@ Reading language definition from </Applications/Inform.app/Contents/Resources/In
 Phase I ... Lexical analysis
 -----------------------------------------------------
 
-I've now read your source text, which is 904 words long.
+I've now read your source text, which is 1502 words long.
 
 
 -----------------------------------------------------
