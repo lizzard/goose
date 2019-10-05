@@ -29,6 +29,7 @@ You can see a potted palm and a printer here.
             <child nodeId="node-1306"></child>
             <child nodeId="node-1436"></child>
             <child nodeId="node-1491"></child>
+            <child nodeId="node-1538"></child>
             <child nodeId="node-1244"></child>
             <child nodeId="node-1326"></child>
             <child nodeId="node-1434"></child>
@@ -630,6 +631,35 @@ You're carrying too many things already.
 A large room with narrow hallways running between grey-walled cubicles.
 
 You can see some spilled dirt and a printer here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1538">
+        <command xml:space="preserve">switch on printer</command>
+        <result xml:space="preserve">A concept somewhat beyond you. Try pecking it instead.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1539"></child>
+            <child nodeId="node-1541"></child>
+        </children>
+    </item>
+    <item nodeId="node-1541">
+        <command xml:space="preserve">switch off printer</command>
+        <result xml:space="preserve">That's already off.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1539">
+        <command xml:space="preserve">peck printer</command>
+        <result xml:space="preserve">You jab your beak at the printer.
+The printer switches on.
+
+Some sheets of paper fly out of the printer and across the room.
+
+[Your score has just gone up by one point.]
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>

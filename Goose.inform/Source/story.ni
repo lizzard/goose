@@ -176,6 +176,11 @@ After pecking an ipad for the first time:
 Instead of pecking a video camera:
 	say "You leap several feet in the air but fail to peck the video camera.";
 
+Instead of switching on a device:
+	say "A concept somewhat beyond you. Try pecking it instead.";
+	
+Instead of switching off a device:
+	say "You feel more like honking, pecking, and flapping, to be honest.";
 
 A Cubicle is south of an open-plan office. The description is "An adjustable standing/sitting desk dominates this spacious cubicle. The main office is just to the north."
 
