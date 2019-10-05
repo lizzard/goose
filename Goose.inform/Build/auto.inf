@@ -11064,6 +11064,7 @@ Object I125_open_plan_office ""
 Object -> I126_potted_palm ""
     class K2_thing
     with short_name BC_153
+    with description BC_154
     with vector 0
     has mark_as_thing
     with IK2_Count 1
@@ -11071,7 +11072,6 @@ Object -> I126_potted_palm ""
     with KD_Count 2
     with name 'potted' 'palm' 'things//p' 
     with action_bitmap 0 0 0 0 0 0 
-    with description BC_154
     with initial BC_155
     with list_together BC_156
     with plural BC_157
@@ -11081,6 +11081,7 @@ Object -> I126_potted_palm ""
 Object -> I127_printer ""
     class K13_device
     with short_name BC_159
+    with description BC_160
     has static
     with vector 0
     has mark_as_thing
@@ -11091,7 +11092,6 @@ Object -> I127_printer ""
     with KD_Count 13
     with name 'printer' 'devices//p' 
     with action_bitmap 0 0 0 0 0 0 
-    with description BC_160
     with initial BC_161
     with list_together BC_162
     with plural BC_163
@@ -11117,6 +11117,7 @@ Object I128_office_kitchen ""
 Object -> I129_pod_based_coffee_maker ""
     class K13_device
     with short_name BC_170
+    with description BC_171
     has static
     with vector 0
     has mark_as_thing
@@ -11127,7 +11128,6 @@ Object -> I129_pod_based_coffee_maker ""
     with KD_Count 13
     with name 'pod-based' 'coffee' 'maker' 'devices//p' 
     with action_bitmap 0 0 0 0 0 0 
-    with description BC_171
     with initial BC_172
     with list_together BC_173
     with plural BC_174
@@ -11137,6 +11137,7 @@ Object -> I129_pod_based_coffee_maker ""
 Object -> I130_sink ""
     class K13_device
     with short_name BC_176
+    with description BC_177
     has static
     with vector 0
     has mark_as_thing
@@ -11147,7 +11148,6 @@ Object -> I130_sink ""
     with KD_Count 13
     with name 'sink' 'devices//p' 
     with action_bitmap 0 0 0 0 0 0 
-    with description BC_177
     with initial BC_178
     with list_together BC_179
     with plural BC_180
@@ -11176,6 +11176,7 @@ Object -> I132_purple_haired_developer ""
 Object -> -> I131_cup_of_coffee ""
     class K2_thing
     with short_name BC_188
+    with description BC_189
     has ~static
     with vector 0
     has mark_as_thing
@@ -11184,7 +11185,6 @@ Object -> -> I131_cup_of_coffee ""
     with KD_Count 2
     with name 'cup' 'of' 'coffee' 'things//p' 
     with action_bitmap 0 0 0 0 0 0 
-    with description BC_189
     with initial BC_190
     with list_together BC_191
     with plural BC_192
@@ -11281,6 +11281,7 @@ Object I137_cubicle ""
 Object -> I138_adjustable_desk ""
     class K6_supporter
     with short_name BC_222
+    with description BC_223
     has static
     with vector 0
     has mark_as_thing
@@ -11291,7 +11292,6 @@ Object -> I138_adjustable_desk ""
     with KD_Count 6
     with name 'adjustable' 'desk' 'supporters//p' 
     with action_bitmap 0 0 0 0 0 0 
-    with description BC_223
     with initial BC_224
     with list_together BC_225
     with plural BC_226
@@ -11466,7 +11466,7 @@ Array Global_Vars -->
   (BC_269) ! 34 story genre
   (BC_270) ! 35 story description
   (1) ! 36 release number
-  (0) ! 37 story creation year
+  (2019) ! 37 story creation year
   (0) ! 45 locale paragraph count
 ;
 
@@ -12847,9 +12847,9 @@ Array ActionHappened --> 0 0 0 0 0 0;
     self = noun;
     if (debug_rules) DB_Rule(R_810, 810);
     ! [2: now the description of a potted palm is ~A torn up potted plant, on its side with dirt spilling out.~]
-    BlkValueCopy(GProperty(10, I126_potted_palm,description), TX_L_69);
+    BlkValueCopy(GProperty(10, I126_potted_palm,description), TX_L_76);
     ! [3: now the printed name of a potted palm is ~torn-up potted palm, lying sideways~]
-    BlkValueCopy(GProperty(10, I126_potted_palm,short_name), TX_L_70);
+    BlkValueCopy(GProperty(10, I126_potted_palm,short_name), TX_L_77);
     ! [4: now spilled dirt is in the location of the player]
     MoveObject(I140_spilled_dirt,LocationOf(player));
     ! [5: increment the score]
@@ -12867,7 +12867,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
     ! [2: say ~Some sheets of paper fly out of the printer and across the room.~]
     say__p=1;! [3: ~Some sheets of paper fly out of the printer and across the room.~]
     ParaContent(); print "Some sheets of paper fly out of the printer and across the room."; new_line; .L_Say11; .L_SayX11;! [4: now the printed name of the printer is ~dented printer~]
-    BlkValueCopy(GProperty(10, I127_printer,short_name), TX_L_71);
+    BlkValueCopy(GProperty(10, I127_printer,short_name), TX_L_78);
     ! [5: now some sheets of paper is in the location of the player]
     MoveObject(I142_sheets_of_paper,LocationOf(player));
     ! [6: increment the score]
@@ -12917,13 +12917,13 @@ Array ActionHappened --> 0 0 0 0 0 0;
     ! [2: say ~The developer shrieks in rage. She comes at you ready to kill.~]
     say__p=1;! [3: ~The developer shrieks in rage. She comes at you ready to kill.~]
     ParaContent(); print "The developer shrieks in rage. She comes at you ready to kill."; new_line; .L_Say14; .L_SayX14;! [4: now the printed name of a purple-haired developer is ~purple-haired developer trying to catch you~]
-    BlkValueCopy(GProperty(10, I132_purple_haired_developer,short_name), TX_L_72);
+    BlkValueCopy(GProperty(10, I132_purple_haired_developer,short_name), TX_L_79);
     ! [5: now the cup of coffee is in the location of the player]
     MoveObject(I131_cup_of_coffee,LocationOf(player));
     ! [6: now puddles of coffee is in the location of the player]
     MoveObject(I143_puddles_of_spilled_coff,LocationOf(player));
     ! [7: now the printed name of the cup of coffee is ~empty coffee cup~]
-    BlkValueCopy(GProperty(10, I131_cup_of_coffee,short_name), TX_L_73);
+    BlkValueCopy(GProperty(10, I131_cup_of_coffee,short_name), TX_L_80);
     ! [8: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -12943,9 +12943,9 @@ Array ActionHappened --> 0 0 0 0 0 0;
     ParaContent(); print "~OUCH!!! HEY!!!~"; new_line; .L_Say16; .L_SayX16;! [6: say ~The project manager leaps up from her chair!~]
     say__p=1;! [7: ~The project manager leaps up from her chair!~]
     ParaContent(); print "The project manager leaps up from her chair!"; new_line; .L_Say17; .L_SayX17;! [8: now the printed name of a project manager is ~flustered geek, chasing you around the room~]
-    BlkValueCopy(GProperty(10, I134_project_manager,short_name), TX_L_74);
+    BlkValueCopy(GProperty(10, I134_project_manager,short_name), TX_L_81);
     ! [9: now the description of a project manager is ~A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.~]
-    BlkValueCopy(GProperty(10, I134_project_manager,description), TX_L_75);
+    BlkValueCopy(GProperty(10, I134_project_manager,description), TX_L_82);
     ! [10: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -12965,11 +12965,11 @@ Array ActionHappened --> 0 0 0 0 0 0;
     ParaContent(); print "The conference call participants all start talking at once!"; new_line; .L_Say19; .L_SayX19;! [6: say ~Someone yells, 'STOP THAT GOOSE!' and starts to chase you!~]
     say__p=1;! [7: ~Someone yells, 'STOP THAT GOOSE!' and starts to chase you!~]
     ParaContent(); print "Someone yells, ~STOP THAT GOOSE!~ and starts to chase you!"; new_line; .L_Say20; .L_SayX20;! [8: now the printed name of an ipad is ~battered and scratched ipad~]
-    BlkValueCopy(GProperty(10, I135_ipad,short_name), TX_L_76);
+    BlkValueCopy(GProperty(10, I135_ipad,short_name), TX_L_83);
     ! [9: now the printed name of a project manager is ~flustered geek, chasing you around the room.~]
-    BlkValueCopy(GProperty(10, I134_project_manager,short_name), TX_L_77);
+    BlkValueCopy(GProperty(10, I134_project_manager,short_name), TX_L_84);
     ! [10: now the description of a project manager is ~A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.~]
-    BlkValueCopy(GProperty(10, I134_project_manager,description), TX_L_75);
+    BlkValueCopy(GProperty(10, I134_project_manager,description), TX_L_82);
     ! [11: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -12985,9 +12985,9 @@ Array ActionHappened --> 0 0 0 0 0 0;
     ! [2: say ~The desk starts going up and down at random.~]
     say__p=1;! [3: ~The desk starts going up and down at random.~]
     ParaContent(); print "The desk starts going up and down at random."; new_line; .L_Say21; .L_SayX21;! [4: now the printed name of an adjustable desk is ~broken adjustable desk~]
-    BlkValueCopy(GProperty(10, I138_adjustable_desk,short_name), TX_L_78);
+    BlkValueCopy(GProperty(10, I138_adjustable_desk,short_name), TX_L_85);
     ! [5: now the description of an adjustable desk is ~An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.~]
-    BlkValueCopy(GProperty(10, I138_adjustable_desk,description), TX_L_79);
+    BlkValueCopy(GProperty(10, I138_adjustable_desk,description), TX_L_86);
     ! [6: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -13001,9 +13001,9 @@ Array ActionHappened --> 0 0 0 0 0 0;
     self = noun;
     if (debug_rules) DB_Rule(R_822, 822);
     ! [2: now the printed name of a tattered copy of design patterns is ~book with the cover torn off~]
-    BlkValueCopy(GProperty(10, I139_tattered_copy_of_design,short_name), TX_L_80);
+    BlkValueCopy(GProperty(10, I139_tattered_copy_of_design,short_name), TX_L_87);
     ! [3: now the description of a tattered copy of design patterns is ~A book with the cover torn off, covered in goose spit.~]
-    BlkValueCopy(GProperty(10, I139_tattered_copy_of_design,description), TX_L_81);
+    BlkValueCopy(GProperty(10, I139_tattered_copy_of_design,description), TX_L_88);
     ! [4: now little bits of chewed up paper is in the location of the player]
     MoveObject(I141_little_bits_of_chewed_u,LocationOf(player));
     ! [5: increment the score]
@@ -13041,11 +13041,11 @@ Array ActionHappened --> 0 0 0 0 0 0;
         ! [6: now puddles of coffee is in the location of the player]
         MoveObject(I143_puddles_of_spilled_coff,LocationOf(player));
         ! [7: now the printed name of the cup of coffee is ~empty coffee cup~]
-        BlkValueCopy(GProperty(10, I131_cup_of_coffee,short_name), TX_L_73);
+        BlkValueCopy(GProperty(10, I131_cup_of_coffee,short_name), TX_L_80);
         ! [8: now the printed name of a project manager is ~wet, scalded geek, chasing you around the room.~]
-        BlkValueCopy(GProperty(10, I134_project_manager,short_name), TX_L_82);
+        BlkValueCopy(GProperty(10, I134_project_manager,short_name), TX_L_89);
         ! [9: now the description of a project manager is ~A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.~]
-        BlkValueCopy(GProperty(10, I134_project_manager,description), TX_L_83);
+        BlkValueCopy(GProperty(10, I134_project_manager,description), TX_L_90);
         }
         RulebookSucceeds(); rtrue;
         } else if (debug_rules > 1) DB_Rule(R_817, 817, 'action');
@@ -20084,7 +20084,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
     if (((((parameter_value ofclass K2_thing))))) { ! Runs only when pattern matches
     if (debug_rules) DB_Rule(R_825, 825);
     ! [2: add ~in your beak~ to the tagline]
-    LIST_OF_TY_InsertItem((MStack-->MstVO(371,0)), BlkValueCopy(I7SFRAME, TX_L_84), 0, 0, 0);
+    LIST_OF_TY_InsertItem((MStack-->MstVO(371,0)), BlkValueCopy(I7SFRAME, TX_L_91), 0, 0, 0);
     } else if (debug_rules > 1) DB_Rule(R_825, 825, 'action');
     rfalse;
 ];
@@ -50244,68 +50244,75 @@ Verb 'peck'
 
 
 
-Constant TX_PS_62 = ">";
-Constant TX_PS_81 = "A book with the cover torn off, covered in goose spit.";
-Array TX_L_81 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_81;
-Constant TX_PS_47 = "A geeky looking person, concentrating deeply.";
-Constant TX_PS_83 = "A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.";
-Array TX_L_83 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_83;
-Constant TX_PS_75 = "A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.";
-Array TX_L_75 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_75;
-Constant TX_PS_45 = "A large board room with chairs arranged around a central table.";
+Constant TX_PS_68 = ">";
+Constant TX_PS_59 = "A beautiful ergonomic desk, adjustable with electronic controls.";
+Constant TX_PS_88 = "A book with the cover torn off, covered in goose spit.";
+Array TX_L_88 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_88;
+Constant TX_PS_52 = "A geeky looking person, concentrating deeply.";
+Constant TX_PS_90 = "A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.";
+Array TX_L_90 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_90;
+Constant TX_PS_82 = "A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.";
+Array TX_L_82 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_82;
+Constant TX_PS_45 = "A gleaming, tidy sink.";
+Constant TX_PS_50 = "A large board room with chairs arranged around a central table.";
+Constant TX_PS_37 = "A large indoor plant with luxuriant fronds.";
 Constant TX_PS_35 = "A large room with narrow hallways running between grey-walled cubicles.";
-Constant TX_PS_69 = "A torn up potted plant, on its side with dirt spilling out.";
-Array TX_L_69 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_69;
+Constant TX_PS_48 = "A steaming, very full cup of coffee.";
+Constant TX_PS_76 = "A torn up potted plant, on its side with dirt spilling out.";
+Array TX_L_76 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_76;
 Constant TX_PS_3 = "An Interactive Fiction";
-Constant TX_PS_79 = "An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.";
-Array TX_L_79 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_79;
-Constant TX_PS_52 = "An adjustable standing/sitting desk dominates this spacious cubicle.";
-Constant TX_PS_49 = "An ipad with an interface to control a video conference.";
-Constant TX_PS_44 = "Conference room";
-Constant TX_PS_51 = "Cubicle";
-Constant TX_PS_63 = "Fiction";
-Constant TX_PS_2 = "Goose";
-Constant TX_PS_38 = "Office kitchen";
+Constant TX_PS_86 = "An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.";
+Array TX_L_86 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_86;
+Constant TX_PS_57 = "An adjustable standing/sitting desk dominates this spacious cubicle.";
+Constant TX_PS_54 = "An ipad with an interface to control a video conference.";
+Constant TX_PS_69 = "Comedy";
+Constant TX_PS_49 = "Conference room";
+Constant TX_PS_56 = "Cubicle";
+Constant TX_PS_70 = "It's a beautiful day in the office, and you are a horrible goose.";
+Constant TX_PS_4 = "Lizzard";
+Constant TX_PS_2 = "Office Goose";
+Constant TX_PS_40 = "Office kitchen";
 Constant TX_PS_34 = "Open-plan office";
-Constant TX_PS_59 = "Puddles of spilled coffee";
-Constant TX_PS_61 = "Puddles of water";
-Constant TX_PS_67 = "QUIT";
-Constant TX_PS_64 = "RESTART";
-Constant TX_PS_65 = "RESTORE a saved game";
-Constant TX_PS_39 = "This mini kitchen has tasty snacks and bad coffee.";
-Constant TX_PS_68 = "UNDO the last command";
+Constant TX_PS_65 = "Puddles of spilled coffee";
+Constant TX_PS_67 = "Puddles of water";
+Constant TX_PS_74 = "QUIT";
+Constant TX_PS_71 = "RESTART";
+Constant TX_PS_72 = "RESTORE a saved game";
+Constant TX_PS_39 = "This large printer has a ton of options for copying, collating, and stapling.";
+Constant TX_PS_41 = "This mini kitchen has tasty snacks and bad coffee.";
+Constant TX_PS_43 = "This sturdy machine is ready to make you a bitter cup of plastic swill.";
+Constant TX_PS_75 = "UNDO the last command";
 Constant TX_PS_32 = "You're large, you're white, and you're waddling.";
 Constant TX_PS_33 = "Yourself";
-Constant TX_PS_53 = "adjustable desk";
+Constant TX_PS_58 = "adjustable desk";
 Constant TX_PS_9 = "animals";
 Constant TX_PS_14 = "backdrops";
-Constant TX_PS_76 = "battered and scratched ipad";
-Array TX_L_76 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_76;
-Constant TX_PS_80 = "book with the cover torn off";
-Array TX_L_80 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_80;
-Constant TX_PS_78 = "broken adjustable desk";
-Array TX_L_78 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_78;
+Constant TX_PS_83 = "battered and scratched ipad";
+Array TX_L_83 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_83;
+Constant TX_PS_87 = "book with the cover torn off";
+Array TX_L_87 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_87;
+Constant TX_PS_85 = "broken adjustable desk";
+Array TX_L_85 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_85;
 Constant TX_PS_11 = "containers";
-Constant TX_PS_43 = "cup of coffee";
-Constant TX_PS_71 = "dented printer";
-Array TX_L_71 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_71;
+Constant TX_PS_47 = "cup of coffee";
+Constant TX_PS_78 = "dented printer";
+Array TX_L_78 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_78;
 Constant TX_PS_15 = "devices";
 Constant TX_PS_17 = "directions";
 Constant TX_PS_10 = "doors";
 Constant TX_PS_28 = "down";
 Constant TX_PS_25 = "east";
-Constant TX_PS_73 = "empty coffee cup";
-Array TX_L_73 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_73;
-Constant TX_PS_74 = "flustered geek, chasing you around the room";
-Array TX_L_74 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_74;
-Constant TX_PS_77 = "flustered geek, chasing you around the room.";
-Array TX_L_77 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_77;
-Constant TX_PS_84 = "in your beak";
+Constant TX_PS_80 = "empty coffee cup";
+Array TX_L_80 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_80;
+Constant TX_PS_81 = "flustered geek, chasing you around the room";
+Array TX_L_81 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_81;
+Constant TX_PS_84 = "flustered geek, chasing you around the room.";
 Array TX_L_84 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_84;
+Constant TX_PS_91 = "in your beak";
+Array TX_L_91 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_91;
 Constant TX_PS_29 = "inside";
-Constant TX_PS_48 = "ipad";
-Constant TX_PS_56 = "little bits of chewed up paper";
-Constant TX_PS_4 = "lizzard";
+Constant TX_PS_53 = "ipad";
+Constant TX_PS_62 = "little bits of chewed up paper";
 Constant TX_PS_7 = "men";
 Constant TX_PS_18 = "north";
 Constant TX_PS_20 = "northeast";
@@ -50313,34 +50320,34 @@ Constant TX_PS_21 = "northwest";
 Constant TX_PS_30 = "outside";
 Constant TX_PS_6 = "people";
 Constant TX_PS_13 = "player's holdalls";
-Constant TX_PS_40 = "pod-based coffee maker";
+Constant TX_PS_42 = "pod-based coffee maker";
 Constant TX_PS_36 = "potted palm";
-Constant TX_PS_37 = "printer";
-Constant TX_PS_46 = "project manager";
-Constant TX_PS_58 = "puddles of spilled coffee";
-Constant TX_PS_60 = "puddles of water";
-Constant TX_PS_72 = "purple-haired developer trying to catch you";
-Array TX_L_72 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_72;
-Constant TX_PS_42 = "purple-haired developer";
+Constant TX_PS_38 = "printer";
+Constant TX_PS_51 = "project manager";
+Constant TX_PS_64 = "puddles of spilled coffee";
+Constant TX_PS_66 = "puddles of water";
+Constant TX_PS_79 = "purple-haired developer trying to catch you";
+Array TX_L_79 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_79;
+Constant TX_PS_46 = "purple-haired developer";
 Constant TX_PS_16 = "regions";
-Constant TX_PS_66 = "see some suggestions for AMUSING things to do";
-Constant TX_PS_57 = "sheets of paper";
-Constant TX_PS_41 = "sink";
+Constant TX_PS_73 = "see some suggestions for AMUSING things to do";
+Constant TX_PS_63 = "sheets of paper";
+Constant TX_PS_44 = "sink";
 Constant TX_PS_22 = "south";
 Constant TX_PS_23 = "southeast";
 Constant TX_PS_24 = "southwest";
-Constant TX_PS_55 = "spilled dirt";
+Constant TX_PS_61 = "spilled dirt";
 Constant TX_PS_5 = "supporters";
-Constant TX_PS_54 = "tattered copy of Design Patterns";
+Constant TX_PS_60 = "tattered copy of Design Patterns";
 Constant TX_PS_19 = "the";
-Constant TX_PS_70 = "torn-up potted palm, lying sideways";
-Array TX_L_70 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_70;
+Constant TX_PS_77 = "torn-up potted palm, lying sideways";
+Array TX_L_77 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_77;
 Constant TX_PS_27 = "up";
 Constant TX_PS_12 = "vehicles";
-Constant TX_PS_50 = "video camera";
+Constant TX_PS_55 = "video camera";
 Constant TX_PS_26 = "west";
-Constant TX_PS_82 = "wet, scalded geek, chasing you around the room.";
-Array TX_L_82 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_82;
+Constant TX_PS_89 = "wet, scalded geek, chasing you around the room.";
+Array TX_L_89 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_89;
 Constant TX_PS_8 = "women";
 Constant TX_PS_31 = "yourself";
 Array TX_L_31 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_31;
@@ -57652,128 +57659,128 @@ Array BC_150 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_151 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_152 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_153 --> PACKED_TEXT_STORAGE TX_PS_36;
-Array BC_154 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_154 --> PACKED_TEXT_STORAGE TX_PS_37;
 Array BC_155 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_156 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_157 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_158 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_159 --> PACKED_TEXT_STORAGE TX_PS_37;
-Array BC_160 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_159 --> PACKED_TEXT_STORAGE TX_PS_38;
+Array BC_160 --> PACKED_TEXT_STORAGE TX_PS_39;
 Array BC_161 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_162 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_163 --> PACKED_TEXT_STORAGE TX_PS_15;
 Array BC_164 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_165 --> PACKED_TEXT_STORAGE TX_PS_38;
-Array BC_166 --> PACKED_TEXT_STORAGE TX_PS_39;
+Array BC_165 --> PACKED_TEXT_STORAGE TX_PS_40;
+Array BC_166 --> PACKED_TEXT_STORAGE TX_PS_41;
 Array BC_167 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_168 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_169 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_170 --> PACKED_TEXT_STORAGE TX_PS_40;
-Array BC_171 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_170 --> PACKED_TEXT_STORAGE TX_PS_42;
+Array BC_171 --> PACKED_TEXT_STORAGE TX_PS_43;
 Array BC_172 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_173 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_174 --> PACKED_TEXT_STORAGE TX_PS_15;
 Array BC_175 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_176 --> PACKED_TEXT_STORAGE TX_PS_41;
-Array BC_177 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_176 --> PACKED_TEXT_STORAGE TX_PS_44;
+Array BC_177 --> PACKED_TEXT_STORAGE TX_PS_45;
 Array BC_178 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_179 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_180 --> PACKED_TEXT_STORAGE TX_PS_15;
 Array BC_181 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_182 --> PACKED_TEXT_STORAGE TX_PS_42;
+Array BC_182 --> PACKED_TEXT_STORAGE TX_PS_46;
 Array BC_183 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_184 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_185 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_186 --> PACKED_TEXT_STORAGE TX_PS_6;
 Array BC_187 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_188 --> PACKED_TEXT_STORAGE TX_PS_43;
-Array BC_189 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_188 --> PACKED_TEXT_STORAGE TX_PS_47;
+Array BC_189 --> PACKED_TEXT_STORAGE TX_PS_48;
 Array BC_190 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_191 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_192 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_193 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_194 --> PACKED_TEXT_STORAGE TX_PS_44;
-Array BC_195 --> PACKED_TEXT_STORAGE TX_PS_45;
+Array BC_194 --> PACKED_TEXT_STORAGE TX_PS_49;
+Array BC_195 --> PACKED_TEXT_STORAGE TX_PS_50;
 Array BC_196 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_197 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_198 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_199 --> PACKED_TEXT_STORAGE TX_PS_46;
-Array BC_200 --> PACKED_TEXT_STORAGE TX_PS_47;
+Array BC_199 --> PACKED_TEXT_STORAGE TX_PS_51;
+Array BC_200 --> PACKED_TEXT_STORAGE TX_PS_52;
 Array BC_201 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_202 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_203 --> PACKED_TEXT_STORAGE TX_PS_6;
 Array BC_204 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_205 --> PACKED_TEXT_STORAGE TX_PS_48;
-Array BC_206 --> PACKED_TEXT_STORAGE TX_PS_49;
+Array BC_205 --> PACKED_TEXT_STORAGE TX_PS_53;
+Array BC_206 --> PACKED_TEXT_STORAGE TX_PS_54;
 Array BC_207 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_208 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_209 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_210 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_211 --> PACKED_TEXT_STORAGE TX_PS_50;
+Array BC_211 --> PACKED_TEXT_STORAGE TX_PS_55;
 Array BC_212 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_213 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_214 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_215 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_216 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_217 --> PACKED_TEXT_STORAGE TX_PS_51;
-Array BC_218 --> PACKED_TEXT_STORAGE TX_PS_52;
+Array BC_217 --> PACKED_TEXT_STORAGE TX_PS_56;
+Array BC_218 --> PACKED_TEXT_STORAGE TX_PS_57;
 Array BC_219 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_220 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_221 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_222 --> PACKED_TEXT_STORAGE TX_PS_53;
-Array BC_223 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_222 --> PACKED_TEXT_STORAGE TX_PS_58;
+Array BC_223 --> PACKED_TEXT_STORAGE TX_PS_59;
 Array BC_224 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_225 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_226 --> PACKED_TEXT_STORAGE TX_PS_5;
 Array BC_227 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_228 --> PACKED_TEXT_STORAGE TX_PS_54;
+Array BC_228 --> PACKED_TEXT_STORAGE TX_PS_60;
 Array BC_229 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_230 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_231 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_232 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_233 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_234 --> PACKED_TEXT_STORAGE TX_PS_55;
+Array BC_234 --> PACKED_TEXT_STORAGE TX_PS_61;
 Array BC_235 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_236 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_237 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_238 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_239 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_240 --> PACKED_TEXT_STORAGE TX_PS_56;
+Array BC_240 --> PACKED_TEXT_STORAGE TX_PS_62;
 Array BC_241 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_242 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_243 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_244 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_245 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_246 --> PACKED_TEXT_STORAGE TX_PS_57;
+Array BC_246 --> PACKED_TEXT_STORAGE TX_PS_63;
 Array BC_247 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_248 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_249 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_250 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_251 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_252 --> PACKED_TEXT_STORAGE TX_PS_58;
-Array BC_253 --> PACKED_TEXT_STORAGE TX_PS_59;
+Array BC_252 --> PACKED_TEXT_STORAGE TX_PS_64;
+Array BC_253 --> PACKED_TEXT_STORAGE TX_PS_65;
 Array BC_254 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_255 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_256 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_257 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_258 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_259 --> PACKED_TEXT_STORAGE TX_PS_60;
-Array BC_260 --> PACKED_TEXT_STORAGE TX_PS_61;
+Array BC_259 --> PACKED_TEXT_STORAGE TX_PS_66;
+Array BC_260 --> PACKED_TEXT_STORAGE TX_PS_67;
 Array BC_261 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_262 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_263 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_264 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_265 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_266 --> PACKED_TEXT_STORAGE TX_PS_62;
+Array BC_266 --> PACKED_TEXT_STORAGE TX_PS_68;
 Array BC_267 --> PACKED_TEXT_STORAGE TX_PS_4;
 Array BC_268 --> PACKED_TEXT_STORAGE TX_PS_3;
-Array BC_269 --> PACKED_TEXT_STORAGE TX_PS_63;
-Array BC_270 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_271 --> PACKED_TEXT_STORAGE TX_PS_64;
-Array BC_272 --> PACKED_TEXT_STORAGE TX_PS_65;
-Array BC_273 --> PACKED_TEXT_STORAGE TX_PS_66;
-Array BC_274 --> PACKED_TEXT_STORAGE TX_PS_67;
-Array BC_275 --> PACKED_TEXT_STORAGE TX_PS_68;
+Array BC_269 --> PACKED_TEXT_STORAGE TX_PS_69;
+Array BC_270 --> PACKED_TEXT_STORAGE TX_PS_70;
+Array BC_271 --> PACKED_TEXT_STORAGE TX_PS_71;
+Array BC_272 --> PACKED_TEXT_STORAGE TX_PS_72;
+Array BC_273 --> PACKED_TEXT_STORAGE TX_PS_73;
+Array BC_274 --> PACKED_TEXT_STORAGE TX_PS_74;
+Array BC_275 --> PACKED_TEXT_STORAGE TX_PS_75;
 
 
 

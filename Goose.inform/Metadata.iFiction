@@ -6,11 +6,12 @@
             <format>glulx</format>
         </identification>
         <bibliographic>
-            <title>Goose</title>
-            <author>lizzard</author>
+            <title>Office Goose</title>
+            <author>Lizzard</author>
             <headline>An Interactive Fiction</headline>
-            <genre>Fiction</genre>
+            <genre>Comedy</genre>
             <firstpublished>2019</firstpublished>
+            <description>It's a beautiful day in the office, and you are a horrible goose.</description>
             <language>en</language>
             <group>Inform</group>
         </bibliographic>

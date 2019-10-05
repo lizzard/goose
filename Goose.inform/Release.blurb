@@ -10,7 +10,7 @@ release to "/Users/ehenry/dev/inform7/goose/Goose.materials/Release"
 
 ! Blorb instructions
 
-storyfile leafname "Goose.gblorb"
+storyfile leafname "Office Goose.gblorb"
 storyfile "/Users/ehenry/dev/inform7/goose/Goose.inform/Build/output.ulx" include
 ifiction "/Users/ehenry/dev/inform7/goose/Goose.inform/Metadata.iFiction" include
 cover "/Applications/Inform.app/Contents/Resources/Internal/Miscellany/Cover.jpg"
@@ -21,9 +21,9 @@ picture 1 "/Applications/Inform.app/Contents/Resources/Internal/Miscellany/Cover
 placeholder [IFID] = "DD12A67A-698C-4117-AC89-763288B49A46"
 placeholder [RELEASE] = "1"
 placeholder [YEAR] = "2019"
-placeholder [TITLE] = "Goose"
-placeholder [AUTHOR] = "lizzard"
-placeholder [BLURB] = "A work of interactive fiction."
+placeholder [TITLE] = "Office Goose"
+placeholder [AUTHOR] = "Lizzard"
+placeholder [BLURB] = "It's a beautiful day in the office, and you are a horrible goose."
 
 ! Other material to release
 

@@ -1,4 +1,11 @@
-"Goose" by lizzard
+"Office Goose" by Lizzard
+
+The story title is "Office Goose". 
+The story author is "Lizzard". 
+The story genre is "Comedy". 
+The release number is 1. 
+The story description is "It's a beautiful day in the office, and you are a horrible goose." 
+The story creation year is 2019.
 
 use serial comma;
 
@@ -73,9 +80,9 @@ Section 2 - The Office
 
 An Open-plan office is a room. The description is "A large room with narrow hallways running between grey-walled cubicles."
 
-A potted palm is an object in an open-plan office.
+A potted palm is an object in an open-plan office. The description of a potted palm is "A large indoor plant with luxuriant fronds."
 
-The printer is a device in an open-plan office. It is fixed in place.
+The printer is a device in an open-plan office. It is fixed in place. The description of the printer is "This large printer has a ton of options for copying, collating, and stapling."
 
 
 After taking a potted palm for the first time:
@@ -98,11 +105,11 @@ After pecking the printer for the first time:
 
 An Office kitchen is east of an open-plan office. The description is "This mini kitchen has tasty snacks and bad coffee."
 
-A pod-based coffee maker is a device in an office kitchen. It is fixed in place.
+A pod-based coffee maker is a device in an office kitchen. It is fixed in place. The description is "This sturdy machine is ready to make you a bitter cup of plastic swill."
 
-A sink is a device in an office kitchen. It is fixed in place.
+A sink is a device in an office kitchen. It is fixed in place. The description is "A gleaming, tidy sink."
 
-A cup of coffee is an object. 
+A cup of coffee is an object. The description is "A steaming, very full cup of coffee."
 
 A purple-haired developer is a person. She is in an office kitchen. A purple-haired developer is carrying a cup of coffee.
 
@@ -168,7 +175,7 @@ Instead of pecking a video camera:
 
 A Cubicle is south of an open-plan office. The description is "An adjustable standing/sitting desk dominates this spacious cubicle."
 
-An adjustable desk is a supporter in a cubicle. It is fixed in place.
+An adjustable desk is a supporter in a cubicle. It is fixed in place. The description is "A beautiful ergonomic desk, adjustable with electronic controls."
 
 After pecking an adjustable desk for the first time:
 	say "The desk starts going up and down at random.";
@@ -176,7 +183,7 @@ After pecking an adjustable desk for the first time:
 	now the description of an adjustable desk is "An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.";
 	increment the score;
 	
-A tattered copy of Design Patterns is on the adjustable desk. Understand "book" as a tattered copy of Design Patterns.
+A tattered copy of Design Patterns is on the adjustable desk. Understand "book" as a tattered copy of Design Patterns. 
 	
 After taking a tattered copy of Design Patterns for the first time:
 	now the printed name of a tattered copy of Design Patterns is "book with the cover torn off";
