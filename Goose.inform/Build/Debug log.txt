@@ -14,7 +14,7 @@ Reading language definition from </Applications/Inform.app/Contents/Resources/In
 Phase I ... Lexical analysis
 -----------------------------------------------------
 
-I've now read your source text, which is 1912 words long.
+I've now read your source text, which is 2048 words long.
 
 
 -----------------------------------------------------
@@ -175,8 +175,8 @@ Phase XIII ... Compilation now complete
 -----------------------------------------------------
 
 CAT "a quick line drawing of a goose"
-Total of 110 files written as streams.
-CPU time: 187 centiseconds
+Total of 111 files written as streams.
+CPU time: 186 centiseconds
 
 
 That concludes the debugging log from this run of Inform.

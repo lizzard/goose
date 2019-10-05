@@ -11,21 +11,21 @@
     </dict>
     <key>1</key><dict>
         <key>Filename</key><string>/Users/ehenry/dev/inform7/goose/Goose.inform/Source/story.ni</string>
-        <key>Line</key><integer>35</integer>
+        <key>Line</key><integer>36</integer>
         <key>Title</key><string>Section 1 - Rules for the goose</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>2</key><dict>
         <key>Filename</key><string>/Users/ehenry/dev/inform7/goose/Goose.inform/Source/story.ni</string>
-        <key>Line</key><integer>82</integer>
+        <key>Line</key><integer>99</integer>
         <key>Title</key><string>Section 2 - The Office</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>3</key><dict>
         <key>Filename</key><string>/Users/ehenry/dev/inform7/goose/Goose.inform/Source/story.ni</string>
-        <key>Line</key><integer>226</integer>
+        <key>Line</key><integer>243</integer>
         <key>Title</key><string>Section 3 - Overly complex inventory rules</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>

@@ -9,7 +9,7 @@
 
 Office Goose
 An Interactive Fiction by Lizzard
-Release 3 / Serial number 191005 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD
+Release 4 / Serial number 191005 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD
 It's a beautiful day in the office, and you are a horrible goose.
 
 Open-plan office
@@ -1521,14 +1521,68 @@ You can see a potted palm and a printer here.
     <item nodeId="node-1498">
         <command xml:space="preserve">l</command>
         <result xml:space="preserve">Open-plan office
-A large room with narrow hallways running between grey-walled cubicles.
+A large room with narrow hallways running between grey-walled cubicles. Exits lead east, west, and south.
 
 You can see a potted palm and a printer here.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
         <children><child nodeId="node-1499"></child>
+            <child nodeId="node-1543"></child>
         </children>
+    </item>
+    <item nodeId="node-1543">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying nothing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1544"></child>
+        </children>
+    </item>
+    <item nodeId="node-1544">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Open-plan office
+A large room with narrow hallways running between grey-walled cubicles. Exits lead east, west, and south.
+
+You can see a potted palm and a printer here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1545"></child>
+        </children>
+    </item>
+    <item nodeId="node-1545">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Open-plan office
+A large room with narrow hallways running between grey-walled cubicles. Exits lead east, west, and south.
+
+You can see a potted palm and a printer here.
+
+(You feel a mighty primal urge to honk, to flap, and to peck things.)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1546"></child>
+        </children>
+    </item>
+    <item nodeId="node-1546">
+        <command xml:space="preserve">honk</command>
+        <result xml:space="preserve">HONK!!!!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1547"></child>
+        </children>
+    </item>
+    <item nodeId="node-1547">
+        <command xml:space="preserve">help</command>
+        <result xml:space="preserve">You can honk and flap. Also, you can peck things.
+"look" shows you what's in a room. "x" for examine shows you a long description of an object.
+"take" may work on objects light enough for you to pick up.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-1499">
         <command xml:space="preserve">e</command>

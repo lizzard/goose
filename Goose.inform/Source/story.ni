@@ -32,6 +32,7 @@ The carrying capacity of the player is 1.
 
 After printing the banner text, say "It's a beautiful day in the office, and you are a horrible goose.";
 
+
 Section 1 - Rules for the goose
 
 The description of the player is "You're large, you're white, and you're waddling."
@@ -65,7 +66,7 @@ After flapping:
 Carry out flapping:
 		say "You flap your wings, menacing everything in the near vicinity.";
 
-Pecking is an action applying to one thing. Understand "peck [something]" as pecking. 
+Pecking is an action applying to one thing. Understand "peck [something]" as pecking. Understand "bite [something]" as pecking.
 		
 Carry out pecking:
 	say "You jab your beak at [the noun].";
@@ -77,7 +78,23 @@ Carry out pecking:
 		say "[The noun] switches off.";
 		now the noun is switched off;
 
-			
+A thing can be examined or unexamined. A thing is usually unexamined. Carry out examining something: now the noun is examined. 
+
+Taking inventory is acting confused. Looking is acting confused. Examining an examined thing is acting confused. 
+
+After acting confused for three turns:
+        say "(You feel a mighty primal urge to honk, to flap, and to peck things.)" 			
+Understand "help" as getting help. Understand the commands "instructions" or "menu" or "info" or "about" as "help". 
+
+Getting help is an action applying to nothing.
+
+Carry out getting help:
+	say "You can honk and flap. Also, you can peck things.";
+	say "'look' shows you what's in a room. ";
+	say "'x' for examine shows you a long description of an object.";
+	say "'take' may work on objects light enough for you to pick up.";
+
+
 		
 Section 2 - The Office
 
