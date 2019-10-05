@@ -19,7 +19,7 @@ picture 1 "/Users/ehenry/dev/inform7/goose/Goose.materials/Cover.jpg"
 ! Placeholder variables
 
 placeholder [IFID] = "DD12A67A-698C-4117-AC89-763288B49A46"
-placeholder [RELEASE] = "3"
+placeholder [RELEASE] = "4"
 placeholder [YEAR] = "2019"
 placeholder [TITLE] = "Office Goose"
 placeholder [AUTHOR] = "Lizzard"

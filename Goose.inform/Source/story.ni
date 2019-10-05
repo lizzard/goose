@@ -3,11 +3,12 @@
 The story title is "Office Goose". 
 The story author is "Lizzard". 
 The story genre is "Comedy". 
-The release number is 3. 
+The release number is 4. 
 The story description is "It's a beautiful day in the office, and you are a horrible goose." 
 The story creation year is 2019.
 
-Release along with an interpreter and cover art.
+Release along with an interpreter and cover art ("a quick line drawing of a goose").
+[Thanks to Danny O'Brien for setting up a web host for this at https://www.endofgreatness.com/officegoose/]
 
 use serial comma;
 
