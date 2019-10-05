@@ -32,6 +32,7 @@ The carrying capacity of the player is 1.
 
 After printing the banner text, say "It's a beautiful day in the office, and you are a horrible goose.";
 
+A person is either flustered or calm. A person is usually calm. 
 
 Section 1 - Rules for the goose
 
@@ -100,9 +101,9 @@ Section 2 - The Office
 
 An Open-plan office is a room. The description is "A large room with narrow hallways running between grey-walled cubicles. Exits lead east, west, and south."
 
-A potted palm is an object in an open-plan office. The description of a potted palm is "A large indoor plant with luxuriant fronds."
+A potted palm is an object in an open-plan office. The description of a potted palm is "A large indoor plant with luxuriant fronds.[line break]You feel an urge to peck it."
 
-The printer is a device in an open-plan office. It is fixed in place. The description of the printer is "This large printer has a ton of options for copying, collating, and stapling."
+The printer is a device in an open-plan office. It is fixed in place. The description of the printer is "This large printer has a ton of options for copying, collating, and stapling.[line break] What would happen if you pecked it, hard, with your powerful beak?"
 
 
 After taking a potted palm for the first time:
@@ -133,7 +134,7 @@ A sink is a device in an office kitchen. It is fixed in place. The description i
 
 A cup of coffee is an object. The description is "A steaming, very full cup of coffee."
 
-A purple-haired developer is a person. She is in an office kitchen. A purple-haired developer is carrying a cup of coffee.
+A purple-haired developer is a person.  She is in an office kitchen.  A purple-haired developer is carrying a cup of coffee.
 
 Instead of examining a purple-haired developer:
     say "[The noun] is carrying [a list of things carried by the noun]." 
@@ -141,11 +142,13 @@ Instead of examining a purple-haired developer:
 After pecking a pod-based coffee maker for the first time:
 	say "Coffee sprays out of the coffee maker!";
 	now puddles of spilled coffee is in the location of the player;
+	now the developer is flustered;
 	increment the score;
 
 After pecking a sink for the first time:
 	say "The faucet cracks. Water sprays all over!";
 	now puddles of water is in the location of the player;
+	now the developer is flustered;
 	increment the score;
 	
 After pecking a purple-haired developer for the first time:
@@ -154,6 +157,7 @@ After pecking a purple-haired developer for the first time:
 	now the cup of coffee is in the location of the player;
 	now puddles of coffee is in the location of the player;
 	now the printed name of the cup of coffee is "empty coffee cup";
+	now the developer is flustered;
 	increment the score;
 
 After pecking a cup of coffee:
@@ -161,6 +165,7 @@ After pecking a cup of coffee:
 		say "Hot coffee spills all over the developer. She yells and drops the cup.";
 		now the cup of coffee is in the location of the player;
 		now puddles of coffee is in the location of the player;
+		now the developer is flustered;
 		now the printed name of the cup of coffee is "empty coffee cup";
 		now the printed name of a project manager is "wet, scalded geek, chasing you around the room.";
 		now the description of a project manager is "A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.";
@@ -174,8 +179,9 @@ After pecking a project manager for the first time:
 	say "You peck her in the butt, feeling a deep sense of satisfaction.";
 	say "'OUCH!!! HEY!!!'";
 	say "The project manager leaps up from her chair!";
-	now the printed name of a project manager is "flustered geek, chasing you around the room";
+	now the printed name of a project manager is "flustered geek";
 	now the description of a project manager is "A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.";
+	now the project manager is flustered;
 	increment the score;
 
 An ipad is an object in a conference room. It is fixed in place. The description of an ipad is "An ipad with an interface to control a video conference."
@@ -240,7 +246,26 @@ Some sheets of paper is an object.
 puddles of spilled coffee is an object.
 puddles of water is an object.
 
-Section 3 - Overly complex inventory rules
+Section 3 - Wild goose chase
+
+
+
+Every turn:
+	if the developer is flustered:
+		say "[one of]'Horrible goose,'[or]'Catch it,'[or]'Nnnnnnggggg,'[then purely at random] yells the developer[one of], chasing you.[or]. She trips and falls over, swearing.[or].[then purely at random]" ;
+		if the location of the developer is not the location of the player:
+			let the way be the best route from the location of the developer to the location of the player, using doors;
+			try the developer going the way;
+	if the project manager is flustered:
+		say "[one of]'What the heck,'[or]'My meeting,'[or]'Get it out of here,'[then purely at random] shrieks the manager[one of], lurching forward.[or]. She falls over a chair.[or].[then purely at random]" ;
+		if the location of the project manager is not the location of the player:
+			let the way be the best route from the location of the project manager to the location of the player, using doors;
+			try the project manager going the way;
+	
+
+		
+
+Section 4 - Overly complex inventory rules
 
 [Adds taglines to your inventory for particular things] 
 		
