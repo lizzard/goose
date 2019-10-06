@@ -107,6 +107,12 @@ Carry out getting help:
 Section 2 - Rules for things
 
 A thing can be broken or functional. A thing is usually functional.
+
+Check dropping something:
+	if the player is in the office kitchen:
+		if the coffee maker is broken or the sink is broken or the coffee cup is  broken:
+			now the noun is wet;
+			
 		
 Section 3 - The Office
 
@@ -121,12 +127,14 @@ After taking a potted palm for the first time:
 	now the description of a potted palm is "A torn up potted plant, on its side with dirt spilling out.";
 	now the printed name of a potted palm is "torn-up potted palm, lying sideways";
 	now spilled dirt is in the location of the player;
+	now the palm is broken;
 	increment the score;
 	
 After pecking a potted palm:
 	say "Dirt spills out. How satisfying. You could probably pick up the whole plant.";
 	now the description of a potted palm is "A torn up potted plant, on its side with dirt spilling out.";
 	now the printed name of a potted palm is "torn-up potted palm, lying sideways";
+	now the palm is broken;
 	now spilled dirt is in the location of the player;
 
 
@@ -137,7 +145,7 @@ After pecking the printer for the first time:
 	increment the score;
 
 
-An Office kitchen is east of an open-plan office. The description is "This mini kitchen has tasty snacks and bad coffee. The main office is just to the east."
+An Office kitchen is east of an open-plan office. The description is "This mini kitchen has tasty snacks and bad coffee. The main office is just to the west."
 
 The snacks are scenery in an office kitchen. The description of the snacks is "They're just out of your reach. Infuriating. " 
 
@@ -159,13 +167,17 @@ After pecking a pod-based coffee maker for the first time:
 	say "Coffee sprays out of the coffee maker!";
 	now puddles of spilled coffee is in the location of the player;
 	now the printed name of the coffee maker is "mangled coffee maker";
+	now the coffee maker is broken;
 	now the developer is flustered;
 	increment the score;
 
 After pecking a sink for the first time:
 	say "The faucet cracks. Water sprays all over!";
+	now the printed name of the sink is "sink with a broken faucet, spraying water everywhere";
+	now the description of the sink is "This sink is in sad shape. It's spraying water from the broken faucet.";
 	now puddles of water is in the location of the player;
 	now the developer is flustered;
+	now the sink is broken;
 	increment the score;
 	
 After pecking a purple-haired developer for the first time:
@@ -174,6 +186,7 @@ After pecking a purple-haired developer for the first time:
 	now the cup of coffee is in the location of the player;
 	now puddles of coffee is in the location of the player;
 	now the printed name of the cup of coffee is "empty coffee cup";
+	now the coffee cup is broken;
 	now the developer is flustered;
 	increment the score;
 
@@ -183,7 +196,8 @@ After pecking a cup of coffee:
 		now the cup of coffee is in the location of the player;
 		now puddles of coffee is in the location of the player;
 		now the developer is flustered;
-		now the printed name of the cup of coffee is "empty coffee cup";
+		now the coffee cup is broken;
+		now the printed name of the cup of coffee is "empty, cracked coffee cup";
 		now the printed name of a developer is "wet, scalded developer";
 		now the description of a developer is "A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.";
 
@@ -290,7 +304,6 @@ Every turn:
 			try a project manager going the way;
 	
 		
-
 Section 5 - Overly complex inventory rules
 
 [Adds taglines to your inventory for particular things] 

@@ -12486,10 +12486,10 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ];
 ! No specific request
 ! Every turn:
-[ R_833 
+[ R_834 
     tmp_0 ! Let/loop value (deallocated by end of phrase)
     ;
-    if (debug_rules) DB_Rule(R_833, 833);
+    if (debug_rules) DB_Rule(R_834, 834);
     ! [2: if a developer is flustered]
     if ((((Adj_86_t1_v10(I133_purple_haired_developer)))))
     {! [3: say ~[one of]'Horrible goose,'[or]'Catch it,'[or]'Nnnnnnggggg,'[then purely at random] yells the enraged developer[one of], chasing you.[or]. She trips over you, swearing.[or].[then purely at random]~]
@@ -13063,12 +13063,12 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! ----------------------------------------------------------------------------------------------------
 ! No specific request
 ! Instead of examining a purple-haired developer:
-[ R_817 
+[ R_818 
     tmp_0 ! Let/loop value (deallocated by end of phrase)
     ;
     if ((((action ==##Examine) &&  (actor==player) && ((noun == I133_purple_haired_developer) && (true))))) { ! Runs only when pattern matches
     self = noun;
-    if (debug_rules) DB_Rule(R_817, 817);
+    if (debug_rules) DB_Rule(R_818, 818);
     ! [2: say ~[The noun] is carrying [a list of things carried by the noun].~]
     say__p=1;! [3: the noun]
     ParaContent(); print (The) noun;! [4: ~ is carrying ~]
@@ -13080,31 +13080,31 @@ Array ActionHappened --> 0 0 0 0 0 0;
     				give tmp_0 ~workflag2;
     		WriteListOfMarkedObjects(ENGLISH_BIT);! [6: ~.~]
     ParaContent(); print "."; new_line; .L_Say11; .L_SayX11;RulebookFails(); rtrue;
-    } else if (debug_rules > 1) DB_Rule(R_817, 817, 'action');
+    } else if (debug_rules > 1) DB_Rule(R_818, 818, 'action');
     rfalse;
 ];
 ! No specific request
 ! Instead of pecking a video camera:
-[ R_824 ;
+[ R_825 ;
     if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I137_video_camera) && (true))))) { ! Runs only when pattern matches
     self = noun;
-    if (debug_rules) DB_Rule(R_824, 824);
+    if (debug_rules) DB_Rule(R_825, 825);
     ! [2: say ~You leap several feet in the air but fail to peck the video camera.~]
     say__p=1;! [3: ~You leap several feet in the air but fail to peck the video camera.~]
     ParaContent(); print "You leap several feet in the air but fail to peck the video camera."; new_line; .L_Say12; .L_SayX12;RulebookFails(); rtrue;
-    } else if (debug_rules > 1) DB_Rule(R_824, 824, 'action');
+    } else if (debug_rules > 1) DB_Rule(R_825, 825, 'action');
     rfalse;
 ];
 ! No specific request
 ! Instead of taking scenery:
-[ R_816 ;
+[ R_817 ;
     if ((((action ==##Take) &&  (actor==player) && (((Adj_59_t1_v10(noun))) && (true))))) { ! Runs only when pattern matches
     self = noun;
-    if (debug_rules) DB_Rule(R_816, 816);
+    if (debug_rules) DB_Rule(R_817, 817);
     ! [2: say ~You can't reach it. How infuriating!~]
     say__p=1;! [3: ~You can't reach it. How infuriating!~]
     ParaContent(); print "You can't reach it. How infuriating!"; new_line; .L_Say13; .L_SayX13;RulebookFails(); rtrue;
-    } else if (debug_rules > 1) DB_Rule(R_816, 816, 'action');
+    } else if (debug_rules > 1) DB_Rule(R_817, 817, 'action');
     rfalse;
 ];
 ! No specific request
@@ -13121,40 +13121,40 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ];
 ! No specific request
 ! Instead of switching on a device:
-[ R_825 ;
+[ R_826 ;
     if ((((action ==##SwitchOn) &&  (actor==player) && ((noun ofclass K13_device))))) { ! Runs only when pattern matches
     self = noun;
-    if (debug_rules) DB_Rule(R_825, 825);
+    if (debug_rules) DB_Rule(R_826, 826);
     ! [2: say ~A concept somewhat beyond you. Try pecking it instead.~]
     say__p=1;! [3: ~A concept somewhat beyond you. Try pecking it instead.~]
     ParaContent(); print "A concept somewhat beyond you. Try pecking it instead."; new_line; .L_Say15; .L_SayX15;RulebookFails(); rtrue;
-    } else if (debug_rules > 1) DB_Rule(R_825, 825, 'action');
-    rfalse;
-];
-! No specific request
-! Instead of switching off a device:
-[ R_826 ;
-    if ((((action ==##SwitchOff) &&  (actor==player) && ((noun ofclass K13_device))))) { ! Runs only when pattern matches
-    self = noun;
-    if (debug_rules) DB_Rule(R_826, 826);
-    ! [2: say ~You feel more like honking, pecking, and flapping, to be honest.~]
-    say__p=1;! [3: ~You feel more like honking, pecking, and flapping, to be honest.~]
-    ParaContent(); print "You feel more like honking, pecking, and flapping, to be honest."; new_line; .L_Say16; .L_SayX16;RulebookFails(); rtrue;
     } else if (debug_rules > 1) DB_Rule(R_826, 826, 'action');
     rfalse;
 ];
 ! No specific request
+! Instead of switching off a device:
+[ R_827 ;
+    if ((((action ==##SwitchOff) &&  (actor==player) && ((noun ofclass K13_device))))) { ! Runs only when pattern matches
+    self = noun;
+    if (debug_rules) DB_Rule(R_827, 827);
+    ! [2: say ~You feel more like honking, pecking, and flapping, to be honest.~]
+    say__p=1;! [3: ~You feel more like honking, pecking, and flapping, to be honest.~]
+    ParaContent(); print "You feel more like honking, pecking, and flapping, to be honest."; new_line; .L_Say16; .L_SayX16;RulebookFails(); rtrue;
+    } else if (debug_rules > 1) DB_Rule(R_827, 827, 'action');
+    rfalse;
+];
+! No specific request
 ! Instead of drinking a liquid:
-[ R_831 ;
+[ R_832 ;
     if ((((action ==##Drink) &&  (actor==player) && ((noun ofclass K16_liquid))))) { ! Runs only when pattern matches
     self = noun;
-    if (debug_rules) DB_Rule(R_831, 831);
+    if (debug_rules) DB_Rule(R_832, 832);
     ! [2: say ~You drink from the [noun].~]
     say__p=1;! [3: ~You drink from the ~]
     ParaContent(); print "You drink from the ";! [4: noun]
     ParaContent(); PrintShortName(noun);! [5: ~.~]
     ParaContent(); print "."; new_line; .L_Say17; .L_SayX17;RulebookFails(); rtrue;
-    } else if (debug_rules > 1) DB_Rule(R_831, 831, 'action');
+    } else if (debug_rules > 1) DB_Rule(R_832, 832, 'action');
     rfalse;
 ];
 ! ----------------------------------------------------------------------------------------------------
@@ -13196,28 +13196,30 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! ----------------------------------------------------------------------------------------------------
 ! No specific request
 ! After taking a potted palm for the first time:
-[ R_813 ;
+[ R_814 ;
     if ((PAPR_0() && (((TimesActionHasHappened-->0) == 1) && (ActionCurrentlyHappeningFlag->0)))) { ! Runs only when pattern matches
     self = noun;
-    if (debug_rules) DB_Rule(R_813, 813);
+    if (debug_rules) DB_Rule(R_814, 814);
     ! [2: now the description of a potted palm is ~A torn up potted plant, on its side with dirt spilling out.~]
     BlkValueCopy(GProperty(10, I126_potted_palm,description), TX_L_80);
     ! [3: now the printed name of a potted palm is ~torn-up potted palm, lying sideways~]
     BlkValueCopy(GProperty(10, I126_potted_palm,short_name), TX_L_81);
     ! [4: now spilled dirt is in the location of the player]
     MoveObject(I143_spilled_dirt,LocationOf(player));
-    ! [5: increment the score]
+    ! [5: now the palm is broken]
+    (Adj_90_t2_v10(I126_potted_palm));
+    ! [6: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
-    } else if (debug_rules > 1) DB_Rule(R_813, 813, 'action');
+    } else if (debug_rules > 1) DB_Rule(R_814, 814, 'action');
     rfalse;
 ];
 ! No specific request
 ! After pecking the printer for the first time:
-[ R_815 ;
+[ R_816 ;
     if ((PAPR_1() && (((TimesActionHasHappened-->1) == 1) && (ActionCurrentlyHappeningFlag->1)))) { ! Runs only when pattern matches
     self = noun;
-    if (debug_rules) DB_Rule(R_815, 815);
+    if (debug_rules) DB_Rule(R_816, 816);
     ! [2: say ~Some sheets of paper fly out of the printer and across the room.~]
     say__p=1;! [3: ~Some sheets of paper fly out of the printer and across the room.~]
     ParaContent(); print "Some sheets of paper fly out of the printer and across the room."; new_line; .L_Say18; .L_SayX18;! [4: now the printed name of the printer is ~dented printer~]
@@ -13227,65 +13229,49 @@ Array ActionHappened --> 0 0 0 0 0 0;
     ! [6: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
-    } else if (debug_rules > 1) DB_Rule(R_815, 815, 'action');
+    } else if (debug_rules > 1) DB_Rule(R_816, 816, 'action');
     rfalse;
 ];
 ! No specific request
 ! After pecking a pod-based coffee maker for the first time:
-[ R_818 ;
+[ R_819 ;
     if ((PAPR_2() && (((TimesActionHasHappened-->2) == 1) && (ActionCurrentlyHappeningFlag->2)))) { ! Runs only when pattern matches
     self = noun;
-    if (debug_rules) DB_Rule(R_818, 818);
+    if (debug_rules) DB_Rule(R_819, 819);
     ! [2: say ~Coffee sprays out of the coffee maker!~]
     say__p=1;! [3: ~Coffee sprays out of the coffee maker!~]
     ParaContent(); print "Coffee sprays out of the coffee maker!"; new_line; .L_Say19; .L_SayX19;! [4: now puddles of spilled coffee is in the location of the player]
     MoveObject(I146_puddles_of_spilled_coff,LocationOf(player));
     ! [5: now the printed name of the coffee maker is ~mangled coffee maker~]
     BlkValueCopy(GProperty(10, I130_pod_based_coffee_maker,short_name), TX_L_83);
-    ! [6: now the developer is flustered]
+    ! [6: now the coffee maker is broken]
+    (Adj_90_t2_v10(I130_pod_based_coffee_maker));
+    ! [7: now the developer is flustered]
     (Adj_86_t2_v10(I133_purple_haired_developer));
-    ! [7: increment the score]
-    score = score + 1;;
-    RulebookSucceeds(); rtrue;
-    } else if (debug_rules > 1) DB_Rule(R_818, 818, 'action');
-    rfalse;
-];
-! No specific request
-! After pecking a sink for the first time:
-[ R_819 ;
-    if ((PAPR_3() && (((TimesActionHasHappened-->3) == 1) && (ActionCurrentlyHappeningFlag->3)))) { ! Runs only when pattern matches
-    self = noun;
-    if (debug_rules) DB_Rule(R_819, 819);
-    ! [2: say ~The faucet cracks. Water sprays all over!~]
-    say__p=1;! [3: ~The faucet cracks. Water sprays all over!~]
-    ParaContent(); print "The faucet cracks. Water sprays all over!"; new_line; .L_Say20; .L_SayX20;! [4: now puddles of water is in the location of the player]
-    MoveObject(I147_puddles_of_water,LocationOf(player));
-    ! [5: now the developer is flustered]
-    (Adj_86_t2_v10(I133_purple_haired_developer));
-    ! [6: increment the score]
+    ! [8: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
     } else if (debug_rules > 1) DB_Rule(R_819, 819, 'action');
     rfalse;
 ];
 ! No specific request
-! After pecking a purple-haired developer for the first time:
+! After pecking a sink for the first time:
 [ R_820 ;
-    if ((PAPR_4() && (((TimesActionHasHappened-->4) == 1) && (ActionCurrentlyHappeningFlag->4)))) { ! Runs only when pattern matches
+    if ((PAPR_3() && (((TimesActionHasHappened-->3) == 1) && (ActionCurrentlyHappeningFlag->3)))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_820, 820);
-    ! [2: say ~The developer shrieks in rage. She comes at you ready to kill.~]
-    say__p=1;! [3: ~The developer shrieks in rage. She comes at you ready to kill.~]
-    ParaContent(); print "The developer shrieks in rage. She comes at you ready to kill."; new_line; .L_Say21; .L_SayX21;! [4: now the printed name of a purple-haired developer is ~wet, scalded developer~]
-    BlkValueCopy(GProperty(10, I133_purple_haired_developer,short_name), TX_L_84);
-    ! [5: now the cup of coffee is in the location of the player]
-    MoveObject(I132_cup_of_coffee,LocationOf(player));
-    ! [6: now puddles of coffee is in the location of the player]
-    MoveObject(I146_puddles_of_spilled_coff,LocationOf(player));
-    ! [7: now the printed name of the cup of coffee is ~empty coffee cup~]
-    BlkValueCopy(GProperty(10, I132_cup_of_coffee,short_name), TX_L_85);
-    ! [8: now the developer is flustered]
+    ! [2: say ~The faucet cracks. Water sprays all over!~]
+    say__p=1;! [3: ~The faucet cracks. Water sprays all over!~]
+    ParaContent(); print "The faucet cracks. Water sprays all over!"; new_line; .L_Say20; .L_SayX20;! [4: now the printed name of the sink is ~sink with a broken faucet, spraying water everywhere~]
+    BlkValueCopy(GProperty(10, I131_sink,short_name), TX_L_84);
+    ! [5: now the description of the sink is ~This sink is in sad shape. It's spraying water from the broken faucet.~]
+    BlkValueCopy(GProperty(10, I131_sink,description), TX_L_85);
+    ! [6: now puddles of water is in the location of the player]
+    MoveObject(I147_puddles_of_water,LocationOf(player));
+    ! [7: now the developer is flustered]
     (Adj_86_t2_v10(I133_purple_haired_developer));
+    ! [8: now the sink is broken]
+    (Adj_90_t2_v10(I131_sink));
     ! [9: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -13293,11 +13279,37 @@ Array ActionHappened --> 0 0 0 0 0 0;
     rfalse;
 ];
 ! No specific request
+! After pecking a purple-haired developer for the first time:
+[ R_821 ;
+    if ((PAPR_4() && (((TimesActionHasHappened-->4) == 1) && (ActionCurrentlyHappeningFlag->4)))) { ! Runs only when pattern matches
+    self = noun;
+    if (debug_rules) DB_Rule(R_821, 821);
+    ! [2: say ~The developer shrieks in rage. She comes at you ready to kill.~]
+    say__p=1;! [3: ~The developer shrieks in rage. She comes at you ready to kill.~]
+    ParaContent(); print "The developer shrieks in rage. She comes at you ready to kill."; new_line; .L_Say21; .L_SayX21;! [4: now the printed name of a purple-haired developer is ~wet, scalded developer~]
+    BlkValueCopy(GProperty(10, I133_purple_haired_developer,short_name), TX_L_86);
+    ! [5: now the cup of coffee is in the location of the player]
+    MoveObject(I132_cup_of_coffee,LocationOf(player));
+    ! [6: now puddles of coffee is in the location of the player]
+    MoveObject(I146_puddles_of_spilled_coff,LocationOf(player));
+    ! [7: now the printed name of the cup of coffee is ~empty coffee cup~]
+    BlkValueCopy(GProperty(10, I132_cup_of_coffee,short_name), TX_L_87);
+    ! [8: now the coffee cup is broken]
+    (Adj_90_t2_v10(I132_cup_of_coffee));
+    ! [9: now the developer is flustered]
+    (Adj_86_t2_v10(I133_purple_haired_developer));
+    ! [10: increment the score]
+    score = score + 1;;
+    RulebookSucceeds(); rtrue;
+    } else if (debug_rules > 1) DB_Rule(R_821, 821, 'action');
+    rfalse;
+];
+! No specific request
 ! After pecking a project manager for the first time:
-[ R_822 ;
+[ R_823 ;
     if ((PAPR_5() && (((TimesActionHasHappened-->5) == 1) && (ActionCurrentlyHappeningFlag->5)))) { ! Runs only when pattern matches
     self = noun;
-    if (debug_rules) DB_Rule(R_822, 822);
+    if (debug_rules) DB_Rule(R_823, 823);
     ! [2: say ~You peck her in the butt, feeling a deep sense of satisfaction.~]
     say__p=1;! [3: ~You peck her in the butt, feeling a deep sense of satisfaction.~]
     ParaContent(); print "You peck her in the butt, feeling a deep sense of satisfaction."; new_line; .L_Say22; .L_SayX22;! [4: say ~'OUCH!!! HEY!!!'~]
@@ -13305,35 +13317,11 @@ Array ActionHappened --> 0 0 0 0 0 0;
     ParaContent(); print "~OUCH!!! HEY!!!~"; new_line; .L_Say23; .L_SayX23;! [6: say ~The project manager leaps up from her chair!~]
     say__p=1;! [7: ~The project manager leaps up from her chair!~]
     ParaContent(); print "The project manager leaps up from her chair!"; new_line; .L_Say24; .L_SayX24;! [8: now the printed name of a project manager is ~flustered manager~]
-    BlkValueCopy(GProperty(10, I135_project_manager,short_name), TX_L_86);
+    BlkValueCopy(GProperty(10, I135_project_manager,short_name), TX_L_88);
     ! [9: now the description of a project manager is ~A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.~]
-    BlkValueCopy(GProperty(10, I135_project_manager,description), TX_L_87);
+    BlkValueCopy(GProperty(10, I135_project_manager,description), TX_L_89);
     ! [10: now a project manager is flustered]
     (Adj_86_t2_v10(I135_project_manager));
-    ! [11: increment the score]
-    score = score + 1;;
-    RulebookSucceeds(); rtrue;
-    } else if (debug_rules > 1) DB_Rule(R_822, 822, 'action');
-    rfalse;
-];
-! No specific request
-! After pecking an ipad for the first time:
-[ R_823 ;
-    if ((PAPR_6() && (((TimesActionHasHappened-->6) == 1) && (ActionCurrentlyHappeningFlag->6)))) { ! Runs only when pattern matches
-    self = noun;
-    if (debug_rules) DB_Rule(R_823, 823);
-    ! [2: say ~A huge picture of a plump goose fills the conference room screen.~]
-    say__p=1;! [3: ~A huge picture of a plump goose fills the conference room screen.~]
-    ParaContent(); print "A huge picture of a plump goose fills the conference room screen."; new_line; .L_Say25; .L_SayX25;! [4: say ~The conference call participants all start talking at once!~]
-    say__p=1;! [5: ~The conference call participants all start talking at once!~]
-    ParaContent(); print "The conference call participants all start talking at once!"; new_line; .L_Say26; .L_SayX26;! [6: say ~Someone yells, 'STOP THAT GOOSE!' and starts to chase you!~]
-    say__p=1;! [7: ~Someone yells, 'STOP THAT GOOSE!' and starts to chase you!~]
-    ParaContent(); print "Someone yells, ~STOP THAT GOOSE!~ and starts to chase you!"; new_line; .L_Say27; .L_SayX27;! [8: now the printed name of an ipad is ~battered and scratched ipad~]
-    BlkValueCopy(GProperty(10, I136_ipad,short_name), TX_L_88);
-    ! [9: now the printed name of a project manager is ~flustered manager~]
-    BlkValueCopy(GProperty(10, I135_project_manager,short_name), TX_L_86);
-    ! [10: now the description of a project manager is ~An angry project manager ineptly chasing you.~]
-    BlkValueCopy(GProperty(10, I135_project_manager,description), TX_L_89);
     ! [11: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -13341,101 +13329,127 @@ Array ActionHappened --> 0 0 0 0 0 0;
     rfalse;
 ];
 ! No specific request
-! After pecking an adjustable desk for the first time:
-[ R_827 ;
-    if ((PAPR_7() && (((TimesActionHasHappened-->7) == 1) && (ActionCurrentlyHappeningFlag->7)))) { ! Runs only when pattern matches
+! After pecking an ipad for the first time:
+[ R_824 ;
+    if ((PAPR_6() && (((TimesActionHasHappened-->6) == 1) && (ActionCurrentlyHappeningFlag->6)))) { ! Runs only when pattern matches
     self = noun;
-    if (debug_rules) DB_Rule(R_827, 827);
-    ! [2: say ~The desk starts going up and down at random.~]
-    say__p=1;! [3: ~The desk starts going up and down at random.~]
-    ParaContent(); print "The desk starts going up and down at random."; new_line; .L_Say28; .L_SayX28;! [4: now the printed name of an adjustable desk is ~broken adjustable desk~]
-    BlkValueCopy(GProperty(10, I139_adjustable_desk,short_name), TX_L_90);
-    ! [5: now the description of an adjustable desk is ~An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.~]
-    BlkValueCopy(GProperty(10, I139_adjustable_desk,description), TX_L_91);
-    ! [6: increment the score]
+    if (debug_rules) DB_Rule(R_824, 824);
+    ! [2: say ~A huge picture of a plump goose fills the conference room screen.~]
+    say__p=1;! [3: ~A huge picture of a plump goose fills the conference room screen.~]
+    ParaContent(); print "A huge picture of a plump goose fills the conference room screen."; new_line; .L_Say25; .L_SayX25;! [4: say ~The conference call participants all start talking at once!~]
+    say__p=1;! [5: ~The conference call participants all start talking at once!~]
+    ParaContent(); print "The conference call participants all start talking at once!"; new_line; .L_Say26; .L_SayX26;! [6: say ~Someone yells, 'STOP THAT GOOSE!' and starts to chase you!~]
+    say__p=1;! [7: ~Someone yells, 'STOP THAT GOOSE!' and starts to chase you!~]
+    ParaContent(); print "Someone yells, ~STOP THAT GOOSE!~ and starts to chase you!"; new_line; .L_Say27; .L_SayX27;! [8: now the printed name of an ipad is ~battered and scratched ipad~]
+    BlkValueCopy(GProperty(10, I136_ipad,short_name), TX_L_90);
+    ! [9: now the printed name of a project manager is ~flustered manager~]
+    BlkValueCopy(GProperty(10, I135_project_manager,short_name), TX_L_88);
+    ! [10: now the description of a project manager is ~An angry project manager ineptly chasing you.~]
+    BlkValueCopy(GProperty(10, I135_project_manager,description), TX_L_91);
+    ! [11: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
-    } else if (debug_rules > 1) DB_Rule(R_827, 827, 'action');
+    } else if (debug_rules > 1) DB_Rule(R_824, 824, 'action');
     rfalse;
 ];
 ! No specific request
-! After taking a tattered copy of Design Patterns for the first time:
+! After pecking an adjustable desk for the first time:
 [ R_828 ;
-    if ((PAPR_8() && (((TimesActionHasHappened-->8) == 1) && (ActionCurrentlyHappeningFlag->8)))) { ! Runs only when pattern matches
+    if ((PAPR_7() && (((TimesActionHasHappened-->7) == 1) && (ActionCurrentlyHappeningFlag->7)))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_828, 828);
-    ! [2: now the printed name of a tattered copy of design patterns is ~book with the cover torn off~]
-    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,short_name), TX_L_92);
-    ! [3: now the description of a tattered copy of design patterns is ~A book with the cover torn off, covered in goose spit.~]
-    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,description), TX_L_93);
-    ! [4: now little bits of chewed up paper is in the location of the player]
-    MoveObject(I144_little_bits_of_chewed_u,LocationOf(player));
-    ! [5: increment the score]
+    ! [2: say ~The desk starts going up and down at random.~]
+    say__p=1;! [3: ~The desk starts going up and down at random.~]
+    ParaContent(); print "The desk starts going up and down at random."; new_line; .L_Say28; .L_SayX28;! [4: now the printed name of an adjustable desk is ~broken adjustable desk~]
+    BlkValueCopy(GProperty(10, I139_adjustable_desk,short_name), TX_L_92);
+    ! [5: now the description of an adjustable desk is ~An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.~]
+    BlkValueCopy(GProperty(10, I139_adjustable_desk,description), TX_L_93);
+    ! [6: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
     } else if (debug_rules > 1) DB_Rule(R_828, 828, 'action');
     rfalse;
 ];
 ! No specific request
-! After pecking a tattered copy of Design Patterns for the first time:
+! After taking a tattered copy of Design Patterns for the first time:
 [ R_829 ;
-    if ((PAPR_9() && (((TimesActionHasHappened-->9) == 1) && (ActionCurrentlyHappeningFlag->9)))) { ! Runs only when pattern matches
+    if ((PAPR_8() && (((TimesActionHasHappened-->8) == 1) && (ActionCurrentlyHappeningFlag->8)))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_829, 829);
-    ! [2: say ~Tasty! You could pick up the whole book and carry it around!~]
-    say__p=1;! [3: ~Tasty! You could pick up the whole book and carry it around!~]
-    ParaContent(); print "Tasty! You could pick up the whole book and carry it around!"; new_line; .L_Say29; .L_SayX29;! [4: now the printed name of a tattered copy of design patterns is ~book with the cover torn off~]
-    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,short_name), TX_L_92);
-    ! [5: now the description of a tattered copy of design patterns is ~A book with the cover torn off, covered in goose spit.~]
-    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,description), TX_L_93);
-    ! [6: now little bits of chewed up paper is in the location of the player]
+    ! [2: now the printed name of a tattered copy of design patterns is ~book with the cover torn off~]
+    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,short_name), TX_L_94);
+    ! [3: now the description of a tattered copy of design patterns is ~A book with the cover torn off, covered in goose spit.~]
+    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,description), TX_L_95);
+    ! [4: now little bits of chewed up paper is in the location of the player]
     MoveObject(I144_little_bits_of_chewed_u,LocationOf(player));
+    ! [5: increment the score]
+    score = score + 1;;
     RulebookSucceeds(); rtrue;
     } else if (debug_rules > 1) DB_Rule(R_829, 829, 'action');
     rfalse;
 ];
 ! No specific request
-! After pecking a laptop for the first time:
+! After pecking a tattered copy of Design Patterns for the first time:
 [ R_830 ;
-    if ((PAPR_10() && (((TimesActionHasHappened-->10) == 1) && (ActionCurrentlyHappeningFlag->10)))) { ! Runs only when pattern matches
+    if ((PAPR_9() && (((TimesActionHasHappened-->9) == 1) && (ActionCurrentlyHappeningFlag->9)))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_830, 830);
-    ! [2: say ~Your beak mashes the keys and cracks the screen.~]
-    say__p=1;! [3: ~Your beak mashes the keys and cracks the screen.~]
-    ParaContent(); print "Your beak mashes the keys and cracks the screen."; new_line; .L_Say30; .L_SayX30;! [4: now the printed name of a laptop is ~broken laptop~]
-    BlkValueCopy(GProperty(10, I141_laptop,short_name), TX_L_94);
-    ! [5: now the description of a laptop is ~A broken laptop, with messed-up text scrolling through its flickering windows on a cracked screen.~]
-    BlkValueCopy(GProperty(10, I141_laptop,description), TX_L_95);
-    ! [6: increment the score]
-    score = score + 1;;
+    ! [2: say ~Tasty! You could pick up the whole book and carry it around!~]
+    say__p=1;! [3: ~Tasty! You could pick up the whole book and carry it around!~]
+    ParaContent(); print "Tasty! You could pick up the whole book and carry it around!"; new_line; .L_Say29; .L_SayX29;! [4: now the printed name of a tattered copy of design patterns is ~book with the cover torn off~]
+    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,short_name), TX_L_94);
+    ! [5: now the description of a tattered copy of design patterns is ~A book with the cover torn off, covered in goose spit.~]
+    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,description), TX_L_95);
+    ! [6: now little bits of chewed up paper is in the location of the player]
+    MoveObject(I144_little_bits_of_chewed_u,LocationOf(player));
     RulebookSucceeds(); rtrue;
     } else if (debug_rules > 1) DB_Rule(R_830, 830, 'action');
     rfalse;
 ];
 ! No specific request
+! After pecking a laptop for the first time:
+[ R_831 ;
+    if ((PAPR_10() && (((TimesActionHasHappened-->10) == 1) && (ActionCurrentlyHappeningFlag->10)))) { ! Runs only when pattern matches
+    self = noun;
+    if (debug_rules) DB_Rule(R_831, 831);
+    ! [2: say ~Your beak mashes the keys and cracks the screen.~]
+    say__p=1;! [3: ~Your beak mashes the keys and cracks the screen.~]
+    ParaContent(); print "Your beak mashes the keys and cracks the screen."; new_line; .L_Say30; .L_SayX30;! [4: now the printed name of a laptop is ~broken laptop~]
+    BlkValueCopy(GProperty(10, I141_laptop,short_name), TX_L_96);
+    ! [5: now the description of a laptop is ~A broken laptop, with messed-up text scrolling through its flickering windows on a cracked screen.~]
+    BlkValueCopy(GProperty(10, I141_laptop,description), TX_L_97);
+    ! [6: increment the score]
+    score = score + 1;;
+    RulebookSucceeds(); rtrue;
+    } else if (debug_rules > 1) DB_Rule(R_831, 831, 'action');
+    rfalse;
+];
+! No specific request
 ! After pecking a potted palm:
-[ R_814 ;
+[ R_815 ;
     if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I126_potted_palm) && (true))))) { ! Runs only when pattern matches
     self = noun;
-    if (debug_rules) DB_Rule(R_814, 814);
+    if (debug_rules) DB_Rule(R_815, 815);
     ! [2: say ~Dirt spills out. How satisfying. You could probably pick up the whole plant.~]
     say__p=1;! [3: ~Dirt spills out. How satisfying. You could probably pick up the whole plant.~]
     ParaContent(); print "Dirt spills out. How satisfying. You could probably pick up the whole plant."; new_line; .L_Say31; .L_SayX31;! [4: now the description of a potted palm is ~A torn up potted plant, on its side with dirt spilling out.~]
     BlkValueCopy(GProperty(10, I126_potted_palm,description), TX_L_80);
     ! [5: now the printed name of a potted palm is ~torn-up potted palm, lying sideways~]
     BlkValueCopy(GProperty(10, I126_potted_palm,short_name), TX_L_81);
-    ! [6: now spilled dirt is in the location of the player]
+    ! [6: now the palm is broken]
+    (Adj_90_t2_v10(I126_potted_palm));
+    ! [7: now spilled dirt is in the location of the player]
     MoveObject(I143_spilled_dirt,LocationOf(player));
     RulebookSucceeds(); rtrue;
-    } else if (debug_rules > 1) DB_Rule(R_814, 814, 'action');
+    } else if (debug_rules > 1) DB_Rule(R_815, 815, 'action');
     rfalse;
 ];
 ! No specific request
 ! After pecking a cup of coffee:
-[ R_821 ;
+[ R_822 ;
     if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I132_cup_of_coffee) && (true))))) { ! Runs only when pattern matches
     self = noun;
-    if (debug_rules) DB_Rule(R_821, 821);
+    if (debug_rules) DB_Rule(R_822, 822);
     ! [2: if the cup of coffee is carried by the developer]
     if (((I133_purple_haired_developer == CarrierOf(I132_cup_of_coffee))))
     {! [3: say ~Hot coffee spills all over the developer. She yells and drops the cup.~]
@@ -13446,15 +13460,17 @@ Array ActionHappened --> 0 0 0 0 0 0;
         MoveObject(I146_puddles_of_spilled_coff,LocationOf(player));
         ! [7: now the developer is flustered]
         (Adj_86_t2_v10(I133_purple_haired_developer));
-        ! [8: now the printed name of the cup of coffee is ~empty coffee cup~]
-        BlkValueCopy(GProperty(10, I132_cup_of_coffee,short_name), TX_L_85);
-        ! [9: now the printed name of a developer is ~wet, scalded developer~]
-        BlkValueCopy(GProperty(10, I133_purple_haired_developer,short_name), TX_L_84);
-        ! [10: now the description of a developer is ~A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.~]
-        BlkValueCopy(GProperty(10, I133_purple_haired_developer,description), TX_L_96);
+        ! [8: now the coffee cup is broken]
+        (Adj_90_t2_v10(I132_cup_of_coffee));
+        ! [9: now the printed name of the cup of coffee is ~empty, cracked coffee cup~]
+        BlkValueCopy(GProperty(10, I132_cup_of_coffee,short_name), TX_L_98);
+        ! [10: now the printed name of a developer is ~wet, scalded developer~]
+        BlkValueCopy(GProperty(10, I133_purple_haired_developer,short_name), TX_L_86);
+        ! [11: now the description of a developer is ~A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.~]
+        BlkValueCopy(GProperty(10, I133_purple_haired_developer,description), TX_L_99);
         }
         RulebookSucceeds(); rtrue;
-        } else if (debug_rules > 1) DB_Rule(R_821, 821, 'action');
+        } else if (debug_rules > 1) DB_Rule(R_822, 822, 'action');
         rfalse;
 ];
 ! No specific request
@@ -13545,12 +13561,12 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! ----------------------------------------------------------------------------------------------------
 ! No specific request
 ! Before printing the name of a wet thing:
-[ R_832 ;
+[ R_833 ;
     if (((((parameter_value ofclass K2_thing) && ((Adj_92_t1_v10(parameter_value))))))) { ! Runs only when pattern matches
-    if (debug_rules) DB_Rule(R_832, 832);
+    if (debug_rules) DB_Rule(R_833, 833);
     ! [2: say ~wet ~]
     say__p=1;! [3: ~wet ~]
-    ParaContent(); print "wet "; .L_Say36; .L_SayX36;} else if (debug_rules > 1) DB_Rule(R_832, 832, 'action');
+    ParaContent(); print "wet "; .L_Say36; .L_SayX36;} else if (debug_rules > 1) DB_Rule(R_833, 833, 'action');
     rfalse;
 ];
 ! From the Standard Rules
@@ -13580,16 +13596,16 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! ----------------------------------------------------------------------------------------------------
 ! No specific request
 ! After printing the name of something ( called target ) while taking inventory:
-[ R_835 
+[ R_836 
     tmp_0 ! Let/loop value, e.g., 'target': thing
     ;
     if ((((tmp_0 = parameter_value, (((parameter_value ofclass K2_thing) && (tmp_0=(parameter_value), true))))) || (tmp_0 = 0,false))) { ! Runs only when pattern matches
     if (((((((action ==##Inv) &&  (actor==player))))))) { ! Runs only while condition holds
-    if (debug_rules) DB_Rule(R_835, 835);
+    if (debug_rules) DB_Rule(R_836, 836);
     ! [2: follow the property-aggregation rules for the target]
     FollowRulebook(374, tmp_0, true);
-    } else if (debug_rules > 1) DB_Rule(R_835, 835, 'context');
-    } else if (debug_rules > 1) DB_Rule(R_835, 835, 'action');
+    } else if (debug_rules > 1) DB_Rule(R_836, 836, 'context');
+    } else if (debug_rules > 1) DB_Rule(R_836, 836, 'action');
     rfalse;
 ];
 ! ----------------------------------------------------------------------------------------------------
@@ -14558,15 +14574,15 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ];
 ! No specific request
 ! Carry out taking inventory ( this is the new print inventory rule ):
-[ R_834 ;
+[ R_835 ;
     if (actor == player) {
-    if (debug_rules) DB_Rule(R_834, 834);
+    if (debug_rules) DB_Rule(R_835, 835);
     ! [2: say ~You are carrying: [line break]~]
     say__p=1;! [3: ~You are carrying: ~]
     ParaContent(); print "You are carrying: ";! [4: line break]
     ParaContent(); new_line; .L_Say70; .L_SayX70;! [5: list the contents of the player , with newlines , indented , including contents , with extra indentation]
     WriteListFrom(child(player), 8211);
-    } else if (debug_rules > 1) DB_Rule(R_834, 834, 'actor');
+    } else if (debug_rules > 1) DB_Rule(R_835, 835, 'actor');
     rfalse;
 ];
 ! ----------------------------------------------------------------------------------------------------
@@ -15055,17 +15071,19 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! ----------------------------------------------------------------------------------------------------
 ! Rules in rulebook: check Dropping (B140_check_dropping)
 ! ----------------------------------------------------------------------------------------------------
-! Rule 1/6 ! Check an actor dropping something which is part of the actor ( this is the can't drop body parts rule ):
+! Rule 1/7 ! Check an actor dropping something which is part of the actor ( this is the can't drop body parts rule ):
+!   >>> III.3.2 - Action/What/Thing Acted On >>>
+! Rule 2/7 ! Check dropping something:
 !   >>> I - Number of aspects constrained >>>
-! Rule 2/6 ! Check an actor dropping ( this is the can't drop yourself rule ):
+! Rule 3/7 ! Check an actor dropping ( this is the can't drop yourself rule ):
 !   === equally specific with ===
-! Rule 3/6 ! Check an actor dropping ( this is the can't drop what's already dropped rule ):
+! Rule 4/7 ! Check an actor dropping ( this is the can't drop what's already dropped rule ):
 !   === equally specific with ===
-! Rule 4/6 ! Check an actor dropping ( this is the can't drop what's not held rule ):
+! Rule 5/7 ! Check an actor dropping ( this is the can't drop what's not held rule ):
 !   === equally specific with ===
-! Rule 5/6 ! Check an actor dropping ( this is the can't drop clothes being worn rule ):
+! Rule 6/7 ! Check an actor dropping ( this is the can't drop clothes being worn rule ):
 !   === equally specific with ===
-! Rule 6/6 ! Check an actor dropping ( this is the can't drop if this exceeds carrying capacity rule ):
+! Rule 7/7 ! Check an actor dropping ( this is the can't drop if this exceeds carrying capacity rule ):
 ! ----------------------------------------------------------------------------------------------------
 ! From the Standard Rules
 ! No specific request
@@ -15083,6 +15101,23 @@ Array ActionHappened --> 0 0 0 0 0 0;
     rtrue;
     } else if (debug_rules > 1) DB_Rule(R_119, 119, 'action');
     rfalse;
+];
+! No specific request
+! Check dropping something:
+[ R_813 ;
+    if ((( (actor==player) && ((noun ofclass K2_thing))))) { ! Runs only when pattern matches
+    self = noun;
+    if (debug_rules) DB_Rule(R_813, 813);
+    ! [2: if the player is in the office kitchen]
+    if (((I128_office_kitchen == ContainerOf(player))))
+    {! [3: if the coffee maker is broken or the sink is broken or the coffee cup is broken]
+        if (((((Adj_90_t1_v10(I130_pod_based_coffee_maker))))) || (((((Adj_90_t1_v10(I131_sink))))) || ((((Adj_90_t1_v10(I132_cup_of_coffee)))))))
+        {! [4: now the noun is wet]
+            (Adj_92_t2_v10(noun));
+            }
+            }
+            } else if (debug_rules > 1) DB_Rule(R_813, 813, 'action');
+            rfalse;
 ];
 ! From the Standard Rules
 ! No specific request
@@ -20541,7 +20576,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! ----------------------------------------------------------------------------------------------------
 ! No specific request
 ! A property-aggregation rule for a thing ( this is the mention objects rule ):
-[ R_836 I7RBLK;
+[ R_837 I7RBLK;
     @push I7SFRAME;
     StackFrameCreate(2);
     BlkValueCreateOnStack(0, TEXT_TY);
@@ -20552,16 +20587,16 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ];
 [ KERNEL_4 ;
     if (((((parameter_value ofclass K2_thing))))) { ! Runs only when pattern matches
-    if (debug_rules) DB_Rule(R_836, 836);
+    if (debug_rules) DB_Rule(R_837, 837);
     ! [2: add ~in your beak~ to the tagline]
-    LIST_OF_TY_InsertItem((MStack-->MstVO(374,0)), BlkValueCopy(I7SFRAME, TX_L_97), 0, 0, 0);
-    } else if (debug_rules > 1) DB_Rule(R_836, 836, 'action');
+    LIST_OF_TY_InsertItem((MStack-->MstVO(374,0)), BlkValueCopy(I7SFRAME, TX_L_100), 0, 0, 0);
+    } else if (debug_rules > 1) DB_Rule(R_837, 837, 'action');
     rfalse;
 ];
 ! No specific request
 ! The last property-aggregation rule ( this is the print aggregated properties rule ):
-[ R_837 ;
-    if (debug_rules) DB_Rule(R_837, 837);
+[ R_838 ;
+    if (debug_rules) DB_Rule(R_838, 838);
     ! [2: if the number of entries in the tagline is greater than 0]
     if (((LIST_OF_TY_GetLength((MStack-->MstVO(374,0))) > 0)))
     {! [3: say ~ ([tagline])~]
@@ -22868,10 +22903,10 @@ Constant B7_when_scene_ends = EMPTY_RULEBOOK;
     latest_rule_result-->0 = 0;
     if (original_deadflag ~= deadflag) return 0;
     if (say__p) RulebookParBreak(forbid_breaks);
-    rv = R_833();
+    rv = R_834();
     if (rv) {
         if (rv == 2) return reason_the_action_failed;
-        return R_833;
+        return R_834;
     }
     latest_rule_result-->0 = 0;
     return 0; ! 2 rule(s)
@@ -23224,10 +23259,10 @@ Constant B18_unsuccessful_attempt_by = EMPTY_RULEBOOK;
     ;
     original_deadflag = deadflag;
     if (action == ##Examine) {
-        rv = R_817();
+        rv = R_818();
         if (rv) {
             if (rv == 2) return reason_the_action_failed;
-            return R_817;
+            return R_818;
         }
         latest_rule_result-->0 = 0;
     } else {
@@ -23236,10 +23271,10 @@ Constant B18_unsuccessful_attempt_by = EMPTY_RULEBOOK;
     if (action == ##A79_pecking) {
         if (original_deadflag ~= deadflag) return 0;
         if (say__p) RulebookParBreak(forbid_breaks);
-        rv = R_824();
+        rv = R_825();
         if (rv) {
             if (rv == 2) return reason_the_action_failed;
-            return R_824;
+            return R_825;
         }
         latest_rule_result-->0 = 0;
     } else {
@@ -23248,10 +23283,10 @@ Constant B18_unsuccessful_attempt_by = EMPTY_RULEBOOK;
     if (action == ##Take) {
         if (original_deadflag ~= deadflag) return 0;
         if (say__p) RulebookParBreak(forbid_breaks);
-        rv = R_816();
+        rv = R_817();
         if (rv) {
             if (rv == 2) return reason_the_action_failed;
-            return R_816;
+            return R_817;
         }
         latest_rule_result-->0 = 0;
         if (original_deadflag ~= deadflag) return 0;
@@ -23268,18 +23303,6 @@ Constant B18_unsuccessful_attempt_by = EMPTY_RULEBOOK;
     if (action == ##SwitchOn) {
         if (original_deadflag ~= deadflag) return 0;
         if (say__p) RulebookParBreak(forbid_breaks);
-        rv = R_825();
-        if (rv) {
-            if (rv == 2) return reason_the_action_failed;
-            return R_825;
-        }
-        latest_rule_result-->0 = 0;
-    } else {
-        if (say__p) RulebookParBreak(forbid_breaks);
-    }
-    if (action == ##SwitchOff) {
-        if (original_deadflag ~= deadflag) return 0;
-        if (say__p) RulebookParBreak(forbid_breaks);
         rv = R_826();
         if (rv) {
             if (rv == 2) return reason_the_action_failed;
@@ -23289,13 +23312,25 @@ Constant B18_unsuccessful_attempt_by = EMPTY_RULEBOOK;
     } else {
         if (say__p) RulebookParBreak(forbid_breaks);
     }
+    if (action == ##SwitchOff) {
+        if (original_deadflag ~= deadflag) return 0;
+        if (say__p) RulebookParBreak(forbid_breaks);
+        rv = R_827();
+        if (rv) {
+            if (rv == 2) return reason_the_action_failed;
+            return R_827;
+        }
+        latest_rule_result-->0 = 0;
+    } else {
+        if (say__p) RulebookParBreak(forbid_breaks);
+    }
     if (action == ##Drink) {
         if (original_deadflag ~= deadflag) return 0;
         if (say__p) RulebookParBreak(forbid_breaks);
-        rv = R_831();
+        rv = R_832();
         if (rv) {
             if (rv == 2) return reason_the_action_failed;
-            return R_831;
+            return R_832;
         }
         latest_rule_result-->0 = 0;
     } else {
@@ -23312,10 +23347,10 @@ Constant B22_carry_out = EMPTY_RULEBOOK;
     ;
     original_deadflag = deadflag;
     if (action == ##Take) {
-        rv = R_813();
+        rv = R_814();
         if (rv) {
             if (rv == 2) return reason_the_action_failed;
-            return R_813;
+            return R_814;
         }
         latest_rule_result-->0 = 0;
     } else {
@@ -23324,18 +23359,10 @@ Constant B22_carry_out = EMPTY_RULEBOOK;
     if (action == ##A79_pecking) {
         if (original_deadflag ~= deadflag) return 0;
         if (say__p) RulebookParBreak(forbid_breaks);
-        rv = R_815();
+        rv = R_816();
         if (rv) {
             if (rv == 2) return reason_the_action_failed;
-            return R_815;
-        }
-        latest_rule_result-->0 = 0;
-        if (original_deadflag ~= deadflag) return 0;
-        if (say__p) RulebookParBreak(forbid_breaks);
-        rv = R_818();
-        if (rv) {
-            if (rv == 2) return reason_the_action_failed;
-            return R_818;
+            return R_816;
         }
         latest_rule_result-->0 = 0;
         if (original_deadflag ~= deadflag) return 0;
@@ -23356,10 +23383,10 @@ Constant B22_carry_out = EMPTY_RULEBOOK;
         latest_rule_result-->0 = 0;
         if (original_deadflag ~= deadflag) return 0;
         if (say__p) RulebookParBreak(forbid_breaks);
-        rv = R_822();
+        rv = R_821();
         if (rv) {
             if (rv == 2) return reason_the_action_failed;
-            return R_822;
+            return R_821;
         }
         latest_rule_result-->0 = 0;
         if (original_deadflag ~= deadflag) return 0;
@@ -23372,16 +23399,12 @@ Constant B22_carry_out = EMPTY_RULEBOOK;
         latest_rule_result-->0 = 0;
         if (original_deadflag ~= deadflag) return 0;
         if (say__p) RulebookParBreak(forbid_breaks);
-        rv = R_827();
+        rv = R_824();
         if (rv) {
             if (rv == 2) return reason_the_action_failed;
-            return R_827;
+            return R_824;
         }
         latest_rule_result-->0 = 0;
-    } else {
-        if (say__p) RulebookParBreak(forbid_breaks);
-    }
-    if (action == ##Take) {
         if (original_deadflag ~= deadflag) return 0;
         if (say__p) RulebookParBreak(forbid_breaks);
         rv = R_828();
@@ -23393,7 +23416,7 @@ Constant B22_carry_out = EMPTY_RULEBOOK;
     } else {
         if (say__p) RulebookParBreak(forbid_breaks);
     }
-    if (action == ##A79_pecking) {
+    if (action == ##Take) {
         if (original_deadflag ~= deadflag) return 0;
         if (say__p) RulebookParBreak(forbid_breaks);
         rv = R_829();
@@ -23402,6 +23425,10 @@ Constant B22_carry_out = EMPTY_RULEBOOK;
             return R_829;
         }
         latest_rule_result-->0 = 0;
+    } else {
+        if (say__p) RulebookParBreak(forbid_breaks);
+    }
+    if (action == ##A79_pecking) {
         if (original_deadflag ~= deadflag) return 0;
         if (say__p) RulebookParBreak(forbid_breaks);
         rv = R_830();
@@ -23412,18 +23439,26 @@ Constant B22_carry_out = EMPTY_RULEBOOK;
         latest_rule_result-->0 = 0;
         if (original_deadflag ~= deadflag) return 0;
         if (say__p) RulebookParBreak(forbid_breaks);
-        rv = R_814();
+        rv = R_831();
         if (rv) {
             if (rv == 2) return reason_the_action_failed;
-            return R_814;
+            return R_831;
         }
         latest_rule_result-->0 = 0;
         if (original_deadflag ~= deadflag) return 0;
         if (say__p) RulebookParBreak(forbid_breaks);
-        rv = R_821();
+        rv = R_815();
         if (rv) {
             if (rv == 2) return reason_the_action_failed;
-            return R_821;
+            return R_815;
+        }
+        latest_rule_result-->0 = 0;
+        if (original_deadflag ~= deadflag) return 0;
+        if (say__p) RulebookParBreak(forbid_breaks);
+        rv = R_822();
+        if (rv) {
+            if (rv == 2) return reason_the_action_failed;
+            return R_822;
         }
         latest_rule_result-->0 = 0;
     } else {
@@ -23506,10 +23541,10 @@ Constant B28_when_entire_game_ends = EMPTY_RULEBOOK;
     original_deadflag = deadflag;
     p = parameter_value;
     parameter_value = p;
-    rv = R_832();
+    rv = R_833();
     if (rv) {
         if (rv == 2) return reason_the_action_failed;
-        return R_832;
+        return R_833;
     }
     latest_rule_result-->0 = 0;
     if (original_deadflag ~= deadflag) return 0;
@@ -23545,10 +23580,10 @@ Constant B28_when_entire_game_ends = EMPTY_RULEBOOK;
     ;
     p = parameter_value;
     parameter_value = p;
-    rv = R_835();
+    rv = R_836();
     if (rv) {
         if (rv == 2) return reason_the_action_failed;
-        return R_835;
+        return R_836;
     }
     latest_rule_result-->0 = 0;
     return 0; ! 1 rule(s)
@@ -24108,10 +24143,10 @@ Constant B131_check_taking_inventory = EMPTY_RULEBOOK;
     latest_rule_result-->0 = 0;
     if (original_deadflag ~= deadflag) return 0;
     if (say__p) RulebookParBreak(forbid_breaks);
-    rv = R_834();
+    rv = R_835();
     if (rv) {
         if (rv == 2) return reason_the_action_failed;
-        return R_834;
+        return R_835;
     }
     latest_rule_result-->0 = 0;
     return 0; ! 2 rule(s)
@@ -24308,6 +24343,14 @@ Constant B139_report_removing_it_from = EMPTY_RULEBOOK;
     latest_rule_result-->0 = 0;
     if (original_deadflag ~= deadflag) return 0;
     if (say__p) RulebookParBreak(forbid_breaks);
+    rv = R_813();
+    if (rv) {
+        if (rv == 2) return reason_the_action_failed;
+        return R_813;
+    }
+    latest_rule_result-->0 = 0;
+    if (original_deadflag ~= deadflag) return 0;
+    if (say__p) RulebookParBreak(forbid_breaks);
     rv = R_118();
     if (rv) {
         if (rv == 2) return reason_the_action_failed;
@@ -24346,7 +24389,7 @@ Constant B139_report_removing_it_from = EMPTY_RULEBOOK;
         return R_123;
     }
     latest_rule_result-->0 = 0;
-    return 0; ! 6 rule(s)
+    return 0; ! 7 rule(s)
 ];
 [ B141_carry_out_dropping 
     forbid_breaks ! Implied call parameter
@@ -26753,19 +26796,19 @@ Constant B373_report_getting_help = EMPTY_RULEBOOK;
     original_deadflag = deadflag;
     p = parameter_value;
     parameter_value = p;
-    rv = R_836();
+    rv = R_837();
     if (rv) {
         if (rv == 2) return reason_the_action_failed;
-        return R_836;
+        return R_837;
     }
     latest_rule_result-->0 = 0;
     if (original_deadflag ~= deadflag) return 0;
     if (say__p) RulebookParBreak(forbid_breaks);
     parameter_value = p;
-    rv = R_837();
+    rv = R_838();
     if (rv) {
         if (rv == 2) return reason_the_action_failed;
-        return R_837;
+        return R_838;
     }
     latest_rule_result-->0 = 0;
     return 0; ! 2 rule(s)
@@ -31397,9 +31440,9 @@ Array RulebookNames -->
         if (R == R_315) { print "block buying rule"; rtrue; } ! rule 272
         if (R == R_316) { print "block climbing rule"; rtrue; } ! rule 273
         if (R == R_317) { print "block sleeping rule"; rtrue; } ! rule 274
-        if (R == R_834) { print "new print inventory rule"; rtrue; } ! rule 275
-        if (R == R_836) { print "mention objects rule"; rtrue; } ! rule 276
-        if (R == R_837) { print "print aggregated properties rule"; rtrue; } ! rule 277
+        if (R == R_835) { print "new print inventory rule"; rtrue; } ! rule 275
+        if (R == R_837) { print "mention objects rule"; rtrue; } ! rule 276
+        if (R == R_838) { print "print aggregated properties rule"; rtrue; } ! rule 277
         if (R == LITTLE_USED_DO_NOTHING_R) { print "little-used do nothing rule"; rtrue; } ! rule 278
         if (R == VIRTUAL_MACHINE_STARTUP_R) { print "virtual machine startup rule"; rtrue; } ! rule 279
         if (R == INITIALISE_MEMORY_R) { print "initialise memory rule"; rtrue; } ! rule 280
@@ -31487,28 +31530,29 @@ Array RulebookNames -->
         if (R == R_810) { print "Carry out examining something"; rtrue; } ! rule 362
         if (R == R_811) { print "After acting confused for three turns"; rtrue; } ! rule 363
         if (R == R_812) { print "Carry out getting help"; rtrue; } ! rule 364
-        if (R == R_813) { print "After taking a potted palm for the first time"; rtrue; } ! rule 365
-        if (R == R_814) { print "After pecking a potted palm"; rtrue; } ! rule 366
-        if (R == R_815) { print "After pecking the printer for the first time"; rtrue; } ! rule 367
-        if (R == R_816) { print "Instead of taking scenery"; rtrue; } ! rule 368
-        if (R == R_817) { print "Instead of examining a purple-haired developer"; rtrue; } ! rule 369
-        if (R == R_818) { print "After pecking a pod-based coffee maker for the first time"; rtrue; } ! rule 370
-        if (R == R_819) { print "After pecking a sink for the first time"; rtrue; } ! rule 371
-        if (R == R_820) { print "After pecking a purple-haired developer for the first time"; rtrue; } ! rule 372
-        if (R == R_821) { print "After pecking a cup of coffee"; rtrue; } ! rule 373
-        if (R == R_822) { print "After pecking a project manager for the first time"; rtrue; } ! rule 374
-        if (R == R_823) { print "After pecking an ipad for the first time"; rtrue; } ! rule 375
-        if (R == R_824) { print "Instead of pecking a video camera"; rtrue; } ! rule 376
-        if (R == R_825) { print "Instead of switching on a device"; rtrue; } ! rule 377
-        if (R == R_826) { print "Instead of switching off a device"; rtrue; } ! rule 378
-        if (R == R_827) { print "After pecking an adjustable desk for the first time"; rtrue; } ! rule 379
-        if (R == R_828) { print "After taking a tattered copy of Design Patterns for the first time"; rtrue; } ! rule 380
-        if (R == R_829) { print "After pecking a tattered copy of Design Patterns for the first time"; rtrue; } ! rule 381
-        if (R == R_830) { print "After pecking a laptop for the first time"; rtrue; } ! rule 382
-        if (R == R_831) { print "Instead of drinking a liquid"; rtrue; } ! rule 383
-        if (R == R_832) { print "Before printing the name of a wet thing"; rtrue; } ! rule 384
-        if (R == R_833) { print "Every turn"; rtrue; } ! rule 385
-        if (R == R_835) { print "After printing the name of something ( called target ) while taking inventory"; rtrue; } ! rule 386
+        if (R == R_813) { print "Check dropping something"; rtrue; } ! rule 365
+        if (R == R_814) { print "After taking a potted palm for the first time"; rtrue; } ! rule 366
+        if (R == R_815) { print "After pecking a potted palm"; rtrue; } ! rule 367
+        if (R == R_816) { print "After pecking the printer for the first time"; rtrue; } ! rule 368
+        if (R == R_817) { print "Instead of taking scenery"; rtrue; } ! rule 369
+        if (R == R_818) { print "Instead of examining a purple-haired developer"; rtrue; } ! rule 370
+        if (R == R_819) { print "After pecking a pod-based coffee maker for the first time"; rtrue; } ! rule 371
+        if (R == R_820) { print "After pecking a sink for the first time"; rtrue; } ! rule 372
+        if (R == R_821) { print "After pecking a purple-haired developer for the first time"; rtrue; } ! rule 373
+        if (R == R_822) { print "After pecking a cup of coffee"; rtrue; } ! rule 374
+        if (R == R_823) { print "After pecking a project manager for the first time"; rtrue; } ! rule 375
+        if (R == R_824) { print "After pecking an ipad for the first time"; rtrue; } ! rule 376
+        if (R == R_825) { print "Instead of pecking a video camera"; rtrue; } ! rule 377
+        if (R == R_826) { print "Instead of switching on a device"; rtrue; } ! rule 378
+        if (R == R_827) { print "Instead of switching off a device"; rtrue; } ! rule 379
+        if (R == R_828) { print "After pecking an adjustable desk for the first time"; rtrue; } ! rule 380
+        if (R == R_829) { print "After taking a tattered copy of Design Patterns for the first time"; rtrue; } ! rule 381
+        if (R == R_830) { print "After pecking a tattered copy of Design Patterns for the first time"; rtrue; } ! rule 382
+        if (R == R_831) { print "After pecking a laptop for the first time"; rtrue; } ! rule 383
+        if (R == R_832) { print "Instead of drinking a liquid"; rtrue; } ! rule 384
+        if (R == R_833) { print "Before printing the name of a wet thing"; rtrue; } ! rule 385
+        if (R == R_834) { print "Every turn"; rtrue; } ! rule 386
+        if (R == R_836) { print "After printing the name of something ( called target ) while taking inventory"; rtrue; } ! rule 387
 
 		print "(nameless rule at address ", R, ")";
 	}
@@ -51237,15 +51281,15 @@ Verb 'help' 'instructions' 'menu' 'info' 'about'
 
 Constant TX_PS_72 = ">";
 Constant TX_PS_60 = "A beautiful ergonomic desk, adjustable with electronic controls.";
-Constant TX_PS_93 = "A book with the cover torn off, covered in goose spit.";
-Array TX_L_93 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_93;
-Constant TX_PS_95 = "A broken laptop, with messed-up text scrolling through its flickering windows on a cracked screen.";
+Constant TX_PS_95 = "A book with the cover torn off, covered in goose spit.";
 Array TX_L_95 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_95;
+Constant TX_PS_97 = "A broken laptop, with messed-up text scrolling through its flickering windows on a cracked screen.";
+Array TX_L_97 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_97;
 Constant TX_PS_53 = "A geeky looking person, concentrating deeply.";
-Constant TX_PS_96 = "A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.";
-Array TX_L_96 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_96;
-Constant TX_PS_87 = "A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.";
-Array TX_L_87 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_87;
+Constant TX_PS_99 = "A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.";
+Array TX_L_99 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_99;
+Constant TX_PS_89 = "A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.";
+Array TX_L_89 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_89;
 Constant TX_PS_46 = "A gleaming, tidy sink.";
 Constant TX_PS_64 = "A laptop with several windows open, showing some code.";
 Constant TX_PS_51 = "A large board room with chairs arranged around a central table. Through the open door, you can see the main office to the east.";
@@ -51254,11 +51298,11 @@ Constant TX_PS_49 = "A steaming, very full cup of coffee.";
 Constant TX_PS_80 = "A torn up potted plant, on its side with dirt spilling out.";
 Array TX_L_80 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_80;
 Constant TX_PS_3 = "An Interactive Fiction";
-Constant TX_PS_91 = "An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.";
-Array TX_L_91 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_91;
+Constant TX_PS_93 = "An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.";
+Array TX_L_93 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_93;
 Constant TX_PS_58 = "An adjustable standing/sitting desk dominates this spacious cubicle. The main office is just to the north.";
-Constant TX_PS_89 = "An angry project manager ineptly chasing you.";
-Array TX_L_89 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_89;
+Constant TX_PS_91 = "An angry project manager ineptly chasing you.";
+Array TX_L_91 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_91;
 Constant TX_PS_55 = "An ipad with an interface to control a video conference.";
 Constant TX_PS_73 = "Comedy";
 Constant TX_PS_50 = "Conference room";
@@ -51275,7 +51319,9 @@ Constant TX_PS_75 = "RESTART";
 Constant TX_PS_76 = "RESTORE a saved game";
 Constant TX_PS_42 = "They're just out of your reach. Infuriating. ";
 Constant TX_PS_62 = "This book looks absolutely delicious! Maybe you should take it!";
-Constant TX_PS_40 = "This mini kitchen has tasty snacks and bad coffee. The main office is just to the east.";
+Constant TX_PS_40 = "This mini kitchen has tasty snacks and bad coffee. The main office is just to the west.";
+Constant TX_PS_85 = "This sink is in sad shape. It's spraying water from the broken faucet.";
+Array TX_L_85 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_85;
 Constant TX_PS_44 = "This sturdy machine is ready to make you a bitter cup of plastic swill.";
 Constant TX_PS_79 = "UNDO the last command";
 Constant TX_PS_33 = "You're large, you're white, and you're waddling.";
@@ -51283,14 +51329,14 @@ Constant TX_PS_34 = "Yourself";
 Constant TX_PS_59 = "adjustable desk";
 Constant TX_PS_9 = "animals";
 Constant TX_PS_14 = "backdrops";
-Constant TX_PS_88 = "battered and scratched ipad";
-Array TX_L_88 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_88;
-Constant TX_PS_92 = "book with the cover torn off";
-Array TX_L_92 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_92;
-Constant TX_PS_90 = "broken adjustable desk";
+Constant TX_PS_90 = "battered and scratched ipad";
 Array TX_L_90 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_90;
-Constant TX_PS_94 = "broken laptop";
+Constant TX_PS_94 = "book with the cover torn off";
 Array TX_L_94 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_94;
+Constant TX_PS_92 = "broken adjustable desk";
+Array TX_L_92 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_92;
+Constant TX_PS_96 = "broken laptop";
+Array TX_L_96 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_96;
 Constant TX_PS_11 = "containers";
 Constant TX_PS_48 = "cup of coffee";
 Constant TX_PS_82 = "dented printer";
@@ -51300,12 +51346,14 @@ Constant TX_PS_18 = "directions";
 Constant TX_PS_10 = "doors";
 Constant TX_PS_29 = "down";
 Constant TX_PS_26 = "east";
-Constant TX_PS_85 = "empty coffee cup";
-Array TX_L_85 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_85;
-Constant TX_PS_86 = "flustered manager";
-Array TX_L_86 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_86;
-Constant TX_PS_97 = "in your beak";
-Array TX_L_97 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_97;
+Constant TX_PS_87 = "empty coffee cup";
+Array TX_L_87 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_87;
+Constant TX_PS_98 = "empty, cracked coffee cup";
+Array TX_L_98 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_98;
+Constant TX_PS_88 = "flustered manager";
+Array TX_L_88 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_88;
+Constant TX_PS_100 = "in your beak";
+Array TX_L_100 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_100;
 Constant TX_PS_30 = "inside";
 Constant TX_PS_54 = "ipad";
 Constant TX_PS_63 = "laptop";
@@ -51330,6 +51378,8 @@ Constant TX_PS_47 = "purple-haired developer";
 Constant TX_PS_17 = "regions";
 Constant TX_PS_77 = "see some suggestions for AMUSING things to do";
 Constant TX_PS_67 = "sheets of paper";
+Constant TX_PS_84 = "sink with a broken faucet, spraying water everywhere";
+Array TX_L_84 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_84;
 Constant TX_PS_45 = "sink";
 Constant TX_PS_41 = "snacks";
 Constant TX_PS_23 = "south";
@@ -51345,8 +51395,8 @@ Constant TX_PS_28 = "up";
 Constant TX_PS_12 = "vehicles";
 Constant TX_PS_56 = "video camera";
 Constant TX_PS_27 = "west";
-Constant TX_PS_84 = "wet, scalded developer";
-Array TX_L_84 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_84;
+Constant TX_PS_86 = "wet, scalded developer";
+Array TX_L_86 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_86;
 Constant TX_PS_8 = "women";
 Constant TX_PS_32 = "yourself";
 Array TX_L_32 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_32;
