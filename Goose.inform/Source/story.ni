@@ -173,7 +173,7 @@ After taking a potted palm for the first time:
 After pecking a potted palm:
 	say "Dirt spills out. How satisfying. You could probably pick up the whole plant.";
 	now the description of a potted palm is "A torn up potted plant, on its side with dirt spilling out.";
-	now the printed name of a potted palm is "torn-up potted palm, lying sideways";
+	now the printed name of a potted palm is "torn-up potted palm";
 	now the palm is broken;
 	now spilled dirt is in the location of the player;
 
@@ -186,7 +186,7 @@ After pecking the printer for the first time:
 
 An Office kitchen is east of an open-plan office. The description is "This mini kitchen has tasty snacks and bad coffee. The main office is just to the west."
 
-The snacks are scenery in an office kitchen. The description of the snacks is "They're just out of your reach. Infuriating. " 
+The snacks are scenery in an office kitchen. The description of the snacks is "They're locked up in a high cabinet. Infuriating. " 
 
 Instead of taking scenery:
 	say "You can't reach it. How infuriating!";
@@ -199,15 +199,22 @@ A cup of coffee is an object. The description is "A steaming, very full cup of c
 
 A fire alarm is a device. The description is "An unobtrusive red box, mounted high on the kitchen wall." Understand "box" as a fire alarm. 
 
-After pecking the fire alarm:
+After pecking the fire alarm for the first time:
 	now the fire alarm is switched on;
 	now the fire alarm is broken;
 	say "The glass covering the fire alarm switch breaks."; 
 	say "ooooooOOOOOOooooooo!";
 	say "The developer panics, opens a cupboard and takes out a fire extinguisher.";
 	now the developer is carrying a fire extinguisher;
+	now the cabinet is open;
+	now the printed name of the cabinet is "open cabinet";
 	increment the score;
 	
+A cabinet is a container in the office kitchen. It is closed and locked. 
+
+Some tasty snacks are in the cabinet.
+ 
+
 A fire extinguisher is a device. The description is "A large red cylinder with a trigger handle.";
 
 After pecking the fire extinguisher:

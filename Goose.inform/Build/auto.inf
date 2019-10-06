@@ -4407,7 +4407,7 @@ Global lightflag = false;
 ! ListWriter.i6t: Memory
 ! ==== ==== ==== ==== ==== ==== ==== ==== ==== ====
 
-Constant REQUISITION_STACK_SIZE = 3*39;
+Constant REQUISITION_STACK_SIZE = 3*41;
 Array requisition_stack --> REQUISITION_STACK_SIZE;
 Global requisition_stack_pointer = 0;
 
@@ -10576,8 +10576,8 @@ Constant IK1_First = I126_open_plan_office;
 Constant IK2_First = selfobj;
 Constant IK3_First = I51_north;
 Constant IK4_First = nothing;
-Constant IK5_First = nothing;
-Constant IK6_First = I138_chair;
+Constant IK5_First = I135_cabinet;
+Constant IK6_First = I140_chair;
 Constant IK7_First = nothing;
 Constant IK8_First = selfobj;
 Constant IK9_First = nothing;
@@ -10587,7 +10587,7 @@ Constant IK12_First = nothing;
 Constant IK13_First = I128_printer;
 Constant IK14_First = nothing;
 Constant IK15_First = nothing;
-Constant IK16_First = I150_puddles_of_spilled_coff;
+Constant IK16_First = I152_puddles_of_spilled_coff;
 Constant No_Directions = 12;
 ! Table of direction object alias constants:
 Constant DirectionObject_0 = I51_north;
@@ -10603,10 +10603,10 @@ Constant DirectionObject_9 = I60_down;
 Constant DirectionObject_10 = in_obj;
 Constant DirectionObject_11 = out_obj;
 Array Map_Storage -->
- 0 0 0 I142_cubicle 0 0 I129_office_kitchen I137_conference_room 0 0 0 0 ! Exits from: I126_open_plan_office
+ 0 0 0 I144_cubicle 0 0 I129_office_kitchen I139_conference_room 0 0 0 0 ! Exits from: I126_open_plan_office
  0 0 0 0 0 0 0 I126_open_plan_office 0 0 0 0 ! Exits from: I129_office_kitchen
- 0 0 0 0 0 0 I126_open_plan_office 0 0 0 0 0 ! Exits from: I137_conference_room
- I126_open_plan_office 0 0 0 0 0 0 0 0 0 0 0 ! Exits from: I142_cubicle
+ 0 0 0 0 0 0 I126_open_plan_office 0 0 0 0 0 ! Exits from: I139_conference_room
+ I126_open_plan_office 0 0 0 0 0 0 0 0 0 0 0 ! Exits from: I144_cubicle
 ;
 
 Class VPH_Class;
@@ -11158,7 +11158,7 @@ Object selfobj ""
     with IK2_Count 0
     with IK2_Link I127_potted_palm
     with IK8_Count 0
-    with IK8_Link I136_purple_haired_developer
+    with IK8_Link I138_purple_haired_developer
     with KD_Count 8
     with parse_name Parse_Name_GV13
     with action_bitmap 0 0 0 0 0 0 
@@ -11230,7 +11230,7 @@ Object I129_office_kitchen ""
     with room_index -1
     has mark_as_room
     with IK1_Count 1
-    with IK1_Link I137_conference_room
+    with IK1_Link I139_conference_room
     with KD_Count 1
     with name 'office' 'kitchen' 'rooms//p' 
     with list_together BC_173
@@ -11285,7 +11285,7 @@ Object -> I132_sink ""
     with vector 0
     has mark_as_thing
     with IK2_Count 5
-    with IK2_Link I136_purple_haired_developer
+    with IK2_Link I135_cabinet
     with IK13_Count 2
     with IK13_Link I134_fire_alarm
     with KD_Count 13
@@ -11297,17 +11297,21 @@ Object -> I132_sink ""
     with article BC_193
 ;
 
-Object -> I136_purple_haired_developer ""
-    class K8_person
+Object -> I135_cabinet ""
+    class K5_container
     with short_name BC_194
+    has ~open
+    has openable
+    has lockable
+    has locked
     with vector 0
     has mark_as_thing
-    with IK2_Count 9
-    with IK2_Link I133_cup_of_coffee
-    with IK8_Count 1
-    with IK8_Link I139_project_manager
-    with KD_Count 8
-    with name 'purple-haired' 'developer' 'people//p' 
+    with IK2_Count 8
+    with IK2_Link I136_tasty_snacks
+    with IK5_Count 0
+    with IK5_Link nothing
+    with KD_Count 5
+    with name 'cabinet' 'containers//p' 
     with action_bitmap 0 0 0 0 0 0 
     with description BC_195
     with initial BC_196
@@ -11316,10 +11320,47 @@ Object -> I136_purple_haired_developer ""
     with article BC_199
 ;
 
-Object -> -> I133_cup_of_coffee ""
+Object -> -> I136_tasty_snacks ""
     class K2_thing
     with short_name BC_200
+    has pluralname
+    with vector 0
+    has mark_as_thing
+    with IK2_Count 9
+    with IK2_Link I138_purple_haired_developer
+    with KD_Count 2
+    with name 'tasty' 'snacks' 'things//p' 
+    with action_bitmap 0 0 0 0 0 0 
     with description BC_201
+    with initial BC_202
+    with list_together BC_203
+    with plural BC_204
+    with article BC_205
+;
+
+Object -> I138_purple_haired_developer ""
+    class K8_person
+    with short_name BC_206
+    with vector 0
+    has mark_as_thing
+    with IK2_Count 11
+    with IK2_Link I133_cup_of_coffee
+    with IK8_Count 1
+    with IK8_Link I141_project_manager
+    with KD_Count 8
+    with name 'purple-haired' 'developer' 'people//p' 
+    with action_bitmap 0 0 0 0 0 0 
+    with description BC_207
+    with initial BC_208
+    with list_together BC_209
+    with plural BC_210
+    with article BC_211
+;
+
+Object -> -> I133_cup_of_coffee ""
+    class K2_thing
+    with short_name BC_212
+    with description BC_213
     has ~static
     with vector 0
     has mark_as_thing
@@ -11328,148 +11369,148 @@ Object -> -> I133_cup_of_coffee ""
     with KD_Count 2
     with name 'cup' 'of' 'coffee' 'things//p' 
     with action_bitmap 0 0 0 0 0 0 
-    with initial BC_202
-    with list_together BC_203
-    with plural BC_204
-    with article BC_205
-;
-
-Object I134_fire_alarm ""
-    class K13_device
-    with short_name BC_206
-    with description BC_207
-    with vector 0
-    has mark_as_thing
-    with IK2_Count 7
-    with IK2_Link I135_fire_extinguisher
-    with IK13_Count 3
-    with IK13_Link I135_fire_extinguisher
-    with KD_Count 13
-    with name 'fire' 'alarm' 'devices//p' 'box' 
-    with parse_name Parse_Name_GV99
-    with action_bitmap 0 0 0 0 0 0 
-    with initial BC_208
-    with list_together BC_209
-    with plural BC_210
-    with article BC_211
-;
-
-Object I135_fire_extinguisher ""
-    class K13_device
-    with short_name BC_212
-    with description BC_213
-    with vector 0
-    has mark_as_thing
-    with IK2_Count 8
-    with IK2_Link I138_chair
-    with IK13_Count 4
-    with IK13_Link nothing
-    with KD_Count 13
-    with name 'fire' 'extinguisher' 'devices//p' 
-    with action_bitmap 0 0 0 0 0 0 
     with initial BC_214
     with list_together BC_215
     with plural BC_216
     with article BC_217
 ;
 
-Object I137_conference_room ""
-    class K1_room
+Object I134_fire_alarm ""
+    class K13_device
     with short_name BC_218
     with description BC_219
+    with vector 0
+    has mark_as_thing
+    with IK2_Count 7
+    with IK2_Link I137_fire_extinguisher
+    with IK13_Count 3
+    with IK13_Link I137_fire_extinguisher
+    with KD_Count 13
+    with name 'fire' 'alarm' 'devices//p' 'box' 
+    with parse_name Parse_Name_GV99
+    with action_bitmap 0 0 0 0 0 0 
+    with initial BC_220
+    with list_together BC_221
+    with plural BC_222
+    with article BC_223
+;
+
+Object I137_fire_extinguisher ""
+    class K13_device
+    with short_name BC_224
+    with description BC_225
+    with vector 0
+    has mark_as_thing
+    with IK2_Count 10
+    with IK2_Link I140_chair
+    with IK13_Count 4
+    with IK13_Link nothing
+    with KD_Count 13
+    with name 'fire' 'extinguisher' 'devices//p' 
+    with action_bitmap 0 0 0 0 0 0 
+    with initial BC_226
+    with list_together BC_227
+    with plural BC_228
+    with article BC_229
+;
+
+Object I139_conference_room ""
+    class K1_room
+    with short_name BC_230
+    with description BC_231
     with vector 0
     with room_index -1
     has mark_as_room
     with IK1_Count 2
-    with IK1_Link I142_cubicle
+    with IK1_Link I144_cubicle
     with KD_Count 1
     with name 'conference' 'room' 'rooms//p' 
-    with list_together BC_220
-    with plural BC_221
-    with article BC_222
-;
-
-Object -> I138_chair ""
-    class K6_supporter
-    with short_name BC_223
-    has static
-    has scenery
-    has enterable
-    with vector 0
-    has mark_as_thing
-    with IK2_Count 10
-    with IK2_Link I139_project_manager
-    with IK6_Count 0
-    with IK6_Link I143_adjustable_desk
-    with KD_Count 6
-    with name 'chair' 'supporters//p' 
-    with action_bitmap 0 0 0 0 0 0 
-    with description BC_224
-    with initial BC_225
-    with list_together BC_226
-    with plural BC_227
-    with article BC_228
-;
-
-Object -> I139_project_manager ""
-    class K8_person
-    with short_name BC_229
-    with description BC_230
-    with vector 0
-    has mark_as_thing
-    with IK2_Count 11
-    with IK2_Link I140_ipad
-    with IK8_Count 2
-    with IK8_Link nothing
-    with KD_Count 8
-    with name 'project' 'manager' 'people//p' 
-    with action_bitmap 0 0 0 0 0 0 
-    with initial BC_231
     with list_together BC_232
     with plural BC_233
     with article BC_234
 ;
 
-Object -> I140_ipad ""
-    class K2_thing
+Object -> I140_chair ""
+    class K6_supporter
     with short_name BC_235
-    with description BC_236
     has static
+    has scenery
+    has enterable
     with vector 0
     has mark_as_thing
     with IK2_Count 12
-    with IK2_Link I141_video_camera
-    with KD_Count 2
-    with name 'ipad' 'things//p' 
+    with IK2_Link I141_project_manager
+    with IK6_Count 0
+    with IK6_Link I145_adjustable_desk
+    with KD_Count 6
+    with name 'chair' 'supporters//p' 
     with action_bitmap 0 0 0 0 0 0 
+    with description BC_236
     with initial BC_237
     with list_together BC_238
     with plural BC_239
     with article BC_240
 ;
 
-Object -> I141_video_camera ""
-    class K2_thing
+Object -> I141_project_manager ""
+    class K8_person
     with short_name BC_241
-    has static
+    with description BC_242
     with vector 0
     has mark_as_thing
     with IK2_Count 13
-    with IK2_Link I143_adjustable_desk
-    with KD_Count 2
-    with name 'video' 'camera' 'things//p' 
+    with IK2_Link I142_ipad
+    with IK8_Count 2
+    with IK8_Link nothing
+    with KD_Count 8
+    with name 'project' 'manager' 'people//p' 
     with action_bitmap 0 0 0 0 0 0 
-    with description BC_242
     with initial BC_243
     with list_together BC_244
     with plural BC_245
     with article BC_246
 ;
 
-Object I142_cubicle ""
-    class K1_room
+Object -> I142_ipad ""
+    class K2_thing
     with short_name BC_247
     with description BC_248
+    has static
+    with vector 0
+    has mark_as_thing
+    with IK2_Count 14
+    with IK2_Link I143_video_camera
+    with KD_Count 2
+    with name 'ipad' 'things//p' 
+    with action_bitmap 0 0 0 0 0 0 
+    with initial BC_249
+    with list_together BC_250
+    with plural BC_251
+    with article BC_252
+;
+
+Object -> I143_video_camera ""
+    class K2_thing
+    with short_name BC_253
+    has static
+    with vector 0
+    has mark_as_thing
+    with IK2_Count 15
+    with IK2_Link I145_adjustable_desk
+    with KD_Count 2
+    with name 'video' 'camera' 'things//p' 
+    with action_bitmap 0 0 0 0 0 0 
+    with description BC_254
+    with initial BC_255
+    with list_together BC_256
+    with plural BC_257
+    with article BC_258
+;
+
+Object I144_cubicle ""
+    class K1_room
+    with short_name BC_259
+    with description BC_260
     with vector 0
     with room_index -1
     has mark_as_room
@@ -11477,59 +11518,24 @@ Object I142_cubicle ""
     with IK1_Link nothing
     with KD_Count 1
     with name 'cubicle' 'rooms//p' 
-    with list_together BC_249
-    with plural BC_250
-    with article BC_251
-;
-
-Object -> I143_adjustable_desk ""
-    class K6_supporter
-    with short_name BC_252
-    with description BC_253
-    has static
-    with vector 0
-    has mark_as_thing
-    with IK2_Count 14
-    with IK2_Link I144_tattered_copy_of_the_bo
-    with IK6_Count 1
-    with IK6_Link nothing
-    with KD_Count 6
-    with name 'adjustable' 'desk' 'supporters//p' 
-    with action_bitmap 0 0 0 0 0 0 
-    with initial BC_254
-    with list_together BC_255
-    with plural BC_256
-    with article BC_257
-;
-
-Object -> -> I144_tattered_copy_of_the_bo ""
-    class K2_thing
-    with short_name BC_258
-    with description BC_259
-    with vector 0
-    has mark_as_thing
-    with IK2_Count 15
-    with IK2_Link I145_laptop
-    with KD_Count 2
-    with name 'tattered' 'copy' 'of' 'the' 'book' '^design' 'patterns^' 'things//p' 'book' 
-    with parse_name Parse_Name_GV100
-    with action_bitmap 0 0 0 0 0 0 
-    with initial BC_260
     with list_together BC_261
     with plural BC_262
     with article BC_263
 ;
 
-Object -> -> I145_laptop ""
-    class K2_thing
+Object -> I145_adjustable_desk ""
+    class K6_supporter
     with short_name BC_264
     with description BC_265
+    has static
     with vector 0
     has mark_as_thing
     with IK2_Count 16
-    with IK2_Link I146_code
-    with KD_Count 2
-    with name 'laptop' 'things//p' 
+    with IK2_Link I146_tattered_copy_of_the_bo
+    with IK6_Count 1
+    with IK6_Link nothing
+    with KD_Count 6
+    with name 'adjustable' 'desk' 'supporters//p' 
     with action_bitmap 0 0 0 0 0 0 
     with initial BC_266
     with list_together BC_267
@@ -11537,18 +11543,17 @@ Object -> -> I145_laptop ""
     with article BC_269
 ;
 
-Object -> I146_code ""
+Object -> -> I146_tattered_copy_of_the_bo ""
     class K2_thing
     with short_name BC_270
     with description BC_271
-    has static
-    has scenery
     with vector 0
     has mark_as_thing
     with IK2_Count 17
-    with IK2_Link I147_spilled_dirt
+    with IK2_Link I147_laptop
     with KD_Count 2
-    with name 'code' 'things//p' 
+    with name 'tattered' 'copy' 'of' 'the' 'book' '^design' 'patterns^' 'things//p' 'book' 
+    with parse_name Parse_Name_GV100
     with action_bitmap 0 0 0 0 0 0 
     with initial BC_272
     with list_together BC_273
@@ -11556,52 +11561,52 @@ Object -> I146_code ""
     with article BC_275
 ;
 
-Object I147_spilled_dirt ""
+Object -> -> I147_laptop ""
     class K2_thing
     with short_name BC_276
-    has pluralname
+    with description BC_277
     with vector 0
     has mark_as_thing
     with IK2_Count 18
-    with IK2_Link I148_little_bits_of_chewed_u
+    with IK2_Link I148_code
     with KD_Count 2
-    with name 'spilled' 'dirt' 'things//p' 
+    with name 'laptop' 'things//p' 
     with action_bitmap 0 0 0 0 0 0 
-    with description BC_277
     with initial BC_278
     with list_together BC_279
     with plural BC_280
     with article BC_281
 ;
 
-Object I148_little_bits_of_chewed_u ""
+Object -> I148_code ""
     class K2_thing
     with short_name BC_282
-    has pluralname
+    with description BC_283
+    has static
+    has scenery
     with vector 0
     has mark_as_thing
     with IK2_Count 19
-    with IK2_Link I149_sheets_of_paper
+    with IK2_Link I149_spilled_dirt
     with KD_Count 2
-    with name 'little' 'bits' 'of' 'chewed' 'up' 'paper' 'things//p' 
+    with name 'code' 'things//p' 
     with action_bitmap 0 0 0 0 0 0 
-    with description BC_283
     with initial BC_284
     with list_together BC_285
     with plural BC_286
     with article BC_287
 ;
 
-Object I149_sheets_of_paper ""
+Object I149_spilled_dirt ""
     class K2_thing
     with short_name BC_288
     has pluralname
     with vector 0
     has mark_as_thing
     with IK2_Count 20
-    with IK2_Link I150_puddles_of_spilled_coff
+    with IK2_Link I150_little_bits_of_chewed_u
     with KD_Count 2
-    with name 'sheets' 'of' 'paper' 'things//p' 
+    with name 'spilled' 'dirt' 'things//p' 
     with action_bitmap 0 0 0 0 0 0 
     with description BC_289
     with initial BC_290
@@ -11610,35 +11615,71 @@ Object I149_sheets_of_paper ""
     with article BC_293
 ;
 
-Object I150_puddles_of_spilled_coff ""
-    class K16_liquid
+Object I150_little_bits_of_chewed_u ""
+    class K2_thing
     with short_name BC_294
-    has proper
+    has pluralname
     with vector 0
-    with cap_short_name BC_295
     has mark_as_thing
     with IK2_Count 21
-    with IK2_Link I151_puddles_of_water
+    with IK2_Link I151_sheets_of_paper
+    with KD_Count 2
+    with name 'little' 'bits' 'of' 'chewed' 'up' 'paper' 'things//p' 
+    with action_bitmap 0 0 0 0 0 0 
+    with description BC_295
+    with initial BC_296
+    with list_together BC_297
+    with plural BC_298
+    with article BC_299
+;
+
+Object I151_sheets_of_paper ""
+    class K2_thing
+    with short_name BC_300
+    has pluralname
+    with vector 0
+    has mark_as_thing
+    with IK2_Count 22
+    with IK2_Link I152_puddles_of_spilled_coff
+    with KD_Count 2
+    with name 'sheets' 'of' 'paper' 'things//p' 
+    with action_bitmap 0 0 0 0 0 0 
+    with description BC_301
+    with initial BC_302
+    with list_together BC_303
+    with plural BC_304
+    with article BC_305
+;
+
+Object I152_puddles_of_spilled_coff ""
+    class K16_liquid
+    with short_name BC_306
+    has proper
+    with vector 0
+    with cap_short_name BC_307
+    has mark_as_thing
+    with IK2_Count 23
+    with IK2_Link I153_puddles_of_water
     with IK16_Count 0
-    with IK16_Link I151_puddles_of_water
+    with IK16_Link I153_puddles_of_water
     with KD_Count 16
     with name 'puddles' 'of' 'spilled' 'coffee' 'liquids//p' 
     with action_bitmap 0 0 0 0 0 0 
-    with description BC_296
-    with initial BC_297
-    with list_together BC_298
-    with plural BC_299
-    with article BC_300
+    with description BC_308
+    with initial BC_309
+    with list_together BC_310
+    with plural BC_311
+    with article BC_312
 ;
 
-Object I151_puddles_of_water ""
+Object I153_puddles_of_water ""
     class K16_liquid
-    with short_name BC_301
+    with short_name BC_313
     has proper
     with vector 0
-    with cap_short_name BC_302
+    with cap_short_name BC_314
     has mark_as_thing
-    with IK2_Count 22
+    with IK2_Count 24
     with IK2_Link nothing
     with IK16_Count 1
     with IK16_Link nothing
@@ -11646,11 +11687,11 @@ Object I151_puddles_of_water ""
     with name 'puddles' 'of' 'water' 'liquids//p' 'water' 
     with parse_name Parse_Name_GV101
     with action_bitmap 0 0 0 0 0 0 
-    with description BC_303
-    with initial BC_304
-    with list_together BC_305
-    with plural BC_306
-    with article BC_307
+    with description BC_315
+    with initial BC_316
+    with list_together BC_317
+    with plural BC_318
+    with article BC_319
 ;
 
 Constant I71_german_language = 1;
@@ -11704,12 +11745,12 @@ Constant I123_masculine_gender = 2;
 Constant I124_feminine_gender = 3;
 Array Global_Vars -->
   (false) ! 7 darkness witnessed
-  (BC_308) ! 25 command prompt
+  (BC_320) ! 25 command prompt
   (I73_english_language) ! 29 language of play
-  (BC_309) ! 32 story author
-  (BC_310) ! 33 story headline
-  (BC_311) ! 34 story genre
-  (BC_312) ! 35 story description
+  (BC_321) ! 32 story author
+  (BC_322) ! 33 story headline
+  (BC_323) ! 34 story genre
+  (BC_324) ! 35 story description
   (10) ! 36 release number
   (2019) ! 37 story creation year
   (0) ! 45 locale paragraph count
@@ -11724,14 +11765,14 @@ Array Global_Vars -->
 
 
 Array T0_final_question_options table  tab_0_0 tab_0_1 tab_0_2 tab_0_3 tab_0_4;
-Array tab_0_0 table $0664 0 (BC_313) (BC_314) (BC_315) (BC_316) (BC_317) ;
+Array tab_0_0 table $0664 0 (BC_325) (BC_326) (BC_327) (BC_328) (BC_329) ;
 Array tab_0_1 table $0465 1 (0) (0) (1) (0) (0) ;
 Array tab_0_2 table $2066 2 (Consult_Grammar_102) (Consult_Grammar_103) (Consult_Grammar_104) (Consult_Grammar_105) (Consult_Grammar_106) ;
 Array tab_0_3 table $0067 3 (IMMEDIATELY_RESTART_VM_R) (IMMEDIATELY_RESTORE_SAVED_R) ( TABLE_NOVALUE) (IMMEDIATELY_QUIT_R) (IMMEDIATELY_UNDO_R) ;
 Array tab_0_4 table $0068 4 ( TABLE_NOVALUE) ( TABLE_NOVALUE) (V27_amusing_a_victorious_pla) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ;
 Array T1_locale_priorities table  tab_1_0 tab_1_1;
-Array tab_1_0 table $0869 NULL ( TABLE_NOVALUE)  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
-Array tab_1_1 table $446a 5 ( TABLE_NOVALUE)  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
+Array tab_1_0 table $0869 NULL ( TABLE_NOVALUE)  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
+Array tab_1_1 table $446a 5 ( TABLE_NOVALUE)  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
 Array TB_Blanks -> 
   ! For table T0_final_question_options
   $00  ! Column 0
@@ -11741,7 +11782,7 @@ Array TB_Blanks ->
   $1b  ! Column 4
   
   ! For table T1_locale_priorities
-  $ff $ff $ff  ! Column 1
+  $ff $ff $ff $03  ! Column 1
   
   ! End of table
   NULL NULL;
@@ -12552,7 +12593,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
         say__p=1;! [4: ~You feel a mighty primal urge to honk, to flap, and to peck things.~]
         ParaContent(); print "You feel a mighty primal urge to honk, to flap, and to peck things."; new_line; .L_Say2; .L_SayX2;}
     ! [5: if the sink is broken and the coffee maker is broken and the developer is flustered]
-    if (((((Adj_90_t1_v10(I132_sink))))) && (((((Adj_90_t1_v10(I131_pod_based_coffee_maker))))) && ((((Adj_86_t1_v10(I136_purple_haired_developer)))))))
+    if (((((Adj_90_t1_v10(I132_sink))))) && (((((Adj_90_t1_v10(I131_pod_based_coffee_maker))))) && ((((Adj_86_t1_v10(I138_purple_haired_developer)))))))
     {! [6: now the fire alarm is in an office kitchen]
         MoveObject(I134_fire_alarm,I129_office_kitchen);
         }
@@ -12562,11 +12603,11 @@ Array ActionHappened --> 0 0 0 0 0 0;
         say__p=1;! [9: ~oooooOOOOOOoooooo BEEP BEEP BEEP!~]
         ParaContent(); print "oooooOOOOOOoooooo BEEP BEEP BEEP!"; new_line; .L_Say3; .L_SayX3;}
     ! [10: if the developer is carrying a fire extinguisher and the developer is in open-plan office]
-    if ((((I136_purple_haired_developer == CarrierOf(I135_fire_extinguisher)))) && (((I126_open_plan_office == ContainerOf(I136_purple_haired_developer)))))
+    if ((((I138_purple_haired_developer == CarrierOf(I137_fire_extinguisher)))) && (((I126_open_plan_office == ContainerOf(I138_purple_haired_developer)))))
     {! [11: say ~The developer slips, dropping the extinguisher.~]
         say__p=1;! [12: ~The developer slips, dropping the extinguisher.~]
         ParaContent(); print "The developer slips, dropping the extinguisher."; new_line; .L_Say4; .L_SayX4;! [13: now the extinguisher is in the location of the player]
-        MoveObject(I135_fire_extinguisher,LocationOf(player));
+        MoveObject(I137_fire_extinguisher,LocationOf(player));
         }
     ! [14: if the score is greater than 12]
     if (((score > 12)))
@@ -12597,7 +12638,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
     ;
     if (debug_rules) DB_Rule(R_842, 842);
     ! [2: if a developer is flustered]
-    if ((((Adj_86_t1_v10(I136_purple_haired_developer)))))
+    if ((((Adj_86_t1_v10(I138_purple_haired_developer)))))
     {! [3: say ~[one of]'Horrible goose,'[or]'Catch it,'[or]'Nnnnnnggggg,'[then purely at random] yells the enraged developer[one of], chasing you.[or]. She trips over you, swearing.[or]. She flails, knocking her own glasses onto the floor.[or].[then purely at random]~]
         say__p=1;! [4: one of]
         ParaContent(); 
@@ -12639,16 +12680,16 @@ Array ActionHappened --> 0 0 0 0 0 0;
         ParaContent(); @nop; 3:! [19: ~.~]
         ParaContent(); print "."; new_line;! [20: then purely at random]
         ParaContent(); } .L_Say10; .L_SayX10;! [21: if the location of the developer is not the location of the player]
-        if (((~~((LocationOf(I136_purple_haired_developer) == LocationOf(player))))))
+        if (((~~((LocationOf(I138_purple_haired_developer) == LocationOf(player))))))
         {! [22: let the way be the best route from the location of the developer to the location of the player , using doors]
 
-            		tmp_0 = MapRouteTo(LocationOf(I136_purple_haired_developer),LocationOf(player),0,1);
+            		tmp_0 = MapRouteTo(LocationOf(I138_purple_haired_developer),LocationOf(player),0,1);
             ! [23: try the developer going the way]
-            TryAction(0, I136_purple_haired_developer, ##Go, tmp_0, 0);
+            TryAction(0, I138_purple_haired_developer, ##Go, tmp_0, 0);
             }
             }
     ! [24: if a project manager is flustered]
-    if ((((Adj_86_t1_v10(I139_project_manager)))))
+    if ((((Adj_86_t1_v10(I141_project_manager)))))
     {! [25: say ~[one of]'What the heck,'[or]'My meeting,'[or]'Get it out of here,'[or]'Aaaaagggghh,'[then purely at random] shrieks the manager[one of], lurching forward.[or]. She falls over a chair.[or].[then purely at random]~]
         say__p=1;! [26: one of]
         ParaContent(); 
@@ -12690,12 +12731,12 @@ Array ActionHappened --> 0 0 0 0 0 0;
         ParaContent(); @nop; 2:! [41: ~.~]
         ParaContent(); print "."; new_line;! [42: then purely at random]
         ParaContent(); } .L_Say11; .L_SayX11;! [43: if the location of a project manager is not the location of the player]
-        if (((~~((LocationOf(I139_project_manager) == LocationOf(player))))))
+        if (((~~((LocationOf(I141_project_manager) == LocationOf(player))))))
         {! [44: let the way be the best route from the location of a project manager to the location of the player , using doors]
 
-            		tmp_0 = MapRouteTo(LocationOf(I139_project_manager),LocationOf(player),0,1);
+            		tmp_0 = MapRouteTo(LocationOf(I141_project_manager),LocationOf(player),0,1);
             ! [45: try a project manager going the way]
-            TryAction(0, I139_project_manager, ##Go, tmp_0, 0);
+            TryAction(0, I141_project_manager, ##Go, tmp_0, 0);
             }
             }
             rfalse;
@@ -13203,7 +13244,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! No specific request
 ! Instead of eating dirt:
 [ R_818 ;
-    if ((((action ==##Eat) &&  (actor==player) && ((noun == I147_spilled_dirt) && (true))))) { ! Runs only when pattern matches
+    if ((((action ==##Eat) &&  (actor==player) && ((noun == I149_spilled_dirt) && (true))))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_818, 818);
     ! [2: say ~You take a healthy beakful of dirt and gravel. Good for the digestion.~]
@@ -13217,7 +13258,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
 [ R_826 
     tmp_0 ! Let/loop value (deallocated by end of phrase)
     ;
-    if ((((action ==##Examine) &&  (actor==player) && ((noun == I136_purple_haired_developer) && (true))))) { ! Runs only when pattern matches
+    if ((((action ==##Examine) &&  (actor==player) && ((noun == I138_purple_haired_developer) && (true))))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_826, 826);
     ! [2: say ~[The noun] is carrying [a list of things carried by the noun].~]
@@ -13237,15 +13278,15 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! No specific request
 ! Instead of eating the book:
 [ R_837 ;
-    if ((((action ==##Eat) &&  (actor==player) && ((noun == I144_tattered_copy_of_the_bo) && (true))))) { ! Runs only when pattern matches
+    if ((((action ==##Eat) &&  (actor==player) && ((noun == I146_tattered_copy_of_the_bo) && (true))))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_837, 837);
     ! [2: say ~You shred the book into tiny pieces.~]
     say__p=1;! [3: ~You shred the book into tiny pieces.~]
     ParaContent(); print "You shred the book into tiny pieces."; new_line; .L_Say20; .L_SayX20;! [4: now the book is nowhere]
-    RemoveFromPlay(I144_tattered_copy_of_the_bo);;
+    RemoveFromPlay(I146_tattered_copy_of_the_bo);;
     ! [5: now little bits of chewed up paper is in the location of the player]
-    MoveObject(I148_little_bits_of_chewed_u,LocationOf(player));
+    MoveObject(I150_little_bits_of_chewed_u,LocationOf(player));
     ! [6: increment the score]
     score = score + 1;;
     RulebookFails(); rtrue;
@@ -13335,27 +13376,27 @@ Array ActionHappened --> 0 0 0 0 0 0;
 !   === equally specific with ===
 ! Rule 2/19 ! After pecking the printer for the first time:
 !   === equally specific with ===
-! Rule 3/19 ! After pecking a pod-based coffee maker for the first time:
+! Rule 3/19 ! After pecking the fire alarm for the first time:
 !   === equally specific with ===
-! Rule 4/19 ! After pecking a sink for the first time:
+! Rule 4/19 ! After pecking a pod-based coffee maker for the first time:
 !   === equally specific with ===
-! Rule 5/19 ! After pecking a purple-haired developer for the first time:
+! Rule 5/19 ! After pecking a sink for the first time:
 !   === equally specific with ===
-! Rule 6/19 ! After pecking a project manager for the first time:
+! Rule 6/19 ! After pecking a purple-haired developer for the first time:
 !   === equally specific with ===
-! Rule 7/19 ! After pecking an ipad for the first time:
+! Rule 7/19 ! After pecking a project manager for the first time:
 !   === equally specific with ===
-! Rule 8/19 ! After pecking an adjustable desk for the first time:
+! Rule 8/19 ! After pecking an ipad for the first time:
 !   === equally specific with ===
-! Rule 9/19 ! After taking a book for the first time:
+! Rule 9/19 ! After pecking an adjustable desk for the first time:
 !   === equally specific with ===
-! Rule 10/19 ! After pecking a book for the first time:
+! Rule 10/19 ! After taking a book for the first time:
 !   === equally specific with ===
-! Rule 11/19 ! After pecking a laptop for the first time:
+! Rule 11/19 ! After pecking a book for the first time:
+!   === equally specific with ===
+! Rule 12/19 ! After pecking a laptop for the first time:
 !   >>> I - Number of aspects constrained >>>
-! Rule 12/19 ! After pecking a potted palm:
-!   === equally specific with ===
-! Rule 13/19 ! After pecking the fire alarm:
+! Rule 13/19 ! After pecking a potted palm:
 !   === equally specific with ===
 ! Rule 14/19 ! After pecking the fire extinguisher:
 !   === equally specific with ===
@@ -13376,11 +13417,11 @@ Array ActionHappened --> 0 0 0 0 0 0;
     self = noun;
     if (debug_rules) DB_Rule(R_820, 820);
     ! [2: now the description of a potted palm is ~A torn up potted plant, on its side with dirt spilling out.~]
-    BlkValueCopy(GProperty(10, I127_potted_palm,description), TX_L_86);
+    BlkValueCopy(GProperty(10, I127_potted_palm,description), TX_L_88);
     ! [3: now the printed name of a potted palm is ~torn-up potted palm tree~]
-    BlkValueCopy(GProperty(10, I127_potted_palm,short_name), TX_L_87);
+    BlkValueCopy(GProperty(10, I127_potted_palm,short_name), TX_L_89);
     ! [4: now spilled dirt is in the location of the player]
-    MoveObject(I147_spilled_dirt,LocationOf(player));
+    MoveObject(I149_spilled_dirt,LocationOf(player));
     ! [5: now the palm is broken]
     (Adj_90_t2_v10(I127_potted_palm));
     ! [6: increment the score]
@@ -13398,9 +13439,9 @@ Array ActionHappened --> 0 0 0 0 0 0;
     ! [2: say ~Some sheets of paper fly out of the printer and across the room.~]
     say__p=1;! [3: ~Some sheets of paper fly out of the printer and across the room.~]
     ParaContent(); print "Some sheets of paper fly out of the printer and across the room."; new_line; .L_Say27; .L_SayX27;! [4: now the printed name of the printer is ~dented printer~]
-    BlkValueCopy(GProperty(10, I128_printer,short_name), TX_L_88);
+    BlkValueCopy(GProperty(10, I128_printer,short_name), TX_L_90);
     ! [5: now some sheets of paper is in the location of the player]
-    MoveObject(I149_sheets_of_paper,LocationOf(player));
+    MoveObject(I151_sheets_of_paper,LocationOf(player));
     ! [6: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -13408,21 +13449,49 @@ Array ActionHappened --> 0 0 0 0 0 0;
     rfalse;
 ];
 ! No specific request
+! After pecking the fire alarm for the first time:
+[ R_824 ;
+    if ((PAPR_2() && (((TimesActionHasHappened-->2) == 1) && (ActionCurrentlyHappeningFlag->2)))) { ! Runs only when pattern matches
+    self = noun;
+    if (debug_rules) DB_Rule(R_824, 824);
+    ! [2: now the fire alarm is switched on]
+    (Adj_82_t2_v10(I134_fire_alarm));
+    ! [3: now the fire alarm is broken]
+    (Adj_90_t2_v10(I134_fire_alarm));
+    ! [4: say ~The glass covering the fire alarm switch breaks.~]
+    say__p=1;! [5: ~The glass covering the fire alarm switch breaks.~]
+    ParaContent(); print "The glass covering the fire alarm switch breaks."; new_line; .L_Say28; .L_SayX28;! [6: say ~ooooooOOOOOOooooooo!~]
+    say__p=1;! [7: ~ooooooOOOOOOooooooo!~]
+    ParaContent(); print "ooooooOOOOOOooooooo!"; new_line; .L_Say29; .L_SayX29;! [8: say ~The developer panics, opens a cupboard and takes out a fire extinguisher.~]
+    say__p=1;! [9: ~The developer panics, opens a cupboard and takes out a fire extinguisher.~]
+    ParaContent(); print "The developer panics, opens a cupboard and takes out a fire extinguisher."; new_line; .L_Say30; .L_SayX30;! [10: now the developer is carrying a fire extinguisher]
+    MoveObject(I137_fire_extinguisher,I138_purple_haired_developer);
+    ! [11: now the cabinet is open]
+    (Adj_72_t2_v10(I135_cabinet));
+    ! [12: now the printed name of the cabinet is ~open cabinet~]
+    BlkValueCopy(GProperty(10, I135_cabinet,short_name), TX_L_91);
+    ! [13: increment the score]
+    score = score + 1;;
+    RulebookSucceeds(); rtrue;
+    } else if (debug_rules > 1) DB_Rule(R_824, 824, 'action');
+    rfalse;
+];
+! No specific request
 ! After pecking a pod-based coffee maker for the first time:
 [ R_827 ;
-    if ((PAPR_2() && (((TimesActionHasHappened-->2) == 1) && (ActionCurrentlyHappeningFlag->2)))) { ! Runs only when pattern matches
+    if ((PAPR_3() && (((TimesActionHasHappened-->3) == 1) && (ActionCurrentlyHappeningFlag->3)))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_827, 827);
     ! [2: say ~Coffee sprays out of the coffee maker!~]
     say__p=1;! [3: ~Coffee sprays out of the coffee maker!~]
-    ParaContent(); print "Coffee sprays out of the coffee maker!"; new_line; .L_Say28; .L_SayX28;! [4: now puddles of spilled coffee is in the location of the player]
-    MoveObject(I150_puddles_of_spilled_coff,LocationOf(player));
+    ParaContent(); print "Coffee sprays out of the coffee maker!"; new_line; .L_Say31; .L_SayX31;! [4: now puddles of spilled coffee is in the location of the player]
+    MoveObject(I152_puddles_of_spilled_coff,LocationOf(player));
     ! [5: now the printed name of the coffee maker is ~mangled coffee maker~]
-    BlkValueCopy(GProperty(10, I131_pod_based_coffee_maker,short_name), TX_L_89);
+    BlkValueCopy(GProperty(10, I131_pod_based_coffee_maker,short_name), TX_L_92);
     ! [6: now the coffee maker is broken]
     (Adj_90_t2_v10(I131_pod_based_coffee_maker));
     ! [7: now the developer is flustered]
-    (Adj_86_t2_v10(I136_purple_haired_developer));
+    (Adj_86_t2_v10(I138_purple_haired_developer));
     ! [8: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -13432,19 +13501,19 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! No specific request
 ! After pecking a sink for the first time:
 [ R_828 ;
-    if ((PAPR_3() && (((TimesActionHasHappened-->3) == 1) && (ActionCurrentlyHappeningFlag->3)))) { ! Runs only when pattern matches
+    if ((PAPR_4() && (((TimesActionHasHappened-->4) == 1) && (ActionCurrentlyHappeningFlag->4)))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_828, 828);
     ! [2: say ~The faucet cracks. Water sprays all over!~]
     say__p=1;! [3: ~The faucet cracks. Water sprays all over!~]
-    ParaContent(); print "The faucet cracks. Water sprays all over!"; new_line; .L_Say29; .L_SayX29;! [4: now the printed name of the sink is ~sink with a broken faucet spraying water everywhere~]
-    BlkValueCopy(GProperty(10, I132_sink,short_name), TX_L_90);
+    ParaContent(); print "The faucet cracks. Water sprays all over!"; new_line; .L_Say32; .L_SayX32;! [4: now the printed name of the sink is ~sink with a broken faucet spraying water everywhere~]
+    BlkValueCopy(GProperty(10, I132_sink,short_name), TX_L_93);
     ! [5: now the description of the sink is ~This sink is in sad shape. It's spraying water from the broken faucet.~]
-    BlkValueCopy(GProperty(10, I132_sink,description), TX_L_91);
+    BlkValueCopy(GProperty(10, I132_sink,description), TX_L_94);
     ! [6: now puddles of water is in the location of the player]
-    MoveObject(I151_puddles_of_water,LocationOf(player));
+    MoveObject(I153_puddles_of_water,LocationOf(player));
     ! [7: now the developer is flustered]
-    (Adj_86_t2_v10(I136_purple_haired_developer));
+    (Adj_86_t2_v10(I138_purple_haired_developer));
     ! [8: now the sink is broken]
     (Adj_90_t2_v10(I132_sink));
     ! [9: increment the score]
@@ -13456,23 +13525,23 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! No specific request
 ! After pecking a purple-haired developer for the first time:
 [ R_829 ;
-    if ((PAPR_4() && (((TimesActionHasHappened-->4) == 1) && (ActionCurrentlyHappeningFlag->4)))) { ! Runs only when pattern matches
+    if ((PAPR_5() && (((TimesActionHasHappened-->5) == 1) && (ActionCurrentlyHappeningFlag->5)))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_829, 829);
     ! [2: say ~The developer shrieks in rage. She comes at you ready to kill.~]
     say__p=1;! [3: ~The developer shrieks in rage. She comes at you ready to kill.~]
-    ParaContent(); print "The developer shrieks in rage. She comes at you ready to kill."; new_line; .L_Say30; .L_SayX30;! [4: now the printed name of a purple-haired developer is ~wet, scalded developer~]
-    BlkValueCopy(GProperty(10, I136_purple_haired_developer,short_name), TX_L_92);
+    ParaContent(); print "The developer shrieks in rage. She comes at you ready to kill."; new_line; .L_Say33; .L_SayX33;! [4: now the printed name of a purple-haired developer is ~wet, scalded developer~]
+    BlkValueCopy(GProperty(10, I138_purple_haired_developer,short_name), TX_L_95);
     ! [5: now the cup of coffee is in the location of the player]
     MoveObject(I133_cup_of_coffee,LocationOf(player));
     ! [6: now puddles of coffee is in the location of the player]
-    MoveObject(I150_puddles_of_spilled_coff,LocationOf(player));
+    MoveObject(I152_puddles_of_spilled_coff,LocationOf(player));
     ! [7: now the printed name of the cup of coffee is ~empty coffee cup~]
-    BlkValueCopy(GProperty(10, I133_cup_of_coffee,short_name), TX_L_93);
+    BlkValueCopy(GProperty(10, I133_cup_of_coffee,short_name), TX_L_96);
     ! [8: now the coffee cup is broken]
     (Adj_90_t2_v10(I133_cup_of_coffee));
     ! [9: now the developer is flustered]
-    (Adj_86_t2_v10(I136_purple_haired_developer));
+    (Adj_86_t2_v10(I138_purple_haired_developer));
     ! [10: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -13482,21 +13551,21 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! No specific request
 ! After pecking a project manager for the first time:
 [ R_831 ;
-    if ((PAPR_5() && (((TimesActionHasHappened-->5) == 1) && (ActionCurrentlyHappeningFlag->5)))) { ! Runs only when pattern matches
+    if ((PAPR_6() && (((TimesActionHasHappened-->6) == 1) && (ActionCurrentlyHappeningFlag->6)))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_831, 831);
     ! [2: say ~You peck her in the butt, feeling a deep sense of satisfaction.~]
     say__p=1;! [3: ~You peck her in the butt, feeling a deep sense of satisfaction.~]
-    ParaContent(); print "You peck her in the butt, feeling a deep sense of satisfaction."; new_line; .L_Say31; .L_SayX31;! [4: say ~'OUCH!!! HEY!!!'~]
+    ParaContent(); print "You peck her in the butt, feeling a deep sense of satisfaction."; new_line; .L_Say34; .L_SayX34;! [4: say ~'OUCH!!! HEY!!!'~]
     say__p=1;! [5: ~'OUCH!!! HEY!!!'~]
-    ParaContent(); print "~OUCH!!! HEY!!!~"; new_line; .L_Say32; .L_SayX32;! [6: say ~The project manager leaps up from her chair!~]
+    ParaContent(); print "~OUCH!!! HEY!!!~"; new_line; .L_Say35; .L_SayX35;! [6: say ~The project manager leaps up from her chair!~]
     say__p=1;! [7: ~The project manager leaps up from her chair!~]
-    ParaContent(); print "The project manager leaps up from her chair!"; new_line; .L_Say33; .L_SayX33;! [8: now the printed name of a project manager is ~flustered manager~]
-    BlkValueCopy(GProperty(10, I139_project_manager,short_name), TX_L_94);
+    ParaContent(); print "The project manager leaps up from her chair!"; new_line; .L_Say36; .L_SayX36;! [8: now the printed name of a project manager is ~flustered manager~]
+    BlkValueCopy(GProperty(10, I141_project_manager,short_name), TX_L_97);
     ! [9: now the description of a project manager is ~A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.~]
-    BlkValueCopy(GProperty(10, I139_project_manager,description), TX_L_95);
+    BlkValueCopy(GProperty(10, I141_project_manager,description), TX_L_98);
     ! [10: now a project manager is flustered]
-    (Adj_86_t2_v10(I139_project_manager));
+    (Adj_86_t2_v10(I141_project_manager));
     ! [11: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -13506,21 +13575,21 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! No specific request
 ! After pecking an ipad for the first time:
 [ R_832 ;
-    if ((PAPR_6() && (((TimesActionHasHappened-->6) == 1) && (ActionCurrentlyHappeningFlag->6)))) { ! Runs only when pattern matches
+    if ((PAPR_7() && (((TimesActionHasHappened-->7) == 1) && (ActionCurrentlyHappeningFlag->7)))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_832, 832);
     ! [2: say ~A huge picture of a plump goose fills the conference room screen.~]
     say__p=1;! [3: ~A huge picture of a plump goose fills the conference room screen.~]
-    ParaContent(); print "A huge picture of a plump goose fills the conference room screen."; new_line; .L_Say34; .L_SayX34;! [4: say ~The conference call participants all start talking at once!~]
+    ParaContent(); print "A huge picture of a plump goose fills the conference room screen."; new_line; .L_Say37; .L_SayX37;! [4: say ~The conference call participants all start talking at once!~]
     say__p=1;! [5: ~The conference call participants all start talking at once!~]
-    ParaContent(); print "The conference call participants all start talking at once!"; new_line; .L_Say35; .L_SayX35;! [6: say ~Someone yells, 'STOP THAT GOOSE!' and starts to chase you!~]
+    ParaContent(); print "The conference call participants all start talking at once!"; new_line; .L_Say38; .L_SayX38;! [6: say ~Someone yells, 'STOP THAT GOOSE!' and starts to chase you!~]
     say__p=1;! [7: ~Someone yells, 'STOP THAT GOOSE!' and starts to chase you!~]
-    ParaContent(); print "Someone yells, ~STOP THAT GOOSE!~ and starts to chase you!"; new_line; .L_Say36; .L_SayX36;! [8: now the printed name of an ipad is ~battered and scratched ipad~]
-    BlkValueCopy(GProperty(10, I140_ipad,short_name), TX_L_96);
+    ParaContent(); print "Someone yells, ~STOP THAT GOOSE!~ and starts to chase you!"; new_line; .L_Say39; .L_SayX39;! [8: now the printed name of an ipad is ~battered and scratched ipad~]
+    BlkValueCopy(GProperty(10, I142_ipad,short_name), TX_L_99);
     ! [9: now the printed name of a project manager is ~flustered manager~]
-    BlkValueCopy(GProperty(10, I139_project_manager,short_name), TX_L_94);
+    BlkValueCopy(GProperty(10, I141_project_manager,short_name), TX_L_97);
     ! [10: now the description of a project manager is ~An angry project manager ineptly chasing you.~]
-    BlkValueCopy(GProperty(10, I139_project_manager,description), TX_L_97);
+    BlkValueCopy(GProperty(10, I141_project_manager,description), TX_L_100);
     ! [11: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -13530,17 +13599,17 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! No specific request
 ! After pecking an adjustable desk for the first time:
 [ R_836 ;
-    if ((PAPR_7() && (((TimesActionHasHappened-->7) == 1) && (ActionCurrentlyHappeningFlag->7)))) { ! Runs only when pattern matches
+    if ((PAPR_8() && (((TimesActionHasHappened-->8) == 1) && (ActionCurrentlyHappeningFlag->8)))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_836, 836);
     ! [2: say ~The desk starts going up and down at random.~]
     say__p=1;! [3: ~The desk starts going up and down at random.~]
-    ParaContent(); print "The desk starts going up and down at random."; new_line; .L_Say37; .L_SayX37;! [4: now the printed name of an adjustable desk is ~broken adjustable desk~]
-    BlkValueCopy(GProperty(10, I143_adjustable_desk,short_name), TX_L_98);
+    ParaContent(); print "The desk starts going up and down at random."; new_line; .L_Say40; .L_SayX40;! [4: now the printed name of an adjustable desk is ~broken adjustable desk~]
+    BlkValueCopy(GProperty(10, I145_adjustable_desk,short_name), TX_L_101);
     ! [5: now the description of an adjustable desk is ~An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.~]
-    BlkValueCopy(GProperty(10, I143_adjustable_desk,description), TX_L_99);
+    BlkValueCopy(GProperty(10, I145_adjustable_desk,description), TX_L_102);
     ! [6: now the desk is broken]
-    (Adj_90_t2_v10(I143_adjustable_desk));
+    (Adj_90_t2_v10(I145_adjustable_desk));
     ! [7: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -13550,15 +13619,15 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! No specific request
 ! After taking a book for the first time:
 [ R_838 ;
-    if ((PAPR_8() && (((TimesActionHasHappened-->8) == 1) && (ActionCurrentlyHappeningFlag->8)))) { ! Runs only when pattern matches
+    if ((PAPR_9() && (((TimesActionHasHappened-->9) == 1) && (ActionCurrentlyHappeningFlag->9)))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_838, 838);
     ! [2: now the printed name of a book is ~book with the cover torn off~]
-    BlkValueCopy(GProperty(10, I144_tattered_copy_of_the_bo,short_name), TX_L_100);
+    BlkValueCopy(GProperty(10, I146_tattered_copy_of_the_bo,short_name), TX_L_103);
     ! [3: now the description of a book is ~A book with the cover torn off, covered in goose spit.~]
-    BlkValueCopy(GProperty(10, I144_tattered_copy_of_the_bo,description), TX_L_101);
+    BlkValueCopy(GProperty(10, I146_tattered_copy_of_the_bo,description), TX_L_104);
     ! [4: now little bits of chewed up paper is in the location of the player]
-    MoveObject(I148_little_bits_of_chewed_u,LocationOf(player));
+    MoveObject(I150_little_bits_of_chewed_u,LocationOf(player));
     ! [5: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -13568,17 +13637,17 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! No specific request
 ! After pecking a book for the first time:
 [ R_839 ;
-    if ((PAPR_9() && (((TimesActionHasHappened-->9) == 1) && (ActionCurrentlyHappeningFlag->9)))) { ! Runs only when pattern matches
+    if ((PAPR_10() && (((TimesActionHasHappened-->10) == 1) && (ActionCurrentlyHappeningFlag->10)))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_839, 839);
     ! [2: say ~Tasty! You could pick up the whole book and carry it around!~]
     say__p=1;! [3: ~Tasty! You could pick up the whole book and carry it around!~]
-    ParaContent(); print "Tasty! You could pick up the whole book and carry it around!"; new_line; .L_Say38; .L_SayX38;! [4: now the printed name of a book is ~book with the cover torn off~]
-    BlkValueCopy(GProperty(10, I144_tattered_copy_of_the_bo,short_name), TX_L_100);
+    ParaContent(); print "Tasty! You could pick up the whole book and carry it around!"; new_line; .L_Say41; .L_SayX41;! [4: now the printed name of a book is ~book with the cover torn off~]
+    BlkValueCopy(GProperty(10, I146_tattered_copy_of_the_bo,short_name), TX_L_103);
     ! [5: now the description of a book is ~A book with the cover torn off, covered in goose spit.~]
-    BlkValueCopy(GProperty(10, I144_tattered_copy_of_the_bo,description), TX_L_101);
+    BlkValueCopy(GProperty(10, I146_tattered_copy_of_the_bo,description), TX_L_104);
     ! [6: now little bits of chewed up paper is in the location of the player]
-    MoveObject(I148_little_bits_of_chewed_u,LocationOf(player));
+    MoveObject(I150_little_bits_of_chewed_u,LocationOf(player));
     RulebookSucceeds(); rtrue;
     } else if (debug_rules > 1) DB_Rule(R_839, 839, 'action');
     rfalse;
@@ -13586,15 +13655,15 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! No specific request
 ! After pecking a laptop for the first time:
 [ R_841 ;
-    if ((PAPR_10() && (((TimesActionHasHappened-->10) == 1) && (ActionCurrentlyHappeningFlag->10)))) { ! Runs only when pattern matches
+    if ((PAPR_11() && (((TimesActionHasHappened-->11) == 1) && (ActionCurrentlyHappeningFlag->11)))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_841, 841);
     ! [2: say ~Your beak mashes the keys and cracks the screen.~]
     say__p=1;! [3: ~Your beak mashes the keys and cracks the screen.~]
-    ParaContent(); print "Your beak mashes the keys and cracks the screen."; new_line; .L_Say39; .L_SayX39;! [4: now the printed name of a laptop is ~broken laptop~]
-    BlkValueCopy(GProperty(10, I145_laptop,short_name), TX_L_102);
+    ParaContent(); print "Your beak mashes the keys and cracks the screen."; new_line; .L_Say42; .L_SayX42;! [4: now the printed name of a laptop is ~broken laptop~]
+    BlkValueCopy(GProperty(10, I147_laptop,short_name), TX_L_105);
     ! [5: now the description of a laptop is ~A broken laptop, with messed-up text scrolling through its flickering windows on a cracked screen.~]
-    BlkValueCopy(GProperty(10, I145_laptop,description), TX_L_103);
+    BlkValueCopy(GProperty(10, I147_laptop,description), TX_L_106);
     ! [6: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -13609,54 +13678,30 @@ Array ActionHappened --> 0 0 0 0 0 0;
     if (debug_rules) DB_Rule(R_821, 821);
     ! [2: say ~Dirt spills out. How satisfying. You could probably pick up the whole plant.~]
     say__p=1;! [3: ~Dirt spills out. How satisfying. You could probably pick up the whole plant.~]
-    ParaContent(); print "Dirt spills out. How satisfying. You could probably pick up the whole plant."; new_line; .L_Say40; .L_SayX40;! [4: now the description of a potted palm is ~A torn up potted plant, on its side with dirt spilling out.~]
-    BlkValueCopy(GProperty(10, I127_potted_palm,description), TX_L_86);
-    ! [5: now the printed name of a potted palm is ~torn-up potted palm, lying sideways~]
-    BlkValueCopy(GProperty(10, I127_potted_palm,short_name), TX_L_104);
+    ParaContent(); print "Dirt spills out. How satisfying. You could probably pick up the whole plant."; new_line; .L_Say43; .L_SayX43;! [4: now the description of a potted palm is ~A torn up potted plant, on its side with dirt spilling out.~]
+    BlkValueCopy(GProperty(10, I127_potted_palm,description), TX_L_88);
+    ! [5: now the printed name of a potted palm is ~torn-up potted palm~]
+    BlkValueCopy(GProperty(10, I127_potted_palm,short_name), TX_L_107);
     ! [6: now the palm is broken]
     (Adj_90_t2_v10(I127_potted_palm));
     ! [7: now spilled dirt is in the location of the player]
-    MoveObject(I147_spilled_dirt,LocationOf(player));
+    MoveObject(I149_spilled_dirt,LocationOf(player));
     RulebookSucceeds(); rtrue;
     } else if (debug_rules > 1) DB_Rule(R_821, 821, 'action');
     rfalse;
 ];
 ! No specific request
-! After pecking the fire alarm:
-[ R_824 ;
-    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I134_fire_alarm) && (true))))) { ! Runs only when pattern matches
-    self = noun;
-    if (debug_rules) DB_Rule(R_824, 824);
-    ! [2: now the fire alarm is switched on]
-    (Adj_82_t2_v10(I134_fire_alarm));
-    ! [3: now the fire alarm is broken]
-    (Adj_90_t2_v10(I134_fire_alarm));
-    ! [4: say ~The glass covering the fire alarm switch breaks.~]
-    say__p=1;! [5: ~The glass covering the fire alarm switch breaks.~]
-    ParaContent(); print "The glass covering the fire alarm switch breaks."; new_line; .L_Say41; .L_SayX41;! [6: say ~ooooooOOOOOOooooooo!~]
-    say__p=1;! [7: ~ooooooOOOOOOooooooo!~]
-    ParaContent(); print "ooooooOOOOOOooooooo!"; new_line; .L_Say42; .L_SayX42;! [8: say ~The developer panics, opens a cupboard and takes out a fire extinguisher.~]
-    say__p=1;! [9: ~The developer panics, opens a cupboard and takes out a fire extinguisher.~]
-    ParaContent(); print "The developer panics, opens a cupboard and takes out a fire extinguisher."; new_line; .L_Say43; .L_SayX43;! [10: now the developer is carrying a fire extinguisher]
-    MoveObject(I135_fire_extinguisher,I136_purple_haired_developer);
-    ! [11: increment the score]
-    score = score + 1;;
-    RulebookSucceeds(); rtrue;
-    } else if (debug_rules > 1) DB_Rule(R_824, 824, 'action');
-    rfalse;
-];
-! No specific request
 ! After pecking the fire extinguisher:
 [ R_825 ;
-    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I135_fire_extinguisher) && (true))))) { ! Runs only when pattern matches
+    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I137_fire_extinguisher) && (true))))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_825, 825);
     ! [2: now the fire extinguisher is broken]
-    (Adj_90_t2_v10(I135_fire_extinguisher));
+    (Adj_90_t2_v10(I137_fire_extinguisher));
     ! [3: say ~Nasty-smelling foam spews out of the extinguisher, coating the walls.~]
     say__p=1;! [4: ~Nasty-smelling foam spews out of the extinguisher, coating the walls.~]
     ParaContent(); print "Nasty-smelling foam spews out of the extinguisher, coating the walls."; new_line; .L_Say44; .L_SayX44;! [5: now the printed name of the extinguisher is ~fire extinguisher rolling around as it sprays foam everywhere~]
-    BlkValueCopy(GProperty(10, I135_fire_extinguisher,short_name), TX_L_105);
+    BlkValueCopy(GProperty(10, I137_fire_extinguisher,short_name), TX_L_108);
     ! [6: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -13670,23 +13715,23 @@ Array ActionHappened --> 0 0 0 0 0 0;
     self = noun;
     if (debug_rules) DB_Rule(R_830, 830);
     ! [2: if the cup of coffee is carried by the developer]
-    if (((I136_purple_haired_developer == CarrierOf(I133_cup_of_coffee))))
+    if (((I138_purple_haired_developer == CarrierOf(I133_cup_of_coffee))))
     {! [3: say ~Hot coffee spills all over the developer. She yells and drops the cup.~]
         say__p=1;! [4: ~Hot coffee spills all over the developer. She yells and drops the cup.~]
         ParaContent(); print "Hot coffee spills all over the developer. She yells and drops the cup."; new_line; .L_Say45; .L_SayX45;! [5: now the cup of coffee is in the location of the player]
         MoveObject(I133_cup_of_coffee,LocationOf(player));
         ! [6: now puddles of coffee is in the location of the player]
-        MoveObject(I150_puddles_of_spilled_coff,LocationOf(player));
+        MoveObject(I152_puddles_of_spilled_coff,LocationOf(player));
         ! [7: now the developer is flustered]
-        (Adj_86_t2_v10(I136_purple_haired_developer));
+        (Adj_86_t2_v10(I138_purple_haired_developer));
         ! [8: now the coffee cup is broken]
         (Adj_90_t2_v10(I133_cup_of_coffee));
         ! [9: now the printed name of the cup of coffee is ~empty, cracked coffee cup~]
-        BlkValueCopy(GProperty(10, I133_cup_of_coffee,short_name), TX_L_106);
+        BlkValueCopy(GProperty(10, I133_cup_of_coffee,short_name), TX_L_109);
         ! [10: now the printed name of a developer is ~wet, scalded developer~]
-        BlkValueCopy(GProperty(10, I136_purple_haired_developer,short_name), TX_L_92);
+        BlkValueCopy(GProperty(10, I138_purple_haired_developer,short_name), TX_L_95);
         ! [11: now the description of a developer is ~A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.~]
-        BlkValueCopy(GProperty(10, I136_purple_haired_developer,description), TX_L_107);
+        BlkValueCopy(GProperty(10, I138_purple_haired_developer,description), TX_L_110);
         }
         RulebookSucceeds(); rtrue;
         } else if (debug_rules > 1) DB_Rule(R_830, 830, 'action');
@@ -13695,7 +13740,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! No specific request
 ! After examining code:
 [ R_840 ;
-    if ((((action ==##Examine) &&  (actor==player) && ((noun == I146_code) && (true))))) { ! Runs only when pattern matches
+    if ((((action ==##Examine) &&  (actor==player) && ((noun == I148_code) && (true))))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_840, 840);
     ! [2: say ~Your tiny, walnut-sized brain hurts a bit. Now you want to bite something.~]
@@ -13707,7 +13752,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! No specific request
 ! After acting confused for three turns:
 [ R_812 ;
-    if ((PAPR_11() && ((TurnsActionHasBeenHappening-->11) == 3))) { ! Runs only when pattern matches
+    if ((PAPR_12() && ((TurnsActionHasBeenHappening-->12) == 3))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_812, 812);
     ! [2: say ~You feel a mighty primal urge to honk, to flap, and to peck things.~]
@@ -20807,17 +20852,17 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! No specific request
 ! Check pecking a video camera:
 [ R_833 ;
-    if ((( (actor==player) && ((noun == I141_video_camera) && (true))))) { ! Runs only when pattern matches
+    if ((( (actor==player) && ((noun == I143_video_camera) && (true))))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_833, 833);
     ! [2: if the player is on a chair]
-    if (((I138_chair == SupporterOf(player))))
+    if (((I140_chair == SupporterOf(player))))
     {! [3: say ~The camera lens cracks.~]
         say__p=1;! [4: ~The camera lens cracks.~]
         ParaContent(); print "The camera lens cracks."; new_line; .L_Say347; .L_SayX347;! [5: now the video camera is broken]
-        (Adj_90_t2_v10(I141_video_camera));
+        (Adj_90_t2_v10(I143_video_camera));
         ! [6: now the printed name of the video camera is ~broken camera, dangling from a frayed cable~]
-        BlkValueCopy(GProperty(10, I141_video_camera,short_name), TX_L_108);
+        BlkValueCopy(GProperty(10, I143_video_camera,short_name), TX_L_111);
         ! [7: increment the score]
         score = score + 1;;
         } else {
@@ -20921,7 +20966,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
     if (((((parameter_value ofclass K2_thing))))) { ! Runs only when pattern matches
     if (debug_rules) DB_Rule(R_845, 845);
     ! [2: add ~in your beak~ to the tagline]
-    LIST_OF_TY_InsertItem((MStack-->MstVO(374,0)), BlkValueCopy(I7SFRAME, TX_L_109), 0, 0, 0);
+    LIST_OF_TY_InsertItem((MStack-->MstVO(374,0)), BlkValueCopy(I7SFRAME, TX_L_112), 0, 0, 0);
     } else if (debug_rules > 1) DB_Rule(R_845, 845, 'action');
     rfalse;
 ];
@@ -23735,6 +23780,14 @@ Constant B22_carry_out = EMPTY_RULEBOOK;
         latest_rule_result-->0 = 0;
         if (original_deadflag ~= deadflag) return 0;
         if (say__p) RulebookParBreak(forbid_breaks);
+        rv = R_824();
+        if (rv) {
+            if (rv == 2) return reason_the_action_failed;
+            return R_824;
+        }
+        latest_rule_result-->0 = 0;
+        if (original_deadflag ~= deadflag) return 0;
+        if (say__p) RulebookParBreak(forbid_breaks);
         rv = R_827();
         if (rv) {
             if (rv == 2) return reason_the_action_failed;
@@ -23819,14 +23872,6 @@ Constant B22_carry_out = EMPTY_RULEBOOK;
         if (rv) {
             if (rv == 2) return reason_the_action_failed;
             return R_821;
-        }
-        latest_rule_result-->0 = 0;
-        if (original_deadflag ~= deadflag) return 0;
-        if (say__p) RulebookParBreak(forbid_breaks);
-        rv = R_824();
-        if (rv) {
-            if (rv == 2) return reason_the_action_failed;
-            return R_824;
         }
         latest_rule_result-->0 = 0;
         if (original_deadflag ~= deadflag) return 0;
@@ -30407,7 +30452,7 @@ Array FWMatrix --> NUM_ROOMS*NUM_ROOMS;
 ! Relations.i6t: Relation Route-Finding
 ! ==== ==== ==== ==== ==== ==== ==== ==== ==== ====
 
-Constant MAX_ROUTE_LENGTH = 39 + 32;
+Constant MAX_ROUTE_LENGTH = 41 + 32;
 
 [ RelationRouteTo relation from to count  handler;
 	if (count) {
@@ -31958,7 +32003,7 @@ Array RulebookNames -->
         if (R == R_821) { print "After pecking a potted palm"; rtrue; } ! rule 373
         if (R == R_822) { print "After pecking the printer for the first time"; rtrue; } ! rule 374
         if (R == R_823) { print "Instead of taking scenery"; rtrue; } ! rule 375
-        if (R == R_824) { print "After pecking the fire alarm"; rtrue; } ! rule 376
+        if (R == R_824) { print "After pecking the fire alarm for the first time"; rtrue; } ! rule 376
         if (R == R_825) { print "After pecking the fire extinguisher"; rtrue; } ! rule 377
         if (R == R_826) { print "Instead of examining a purple-haired developer"; rtrue; } ! rule 378
         if (R == R_827) { print "After pecking a pod-based coffee maker for the first time"; rtrue; } ! rule 379
@@ -50146,49 +50191,53 @@ Array Rel_Record_69 -->
     rfalse;
 ];
 [ PAPR_2 ;
-    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I131_pod_based_coffee_maker) && (true))))) rtrue;
+    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I134_fire_alarm) && (true))))) rtrue;
     rfalse;
 ];
 [ PAPR_3 ;
-    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I132_sink) && (true))))) rtrue;
+    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I131_pod_based_coffee_maker) && (true))))) rtrue;
     rfalse;
 ];
 [ PAPR_4 ;
-    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I136_purple_haired_developer) && (true))))) rtrue;
+    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I132_sink) && (true))))) rtrue;
     rfalse;
 ];
 [ PAPR_5 ;
-    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I139_project_manager) && (true))))) rtrue;
+    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I138_purple_haired_developer) && (true))))) rtrue;
     rfalse;
 ];
 [ PAPR_6 ;
-    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I140_ipad) && (true))))) rtrue;
+    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I141_project_manager) && (true))))) rtrue;
     rfalse;
 ];
 [ PAPR_7 ;
-    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I143_adjustable_desk) && (true))))) rtrue;
+    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I142_ipad) && (true))))) rtrue;
     rfalse;
 ];
 [ PAPR_8 ;
-    if ((((action ==##Take) &&  (actor==player) && ((noun == I144_tattered_copy_of_the_bo) && (true))))) rtrue;
+    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I145_adjustable_desk) && (true))))) rtrue;
     rfalse;
 ];
 [ PAPR_9 ;
-    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I144_tattered_copy_of_the_bo) && (true))))) rtrue;
+    if ((((action ==##Take) &&  (actor==player) && ((noun == I146_tattered_copy_of_the_bo) && (true))))) rtrue;
     rfalse;
 ];
 [ PAPR_10 ;
-    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I145_laptop) && (true))))) rtrue;
+    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I146_tattered_copy_of_the_bo) && (true))))) rtrue;
     rfalse;
 ];
 [ PAPR_11 ;
+    if ((((action ==##A79_pecking) &&  (actor==player) && ((noun == I147_laptop) && (true))))) rtrue;
+    rfalse;
+];
+[ PAPR_12 ;
     if (((((NAP_0())) &&  (actor==player)))) rtrue;
     rfalse;
 ];
-Array PastActionsI6Routines --> PAPR_0 PAPR_1 PAPR_2 PAPR_3 PAPR_4 PAPR_5 PAPR_6 PAPR_7 PAPR_8 PAPR_9 PAPR_10 PAPR_11 0 0;
+Array PastActionsI6Routines --> PAPR_0 PAPR_1 PAPR_2 PAPR_3 PAPR_4 PAPR_5 PAPR_6 PAPR_7 PAPR_8 PAPR_9 PAPR_10 PAPR_11 PAPR_12 0 0;
 
 Constant NO_PAST_TENSE_CONDS 0;
-Constant NO_PAST_TENSE_ACTIONS 12;
+Constant NO_PAST_TENSE_ACTIONS 13;
 
 [ TestSinglePastState 
     past_flag ! Implied call parameter
@@ -51834,136 +51883,140 @@ Verb 'help' 'instructions' 'menu' 'info' 'about'
 
 
 
-Constant TX_PS_78 = ">";
-Constant TX_PS_65 = "A beautiful ergonomic desk, adjustable with electronic controls.";
-Constant TX_PS_101 = "A book with the cover torn off, covered in goose spit.";
-Array TX_L_101 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_101;
-Constant TX_PS_103 = "A broken laptop, with messed-up text scrolling through its flickering windows on a cracked screen.";
-Array TX_L_103 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_103;
-Constant TX_PS_58 = "A geeky looking person, concentrating deeply.";
-Constant TX_PS_107 = "A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.";
-Array TX_L_107 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_107;
-Constant TX_PS_95 = "A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.";
-Array TX_L_95 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_95;
+Constant TX_PS_80 = ">";
+Constant TX_PS_67 = "A beautiful ergonomic desk, adjustable with electronic controls.";
+Constant TX_PS_104 = "A book with the cover torn off, covered in goose spit.";
+Array TX_L_104 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_104;
+Constant TX_PS_106 = "A broken laptop, with messed-up text scrolling through its flickering windows on a cracked screen.";
+Array TX_L_106 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_106;
+Constant TX_PS_60 = "A geeky looking person, concentrating deeply.";
+Constant TX_PS_110 = "A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.";
+Array TX_L_110 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_110;
+Constant TX_PS_98 = "A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.";
+Array TX_L_98 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_98;
 Constant TX_PS_46 = "A gleaming, tidy sink.";
-Constant TX_PS_69 = "A laptop with several windows open, showing some code.";
-Constant TX_PS_55 = "A large board room with chairs arranged around a central table. Through the open door, you can see the main office to the east.";
-Constant TX_PS_53 = "A large red cylinder with a trigger handle.";
-Constant TX_PS_49 = "A steaming, very full cup of coffee.";
-Constant TX_PS_86 = "A torn up potted plant, on its side with dirt spilling out.";
-Array TX_L_86 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_86;
+Constant TX_PS_71 = "A laptop with several windows open, showing some code.";
+Constant TX_PS_57 = "A large board room with chairs arranged around a central table. Through the open door, you can see the main office to the east.";
+Constant TX_PS_55 = "A large red cylinder with a trigger handle.";
+Constant TX_PS_51 = "A steaming, very full cup of coffee.";
+Constant TX_PS_88 = "A torn up potted plant, on its side with dirt spilling out.";
+Array TX_L_88 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_88;
 Constant TX_PS_3 = "An Interactive Fiction";
-Constant TX_PS_99 = "An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.";
-Array TX_L_99 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_99;
-Constant TX_PS_63 = "An adjustable standing/sitting desk dominates this spacious cubicle. The main office is just to the north.";
-Constant TX_PS_97 = "An angry project manager ineptly chasing you.";
-Array TX_L_97 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_97;
-Constant TX_PS_60 = "An ipad with an interface to control a video conference.";
-Constant TX_PS_51 = "An unobtrusive red box, mounted high on the kitchen wall.";
-Constant TX_PS_79 = "Comedy";
-Constant TX_PS_54 = "Conference room";
-Constant TX_PS_62 = "Cubicle";
-Constant TX_PS_80 = "It's a beautiful day in the office, and you are a horrible goose.";
+Constant TX_PS_102 = "An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.";
+Array TX_L_102 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_102;
+Constant TX_PS_65 = "An adjustable standing/sitting desk dominates this spacious cubicle. The main office is just to the north.";
+Constant TX_PS_100 = "An angry project manager ineptly chasing you.";
+Array TX_L_100 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_100;
+Constant TX_PS_62 = "An ipad with an interface to control a video conference.";
+Constant TX_PS_53 = "An unobtrusive red box, mounted high on the kitchen wall.";
+Constant TX_PS_81 = "Comedy";
+Constant TX_PS_56 = "Conference room";
+Constant TX_PS_64 = "Cubicle";
+Constant TX_PS_82 = "It's a beautiful day in the office, and you are a horrible goose.";
 Constant TX_PS_4 = "Lizzard";
 Constant TX_PS_2 = "Office Goose";
 Constant TX_PS_39 = "Office kitchen";
 Constant TX_PS_35 = "Open-plan office";
-Constant TX_PS_75 = "Puddles of spilled coffee";
-Constant TX_PS_77 = "Puddles of water";
-Constant TX_PS_84 = "QUIT";
-Constant TX_PS_81 = "RESTART";
-Constant TX_PS_82 = "RESTORE a saved game";
-Constant TX_PS_42 = "They're just out of your reach. Infuriating. ";
-Constant TX_PS_67 = "This book looks absolutely delicious! Maybe you should take it!";
+Constant TX_PS_77 = "Puddles of spilled coffee";
+Constant TX_PS_79 = "Puddles of water";
+Constant TX_PS_86 = "QUIT";
+Constant TX_PS_83 = "RESTART";
+Constant TX_PS_84 = "RESTORE a saved game";
+Constant TX_PS_42 = "They're locked up in a high cabinet. Infuriating. ";
+Constant TX_PS_69 = "This book looks absolutely delicious! Maybe you should take it!";
 Constant TX_PS_40 = "This mini kitchen has tasty snacks and bad coffee. The main office is just to the west.";
-Constant TX_PS_91 = "This sink is in sad shape. It's spraying water from the broken faucet.";
-Array TX_L_91 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_91;
+Constant TX_PS_94 = "This sink is in sad shape. It's spraying water from the broken faucet.";
+Array TX_L_94 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_94;
 Constant TX_PS_44 = "This sturdy machine is ready to make you a bitter cup of plastic swill.";
-Constant TX_PS_85 = "UNDO the last command";
+Constant TX_PS_87 = "UNDO the last command";
 Constant TX_PS_36 = "You're in a large open room. Narrow corridors run between grey-walled cubicles. Exits lead east, west, and south.";
 Constant TX_PS_33 = "You're large, you're white, and you're waddling.";
 Constant TX_PS_34 = "Yourself";
-Constant TX_PS_64 = "adjustable desk";
+Constant TX_PS_66 = "adjustable desk";
 Constant TX_PS_9 = "animals";
 Constant TX_PS_14 = "backdrops";
-Constant TX_PS_96 = "battered and scratched ipad";
-Array TX_L_96 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_96;
-Constant TX_PS_100 = "book with the cover torn off";
-Array TX_L_100 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_100;
-Constant TX_PS_98 = "broken adjustable desk";
-Array TX_L_98 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_98;
-Constant TX_PS_108 = "broken camera, dangling from a frayed cable";
-Array TX_L_108 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_108;
-Constant TX_PS_102 = "broken laptop";
-Array TX_L_102 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_102;
-Constant TX_PS_56 = "chair";
-Constant TX_PS_70 = "code";
+Constant TX_PS_99 = "battered and scratched ipad";
+Array TX_L_99 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_99;
+Constant TX_PS_103 = "book with the cover torn off";
+Array TX_L_103 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_103;
+Constant TX_PS_101 = "broken adjustable desk";
+Array TX_L_101 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_101;
+Constant TX_PS_111 = "broken camera, dangling from a frayed cable";
+Array TX_L_111 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_111;
+Constant TX_PS_105 = "broken laptop";
+Array TX_L_105 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_105;
+Constant TX_PS_47 = "cabinet";
+Constant TX_PS_58 = "chair";
+Constant TX_PS_72 = "code";
 Constant TX_PS_11 = "containers";
-Constant TX_PS_48 = "cup of coffee";
-Constant TX_PS_88 = "dented printer";
-Array TX_L_88 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_88;
+Constant TX_PS_50 = "cup of coffee";
+Constant TX_PS_90 = "dented printer";
+Array TX_L_90 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_90;
 Constant TX_PS_15 = "devices";
 Constant TX_PS_18 = "directions";
 Constant TX_PS_10 = "doors";
 Constant TX_PS_29 = "down";
 Constant TX_PS_26 = "east";
-Constant TX_PS_93 = "empty coffee cup";
-Array TX_L_93 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_93;
-Constant TX_PS_106 = "empty, cracked coffee cup";
-Array TX_L_106 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_106;
-Constant TX_PS_50 = "fire alarm";
-Constant TX_PS_105 = "fire extinguisher rolling around as it sprays foam everywhere";
-Array TX_L_105 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_105;
-Constant TX_PS_52 = "fire extinguisher";
-Constant TX_PS_94 = "flustered manager";
-Array TX_L_94 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_94;
-Constant TX_PS_109 = "in your beak";
+Constant TX_PS_96 = "empty coffee cup";
+Array TX_L_96 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_96;
+Constant TX_PS_109 = "empty, cracked coffee cup";
 Array TX_L_109 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_109;
+Constant TX_PS_52 = "fire alarm";
+Constant TX_PS_108 = "fire extinguisher rolling around as it sprays foam everywhere";
+Array TX_L_108 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_108;
+Constant TX_PS_54 = "fire extinguisher";
+Constant TX_PS_97 = "flustered manager";
+Array TX_L_97 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_97;
+Constant TX_PS_112 = "in your beak";
+Array TX_L_112 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_112;
 Constant TX_PS_30 = "inside";
-Constant TX_PS_59 = "ipad";
-Constant TX_PS_68 = "laptop";
+Constant TX_PS_61 = "ipad";
+Constant TX_PS_70 = "laptop";
 Constant TX_PS_16 = "liquids";
-Constant TX_PS_72 = "little bits of chewed up paper";
-Constant TX_PS_89 = "mangled coffee maker";
-Array TX_L_89 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_89;
+Constant TX_PS_74 = "little bits of chewed up paper";
+Constant TX_PS_92 = "mangled coffee maker";
+Array TX_L_92 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_92;
 Constant TX_PS_7 = "men";
 Constant TX_PS_19 = "north";
 Constant TX_PS_21 = "northeast";
 Constant TX_PS_22 = "northwest";
+Constant TX_PS_91 = "open cabinet";
+Array TX_L_91 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_91;
 Constant TX_PS_31 = "outside";
 Constant TX_PS_6 = "people";
 Constant TX_PS_13 = "player's holdalls";
 Constant TX_PS_43 = "pod-based coffee maker";
 Constant TX_PS_37 = "potted palm";
 Constant TX_PS_38 = "printer";
-Constant TX_PS_57 = "project manager";
-Constant TX_PS_74 = "puddles of spilled coffee";
-Constant TX_PS_76 = "puddles of water";
-Constant TX_PS_47 = "purple-haired developer";
+Constant TX_PS_59 = "project manager";
+Constant TX_PS_76 = "puddles of spilled coffee";
+Constant TX_PS_78 = "puddles of water";
+Constant TX_PS_49 = "purple-haired developer";
 Constant TX_PS_17 = "regions";
-Constant TX_PS_83 = "see some suggestions for AMUSING things to do";
-Constant TX_PS_73 = "sheets of paper";
-Constant TX_PS_90 = "sink with a broken faucet spraying water everywhere";
-Array TX_L_90 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_90;
+Constant TX_PS_85 = "see some suggestions for AMUSING things to do";
+Constant TX_PS_75 = "sheets of paper";
+Constant TX_PS_93 = "sink with a broken faucet spraying water everywhere";
+Array TX_L_93 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_93;
 Constant TX_PS_45 = "sink";
 Constant TX_PS_41 = "snacks";
 Constant TX_PS_23 = "south";
 Constant TX_PS_24 = "southeast";
 Constant TX_PS_25 = "southwest";
-Constant TX_PS_71 = "spilled dirt";
+Constant TX_PS_73 = "spilled dirt";
 Constant TX_PS_5 = "supporters";
-Constant TX_PS_66 = "tattered copy of the book 'Design Patterns'";
+Constant TX_PS_48 = "tasty snacks";
+Constant TX_PS_68 = "tattered copy of the book 'Design Patterns'";
 Constant TX_PS_20 = "the";
-Constant TX_PS_87 = "torn-up potted palm tree";
-Array TX_L_87 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_87;
-Constant TX_PS_104 = "torn-up potted palm, lying sideways";
-Array TX_L_104 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_104;
+Constant TX_PS_89 = "torn-up potted palm tree";
+Array TX_L_89 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_89;
+Constant TX_PS_107 = "torn-up potted palm";
+Array TX_L_107 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_107;
 Constant TX_PS_28 = "up";
 Constant TX_PS_12 = "vehicles";
-Constant TX_PS_61 = "video camera";
+Constant TX_PS_63 = "video camera";
 Constant TX_PS_27 = "west";
-Constant TX_PS_92 = "wet, scalded developer";
-Array TX_L_92 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_92;
+Constant TX_PS_95 = "wet, scalded developer";
+Array TX_L_95 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_95;
 Constant TX_PS_8 = "women";
 Constant TX_PS_32 = "yourself";
 Array TX_L_32 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_32;
@@ -59327,92 +59380,92 @@ Array BC_194 --> PACKED_TEXT_STORAGE TX_PS_47;
 Array BC_195 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_196 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_197 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_198 --> PACKED_TEXT_STORAGE TX_PS_6;
+Array BC_198 --> PACKED_TEXT_STORAGE TX_PS_11;
 Array BC_199 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_200 --> PACKED_TEXT_STORAGE TX_PS_48;
-Array BC_201 --> PACKED_TEXT_STORAGE TX_PS_49;
+Array BC_201 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_202 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_203 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_204 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_205 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_206 --> PACKED_TEXT_STORAGE TX_PS_50;
-Array BC_207 --> PACKED_TEXT_STORAGE TX_PS_51;
+Array BC_206 --> PACKED_TEXT_STORAGE TX_PS_49;
+Array BC_207 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_208 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_209 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_210 --> PACKED_TEXT_STORAGE TX_PS_15;
+Array BC_210 --> PACKED_TEXT_STORAGE TX_PS_6;
 Array BC_211 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_212 --> PACKED_TEXT_STORAGE TX_PS_52;
-Array BC_213 --> PACKED_TEXT_STORAGE TX_PS_53;
+Array BC_212 --> PACKED_TEXT_STORAGE TX_PS_50;
+Array BC_213 --> PACKED_TEXT_STORAGE TX_PS_51;
 Array BC_214 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_215 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_216 --> PACKED_TEXT_STORAGE TX_PS_15;
+Array BC_216 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_217 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_218 --> PACKED_TEXT_STORAGE TX_PS_54;
-Array BC_219 --> PACKED_TEXT_STORAGE TX_PS_55;
+Array BC_218 --> PACKED_TEXT_STORAGE TX_PS_52;
+Array BC_219 --> PACKED_TEXT_STORAGE TX_PS_53;
 Array BC_220 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_221 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_222 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_223 --> PACKED_TEXT_STORAGE TX_PS_56;
-Array BC_224 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_225 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_222 --> PACKED_TEXT_STORAGE TX_PS_15;
+Array BC_223 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_224 --> PACKED_TEXT_STORAGE TX_PS_54;
+Array BC_225 --> PACKED_TEXT_STORAGE TX_PS_55;
 Array BC_226 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_227 --> PACKED_TEXT_STORAGE TX_PS_5;
-Array BC_228 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_229 --> PACKED_TEXT_STORAGE TX_PS_57;
-Array BC_230 --> PACKED_TEXT_STORAGE TX_PS_58;
-Array BC_231 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_227 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_228 --> PACKED_TEXT_STORAGE TX_PS_15;
+Array BC_229 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_230 --> PACKED_TEXT_STORAGE TX_PS_56;
+Array BC_231 --> PACKED_TEXT_STORAGE TX_PS_57;
 Array BC_232 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_233 --> PACKED_TEXT_STORAGE TX_PS_6;
+Array BC_233 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_234 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_235 --> PACKED_TEXT_STORAGE TX_PS_59;
-Array BC_236 --> PACKED_TEXT_STORAGE TX_PS_60;
+Array BC_235 --> PACKED_TEXT_STORAGE TX_PS_58;
+Array BC_236 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_237 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_238 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_239 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_239 --> PACKED_TEXT_STORAGE TX_PS_5;
 Array BC_240 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_241 --> PACKED_TEXT_STORAGE TX_PS_61;
-Array BC_242 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_241 --> PACKED_TEXT_STORAGE TX_PS_59;
+Array BC_242 --> PACKED_TEXT_STORAGE TX_PS_60;
 Array BC_243 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_244 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_245 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_245 --> PACKED_TEXT_STORAGE TX_PS_6;
 Array BC_246 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_247 --> PACKED_TEXT_STORAGE TX_PS_62;
-Array BC_248 --> PACKED_TEXT_STORAGE TX_PS_63;
+Array BC_247 --> PACKED_TEXT_STORAGE TX_PS_61;
+Array BC_248 --> PACKED_TEXT_STORAGE TX_PS_62;
 Array BC_249 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_250 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_251 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_252 --> PACKED_TEXT_STORAGE TX_PS_64;
-Array BC_253 --> PACKED_TEXT_STORAGE TX_PS_65;
+Array BC_252 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_253 --> PACKED_TEXT_STORAGE TX_PS_63;
 Array BC_254 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_255 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_256 --> PACKED_TEXT_STORAGE TX_PS_5;
+Array BC_256 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_257 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_258 --> PACKED_TEXT_STORAGE TX_PS_66;
-Array BC_259 --> PACKED_TEXT_STORAGE TX_PS_67;
-Array BC_260 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_258 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_259 --> PACKED_TEXT_STORAGE TX_PS_64;
+Array BC_260 --> PACKED_TEXT_STORAGE TX_PS_65;
 Array BC_261 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_262 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_263 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_264 --> PACKED_TEXT_STORAGE TX_PS_68;
-Array BC_265 --> PACKED_TEXT_STORAGE TX_PS_69;
+Array BC_264 --> PACKED_TEXT_STORAGE TX_PS_66;
+Array BC_265 --> PACKED_TEXT_STORAGE TX_PS_67;
 Array BC_266 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_267 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_268 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_268 --> PACKED_TEXT_STORAGE TX_PS_5;
 Array BC_269 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_270 --> PACKED_TEXT_STORAGE TX_PS_70;
-Array BC_271 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_136;
+Array BC_270 --> PACKED_TEXT_STORAGE TX_PS_68;
+Array BC_271 --> PACKED_TEXT_STORAGE TX_PS_69;
 Array BC_272 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_273 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_274 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_275 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_276 --> PACKED_TEXT_STORAGE TX_PS_71;
-Array BC_277 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_276 --> PACKED_TEXT_STORAGE TX_PS_70;
+Array BC_277 --> PACKED_TEXT_STORAGE TX_PS_71;
 Array BC_278 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_279 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_280 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_281 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_282 --> PACKED_TEXT_STORAGE TX_PS_72;
-Array BC_283 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_283 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_136;
 Array BC_284 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_285 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_286 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
@@ -59424,29 +59477,41 @@ Array BC_291 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_292 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_293 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_294 --> PACKED_TEXT_STORAGE TX_PS_74;
-Array BC_295 --> PACKED_TEXT_STORAGE TX_PS_75;
+Array BC_295 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_296 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_297 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_298 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_299 --> PACKED_TEXT_STORAGE TX_PS_16;
-Array BC_300 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_301 --> PACKED_TEXT_STORAGE TX_PS_76;
-Array BC_302 --> PACKED_TEXT_STORAGE TX_PS_77;
+Array BC_299 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_300 --> PACKED_TEXT_STORAGE TX_PS_75;
+Array BC_301 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_302 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_303 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_304 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_305 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_306 --> PACKED_TEXT_STORAGE TX_PS_16;
-Array BC_307 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_308 --> PACKED_TEXT_STORAGE TX_PS_78;
-Array BC_309 --> PACKED_TEXT_STORAGE TX_PS_4;
-Array BC_310 --> PACKED_TEXT_STORAGE TX_PS_3;
-Array BC_311 --> PACKED_TEXT_STORAGE TX_PS_79;
-Array BC_312 --> PACKED_TEXT_STORAGE TX_PS_80;
-Array BC_313 --> PACKED_TEXT_STORAGE TX_PS_81;
-Array BC_314 --> PACKED_TEXT_STORAGE TX_PS_82;
-Array BC_315 --> PACKED_TEXT_STORAGE TX_PS_83;
-Array BC_316 --> PACKED_TEXT_STORAGE TX_PS_84;
-Array BC_317 --> PACKED_TEXT_STORAGE TX_PS_85;
+Array BC_306 --> PACKED_TEXT_STORAGE TX_PS_76;
+Array BC_307 --> PACKED_TEXT_STORAGE TX_PS_77;
+Array BC_308 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_309 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_310 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_311 --> PACKED_TEXT_STORAGE TX_PS_16;
+Array BC_312 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_313 --> PACKED_TEXT_STORAGE TX_PS_78;
+Array BC_314 --> PACKED_TEXT_STORAGE TX_PS_79;
+Array BC_315 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_316 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_317 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_318 --> PACKED_TEXT_STORAGE TX_PS_16;
+Array BC_319 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_320 --> PACKED_TEXT_STORAGE TX_PS_80;
+Array BC_321 --> PACKED_TEXT_STORAGE TX_PS_4;
+Array BC_322 --> PACKED_TEXT_STORAGE TX_PS_3;
+Array BC_323 --> PACKED_TEXT_STORAGE TX_PS_81;
+Array BC_324 --> PACKED_TEXT_STORAGE TX_PS_82;
+Array BC_325 --> PACKED_TEXT_STORAGE TX_PS_83;
+Array BC_326 --> PACKED_TEXT_STORAGE TX_PS_84;
+Array BC_327 --> PACKED_TEXT_STORAGE TX_PS_85;
+Array BC_328 --> PACKED_TEXT_STORAGE TX_PS_86;
+Array BC_329 --> PACKED_TEXT_STORAGE TX_PS_87;
 
 
 
