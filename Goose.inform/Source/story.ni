@@ -57,7 +57,12 @@ Instead of taking an object which is fixed in place:
 Honking is an action applying to nothing. Understand "honk" as honking. 
 
 Carry out honking:
+	if the player carries nothing:
 		say "HONK!!!!";
+	if the player carries something:
+		say "HMMMMMNNNNK!!!";
+		say "You suddenly remember that your beak is full of stuff.";
+	
 		
 After honking:
 	if  more than one person is in the location of the player:
