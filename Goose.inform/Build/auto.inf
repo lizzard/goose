@@ -42,8 +42,8 @@ Array UUID_ARRAY string "UUID://DD12A67A-698C-4117-AC89-763288B49A46//";
 Global Story = BC_0;
 Constant Headline BC_1;
 Constant Story_Author BC_2;
-Release 8;
-Serial "191005";
+Release 9;
+Serial "191006";
 
 Default Story 0;
 Default Headline 0;
@@ -11671,7 +11671,7 @@ Array Global_Vars -->
   (BC_298) ! 33 story headline
   (BC_299) ! 34 story genre
   (BC_300) ! 35 story description
-  (8) ! 36 release number
+  (9) ! 36 release number
   (2019) ! 37 story creation year
   (0) ! 45 locale paragraph count
 ;
@@ -12509,9 +12509,9 @@ Array ActionHappened --> 0 0 0 0 0 0;
     if (debug_rules) DB_Rule(R_800, 800);
     ! [2: if the turn count is four]
     if (((turns == 4)))
-    {! [3: say ~(You feel a mighty primal urge to honk, to flap, and to peck things.)~]
-        say__p=1;! [4: ~(You feel a mighty primal urge to honk, to flap, and to peck things.)~]
-        ParaContent(); print "(You feel a mighty primal urge to honk, to flap, and to peck things.)"; new_line; .L_Say2; .L_SayX2;}
+    {! [3: say ~You feel a mighty primal urge to honk, to flap, and to peck things.~]
+        say__p=1;! [4: ~You feel a mighty primal urge to honk, to flap, and to peck things.~]
+        ParaContent(); print "You feel a mighty primal urge to honk, to flap, and to peck things."; new_line; .L_Say2; .L_SayX2;}
     ! [5: if the score is greater than 9]
     if (((score > 9)))
     {! [6: say ~Congratulations! You are the most horrible of horrible geese.~]
@@ -12522,9 +12522,9 @@ Array ActionHappened --> 0 0 0 0 0 0;
         say__p=1;! [11: ~You run outside, ready to wreak mayhem on the rest of the world!~]
         ParaContent(); print "You run outside, ready to wreak mayhem on the rest of the world!"; new_line; .L_Say5; .L_SayX5;! [12: say ~* * * * * * * * * * * * * * * * * *~]
         say__p=1;! [13: ~* * * * * * * * * * * * * * * * * *~]
-        ParaContent(); print "* * * * * * * * * * * * * * * * * *"; .L_Say6; .L_SayX6;! [14: say ~Thanks to Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, and Jim Shepard for playtesting.~]
-        say__p=1;! [15: ~Thanks to Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, and Jim Shepard for playtesting.~]
-        ParaContent(); print "Thanks to Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, and Jim Shepard for playtesting."; new_line; .L_Say7; .L_SayX7;! [16: end the story finally]
+        ParaContent(); print "* * * * * * * * * * * * * * * * * *"; .L_Say6; .L_SayX6;! [14: say ~Thanks to Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, Milo Kim, and Jim Shepard for playtesting.~]
+        say__p=1;! [15: ~Thanks to Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, Milo Kim, and Jim Shepard for playtesting.~]
+        ParaContent(); print "Thanks to Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, Milo Kim, and Jim Shepard for playtesting."; new_line; .L_Say7; .L_SayX7;! [16: end the story finally]
         deadflag=3; story_complete=true;
         }
         rfalse;
@@ -12537,7 +12537,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
     if (debug_rules) DB_Rule(R_840, 840);
     ! [2: if a developer is flustered]
     if ((((Adj_86_t1_v10(I134_purple_haired_developer)))))
-    {! [3: say ~[one of]'Horrible goose,'[or]'Catch it,'[or]'Nnnnnnggggg,'[then purely at random] yells the enraged developer[one of], chasing you.[or]. She trips over you, swearing.[or].[then purely at random]~]
+    {! [3: say ~[one of]'Horrible goose,'[or]'Catch it,'[or]'Nnnnnnggggg,'[then purely at random] yells the enraged developer[one of], chasing you.[or]. She trips over you, swearing.[or]. She flails, knocking her own glasses onto the floor.[or].[then purely at random]~]
         say__p=1;! [4: one of]
         ParaContent(); 
         	
@@ -12562,51 +12562,55 @@ Array ActionHappened --> 0 0 0 0 0 0;
         	
         	if (I7_ST_say_one_flag-->1 == false) {
         		I7_ST_say_one_of-->1 = i7_soo_tpar(I7_ST_say_one_of-->1,
-        3);
+        4);
         	 	I7_ST_say_one_flag-->1 = true;
         	}
         	if (say__comp == false) I7_ST_say_one_flag-->1 =
         false;
-        	switch ((I7_ST_say_one_of-->1)%(3+1)-1)
+        	switch ((I7_ST_say_one_of-->1)%(4+1)-1)
         {
         		0:! [13: ~, chasing you.~]
         ParaContent(); print ", chasing you."; new_line;! [14: or]
         ParaContent(); @nop; 1:! [15: ~. She trips over you, swearing.~]
         ParaContent(); print ". She trips over you, swearing."; new_line;! [16: or]
-        ParaContent(); @nop; 2:! [17: ~.~]
-        ParaContent(); print "."; new_line;! [18: then purely at random]
-        ParaContent(); } .L_Say8; .L_SayX8;! [19: if the location of the developer is not the location of the player]
+        ParaContent(); @nop; 2:! [17: ~. She flails, knocking her own glasses onto the floor.~]
+        ParaContent(); print ". She flails, knocking her own glasses onto the floor."; new_line;! [18: or]
+        ParaContent(); @nop; 3:! [19: ~.~]
+        ParaContent(); print "."; new_line;! [20: then purely at random]
+        ParaContent(); } .L_Say8; .L_SayX8;! [21: if the location of the developer is not the location of the player]
         if (((~~((LocationOf(I134_purple_haired_developer) == LocationOf(player))))))
-        {! [20: let the way be the best route from the location of the developer to the location of the player , using doors]
+        {! [22: let the way be the best route from the location of the developer to the location of the player , using doors]
 
             		tmp_0 = MapRouteTo(LocationOf(I134_purple_haired_developer),LocationOf(player),0,1);
-            ! [21: try the developer going the way]
+            ! [23: try the developer going the way]
             TryAction(0, I134_purple_haired_developer, ##Go, tmp_0, 0);
             }
             }
-    ! [22: if a project manager is flustered]
+    ! [24: if a project manager is flustered]
     if ((((Adj_86_t1_v10(I137_project_manager)))))
-    {! [23: say ~[one of]'What the heck,'[or]'My meeting,'[or]'Get it out of here,'[then purely at random] shrieks the manager[one of], lurching forward.[or]. She falls over a chair.[or].[then purely at random]~]
-        say__p=1;! [24: one of]
+    {! [25: say ~[one of]'What the heck,'[or]'My meeting,'[or]'Get it out of here,'[or]'Aaaaagggghh,'[then purely at random] shrieks the manager[one of], lurching forward.[or]. She falls over a chair.[or].[then purely at random]~]
+        say__p=1;! [26: one of]
         ParaContent(); 
         	
         	if (I7_ST_say_one_flag-->2 == false) {
         		I7_ST_say_one_of-->2 = i7_soo_tpar(I7_ST_say_one_of-->2,
-        3);
+        4);
         	 	I7_ST_say_one_flag-->2 = true;
         	}
         	if (say__comp == false) I7_ST_say_one_flag-->2 =
         false;
-        	switch ((I7_ST_say_one_of-->2)%(3+1)-1)
+        	switch ((I7_ST_say_one_of-->2)%(4+1)-1)
         {
-        		0:! [25: ~'What the heck,'~]
-        ParaContent(); print "~What the heck,~";! [26: or]
-        ParaContent(); @nop; 1:! [27: ~'My meeting,'~]
-        ParaContent(); print "~My meeting,~";! [28: or]
-        ParaContent(); @nop; 2:! [29: ~'Get it out of here,'~]
-        ParaContent(); print "~Get it out of here,~";! [30: then purely at random]
-        ParaContent(); }! [31: ~ shrieks the manager~]
-        ParaContent(); print " shrieks the manager";! [32: one of]
+        		0:! [27: ~'What the heck,'~]
+        ParaContent(); print "~What the heck,~";! [28: or]
+        ParaContent(); @nop; 1:! [29: ~'My meeting,'~]
+        ParaContent(); print "~My meeting,~";! [30: or]
+        ParaContent(); @nop; 2:! [31: ~'Get it out of here,'~]
+        ParaContent(); print "~Get it out of here,~";! [32: or]
+        ParaContent(); @nop; 3:! [33: ~'Aaaaagggghh,'~]
+        ParaContent(); print "~Aaaaagggghh,~";! [34: then purely at random]
+        ParaContent(); }! [35: ~ shrieks the manager~]
+        ParaContent(); print " shrieks the manager";! [36: one of]
         ParaContent(); 
         	
         	if (I7_ST_say_one_flag-->3 == false) {
@@ -12618,18 +12622,18 @@ Array ActionHappened --> 0 0 0 0 0 0;
         false;
         	switch ((I7_ST_say_one_of-->3)%(3+1)-1)
         {
-        		0:! [33: ~, lurching forward.~]
-        ParaContent(); print ", lurching forward."; new_line;! [34: or]
-        ParaContent(); @nop; 1:! [35: ~. She falls over a chair.~]
-        ParaContent(); print ". She falls over a chair."; new_line;! [36: or]
-        ParaContent(); @nop; 2:! [37: ~.~]
-        ParaContent(); print "."; new_line;! [38: then purely at random]
-        ParaContent(); } .L_Say9; .L_SayX9;! [39: if the location of a project manager is not the location of the player]
+        		0:! [37: ~, lurching forward.~]
+        ParaContent(); print ", lurching forward."; new_line;! [38: or]
+        ParaContent(); @nop; 1:! [39: ~. She falls over a chair.~]
+        ParaContent(); print ". She falls over a chair."; new_line;! [40: or]
+        ParaContent(); @nop; 2:! [41: ~.~]
+        ParaContent(); print "."; new_line;! [42: then purely at random]
+        ParaContent(); } .L_Say9; .L_SayX9;! [43: if the location of a project manager is not the location of the player]
         if (((~~((LocationOf(I137_project_manager) == LocationOf(player))))))
-        {! [40: let the way be the best route from the location of a project manager to the location of the player , using doors]
+        {! [44: let the way be the best route from the location of a project manager to the location of the player , using doors]
 
             		tmp_0 = MapRouteTo(LocationOf(I137_project_manager),LocationOf(player),0,1);
-            ! [41: try a project manager going the way]
+            ! [45: try a project manager going the way]
             TryAction(0, I137_project_manager, ##Go, tmp_0, 0);
             }
             }
@@ -13599,9 +13603,9 @@ Array ActionHappened --> 0 0 0 0 0 0;
     if ((PAPR_11() && ((TurnsActionHasBeenHappening-->11) == 3))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_812, 812);
-    ! [2: say ~(You feel a mighty primal urge to honk, to flap, and to peck things.)~]
-    say__p=1;! [3: ~(You feel a mighty primal urge to honk, to flap, and to peck things.)~]
-    ParaContent(); print "(You feel a mighty primal urge to honk, to flap, and to peck things.)"; new_line; .L_Say41; .L_SayX41;RulebookSucceeds(); rtrue;
+    ! [2: say ~You feel a mighty primal urge to honk, to flap, and to peck things.~]
+    say__p=1;! [3: ~You feel a mighty primal urge to honk, to flap, and to peck things.~]
+    ParaContent(); print "You feel a mighty primal urge to honk, to flap, and to peck things."; new_line; .L_Say41; .L_SayX41;RulebookSucceeds(); rtrue;
     } else if (debug_rules > 1) DB_Rule(R_812, 812, 'action');
     rfalse;
 ];
@@ -13613,9 +13617,28 @@ Array ActionHappened --> 0 0 0 0 0 0;
     if (debug_rules) DB_Rule(R_807, 807);
     ! [2: if more than one person is in the location of the player]
     if ((((Prop_4(LocationOf(player))))))
-    {! [3: say ~Startled, a hapless office worker looks up in alarm.~]
-        say__p=1;! [4: ~Startled, a hapless office worker looks up in alarm.~]
-        ParaContent(); print "Startled, a hapless office worker looks up in alarm."; new_line; .L_Say42; .L_SayX42;}
+    {! [3: say ~[one of]Startled, a hapless office worker looks up in alarm.[or]A person near you jumps in fear.[or]Someone does a double take as they realize how close you are.[or]People in the room freeze as they try to figure out what you'll do next.[then purely at random]~]
+        say__p=1;! [4: one of]
+        ParaContent(); 
+        	
+        	if (I7_ST_say_one_flag-->4 == false) {
+        		I7_ST_say_one_of-->4 = i7_soo_tpar(I7_ST_say_one_of-->4,
+        4);
+        	 	I7_ST_say_one_flag-->4 = true;
+        	}
+        	if (say__comp == false) I7_ST_say_one_flag-->4 =
+        false;
+        	switch ((I7_ST_say_one_of-->4)%(4+1)-1)
+        {
+        		0:! [5: ~Startled, a hapless office worker looks up in alarm.~]
+        ParaContent(); print "Startled, a hapless office worker looks up in alarm."; new_line;! [6: or]
+        ParaContent(); @nop; 1:! [7: ~A person near you jumps in fear.~]
+        ParaContent(); print "A person near you jumps in fear."; new_line;! [8: or]
+        ParaContent(); @nop; 2:! [9: ~Someone does a double take as they realize how close you are.~]
+        ParaContent(); print "Someone does a double take as they realize how close you are."; new_line;! [10: or]
+        ParaContent(); @nop; 3:! [11: ~People in the room freeze as they try to figure out what you'll do next.~]
+        ParaContent(); print "People in the room freeze as they try to figure out what you'll do next."; new_line;! [12: then purely at random]
+        ParaContent(); } .L_Say42; .L_SayX42;}
         RulebookSucceeds(); rtrue;
         } else if (debug_rules > 1) DB_Rule(R_807, 807, 'action');
         rfalse;
@@ -13628,9 +13651,28 @@ Array ActionHappened --> 0 0 0 0 0 0;
     if (debug_rules) DB_Rule(R_808, 808);
     ! [2: if more than one person is in the location of the player]
     if ((((Prop_5(LocationOf(player))))))
-    {! [3: say ~Everyone in the room starts in surprise.~]
-        say__p=1;! [4: ~Everyone in the room starts in surprise.~]
-        ParaContent(); print "Everyone in the room starts in surprise."; new_line; .L_Say43; .L_SayX43;}
+    {! [3: say ~[one of]Everyone in the room starts in surprise.[or]One of your powerful wings clubs someone in the elbow.[or]People leap away from the chaotic hurricane of your wings.[or]Your flurry of wings makes people step back in dismay.[then purely at random]~]
+        say__p=1;! [4: one of]
+        ParaContent(); 
+        	
+        	if (I7_ST_say_one_flag-->5 == false) {
+        		I7_ST_say_one_of-->5 = i7_soo_tpar(I7_ST_say_one_of-->5,
+        4);
+        	 	I7_ST_say_one_flag-->5 = true;
+        	}
+        	if (say__comp == false) I7_ST_say_one_flag-->5 =
+        false;
+        	switch ((I7_ST_say_one_of-->5)%(4+1)-1)
+        {
+        		0:! [5: ~Everyone in the room starts in surprise.~]
+        ParaContent(); print "Everyone in the room starts in surprise."; new_line;! [6: or]
+        ParaContent(); @nop; 1:! [7: ~One of your powerful wings clubs someone in the elbow.~]
+        ParaContent(); print "One of your powerful wings clubs someone in the elbow."; new_line;! [8: or]
+        ParaContent(); @nop; 2:! [9: ~People leap away from the chaotic hurricane of your wings.~]
+        ParaContent(); print "People leap away from the chaotic hurricane of your wings."; new_line;! [10: or]
+        ParaContent(); @nop; 3:! [11: ~Your flurry of wings makes people step back in dismay.~]
+        ParaContent(); print "Your flurry of wings makes people step back in dismay."; new_line;! [12: then purely at random]
+        ParaContent(); } .L_Say43; .L_SayX43;}
         RulebookSucceeds(); rtrue;
         } else if (debug_rules > 1) DB_Rule(R_808, 808, 'action');
         rfalse;
@@ -20706,14 +20748,12 @@ Array ActionHappened --> 0 0 0 0 0 0;
         ! [11: stop the action]
         rtrue;
         }
-    ! [12: if the noun is a device and the noun is switched on]
-    if ((((noun ofclass K13_device))) && ((((Adj_82_t1_v10(noun))))))
-    {! [13: say ~[The noun] switches off.~]
+    ! [12: if the noun is a device and the noun is switched on and the noun is broken]
+    if ((((noun ofclass K13_device))) && (((((Adj_82_t1_v10(noun))))) && ((((Adj_90_t1_v10(noun)))))))
+    {! [13: say ~[The noun] seems to be broken now.~]
         say__p=1;! [14: the noun]
-        ParaContent(); print (The) noun;! [15: ~ switches off.~]
-        ParaContent(); print " switches off."; new_line; .L_Say345; .L_SayX345;! [16: now the noun is switched off]
-        (Adj_83_t2_v10(noun));
-        }
+        ParaContent(); print (The) noun;! [15: ~ seems to be broken now.~]
+        ParaContent(); print " seems to be broken now."; new_line; .L_Say345; .L_SayX345;}
         } else if (debug_rules > 1) DB_Rule(R_810, 810, 'actor');
         rfalse;
 ];
@@ -20729,19 +20769,25 @@ Array ActionHappened --> 0 0 0 0 0 0;
 [ R_813 ;
     if (actor == player) {
     if (debug_rules) DB_Rule(R_813, 813);
-    ! [2: say ~You can honk and flap. Also, you can peck things.~]
+    ! [2: say ~You can honk and flap. Also, you can peck things.[line break]~]
     say__p=1;! [3: ~You can honk and flap. Also, you can peck things.~]
-    ParaContent(); print "You can honk and flap. Also, you can peck things."; new_line; .L_Say346; .L_SayX346;! [4: say ~'look' shows you what's in a room. ~]
-    say__p=1;! [5: ~'look' shows you what's in a room. ~]
-    ParaContent(); print "~look~ shows you what's in a room. "; .L_Say347; .L_SayX347;! [6: say ~'x' for examine shows you a long description of an object.~]
-    say__p=1;! [7: ~'x' for examine shows you a long description of an object.~]
-    ParaContent(); print "~x~ for examine shows you a long description of an object."; new_line; .L_Say348; .L_SayX348;! [8: say ~'i' shows what you are carrying~]
-    say__p=1;! [9: ~'i' shows what you are carrying~]
-    ParaContent(); print "~i~ shows what you are carrying"; .L_Say349; .L_SayX349;! [10: say ~'take' may work on objects light enough for you to pick up.~]
-    say__p=1;! [11: ~'take' may work on objects light enough for you to pick up.~]
-    ParaContent(); print "~take~ may work on objects light enough for you to pick up."; new_line; .L_Say350; .L_SayX350;! [12: say ~After you mess with things, try examining them again!'~]
-    say__p=1;! [13: ~After you mess with things, try examining them again!'~]
-    ParaContent(); print "After you mess with things, try examining them again!~"; new_line; .L_Say351; .L_SayX351;} else if (debug_rules > 1) DB_Rule(R_813, 813, 'actor');
+    ParaContent(); print "You can honk and flap. Also, you can peck things.";! [4: line break]
+    ParaContent(); new_line; .L_Say346; .L_SayX346;! [5: say ~'look' shows you what's in a room[line break]~]
+    say__p=1;! [6: ~'look' shows you what's in a room~]
+    ParaContent(); print "~look~ shows you what's in a room";! [7: line break]
+    ParaContent(); new_line; .L_Say347; .L_SayX347;! [8: say ~'x' or examine shows you a long description of an object[line break]~]
+    say__p=1;! [9: ~'x' or examine shows you a long description of an object~]
+    ParaContent(); print "~x~ or examine shows you a long description of an object";! [10: line break]
+    ParaContent(); new_line; .L_Say348; .L_SayX348;! [11: say ~'i' shows what you are carrying[line break]~]
+    say__p=1;! [12: ~'i' shows what you are carrying~]
+    ParaContent(); print "~i~ shows what you are carrying";! [13: line break]
+    ParaContent(); new_line; .L_Say349; .L_SayX349;! [14: say ~'take' may work on objects light enough for you to pick up[line break]~]
+    say__p=1;! [15: ~'take' may work on objects light enough for you to pick up~]
+    ParaContent(); print "~take~ may work on objects light enough for you to pick up";! [16: line break]
+    ParaContent(); new_line; .L_Say350; .L_SayX350;! [17: say ~After you mess with a thing, try examining it again![line break]~]
+    say__p=1;! [18: ~After you mess with a thing, try examining it again!~]
+    ParaContent(); print "After you mess with a thing, try examining it again!";! [19: line break]
+    ParaContent(); new_line; .L_Say351; .L_SayX351;} else if (debug_rules > 1) DB_Rule(R_813, 813, 'actor');
     rfalse;
 ];
 ! ----------------------------------------------------------------------------------------------------
@@ -51813,8 +51859,8 @@ Array TX_L_32 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_32;
 #IFNDEF cap_short_name;
 Constant cap_short_name = short_name;
 #ENDIF;
-Array I7_ST_say_one_of --> 6;
-Array I7_ST_say_one_flag --> 6;
+Array I7_ST_say_one_of --> 8;
+Array I7_ST_say_one_flag --> 8;
 
 Array Runtime_Quotations_Displayed --> 1;
 

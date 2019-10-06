@@ -9,7 +9,7 @@
 
 Office Goose
 An Interactive Fiction by Lizzard
-Release 8 / Serial number 191005 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD
+Release 9 / Serial number 191006 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD
 It's a beautiful day in the office, and you are a horrible goose.
 (If you aren't sure how to play, type "help" and hit enter.)
 
@@ -2139,10 +2139,7 @@ Would you like to RESTART, RESTORE a saved game, QUIT, or UNDO the last command?
     </item>
     <item nodeId="node-1363">
         <command xml:space="preserve">peck printer</command>
-        <result xml:space="preserve">You jab your beak at the A dented printer.
-The A dented printer switches off.
-
-Some sheets of paper fly out of the printer and across the room.
+        <result xml:space="preserve">You jab your beak at the dented printer.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -2173,14 +2170,57 @@ You can see a potted palm and a printer here.
     <item nodeId="node-1390">
         <command xml:space="preserve">l</command>
         <result xml:space="preserve">Open-plan office
-A large room with narrow hallways running between grey-walled cubicles.
+You're in a large open room. Narrow corridors run between grey-walled cubicles. Exits lead east, west, and south.
 
-You can see some sheets of paper, a potted palm and an A dented printer here.
+You can see some sheets of paper, a potted palm, and a dented printer here.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
         <children><child nodeId="node-1394"></child>
+            <child nodeId="node-1902"></child>
         </children>
+    </item>
+    <item nodeId="node-1902">
+        <command xml:space="preserve">switch off printer</command>
+        <result xml:space="preserve">You feel more like honking, pecking, and flapping, to be honest.
+
+(You feel a mighty primal urge to honk, to flap, and to peck things.)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1903"></child>
+        </children>
+    </item>
+    <item nodeId="node-1903">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Open-plan office
+You're in a large open room. Narrow corridors run between grey-walled cubicles. Exits lead east, west, and south.
+
+You can see some sheets of paper, a potted palm, and a dented printer here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1904"></child>
+        </children>
+    </item>
+    <item nodeId="node-1904">
+        <command xml:space="preserve">peck paper</command>
+        <result xml:space="preserve">You jab your beak at the sheets of paper.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1905"></child>
+        </children>
+    </item>
+    <item nodeId="node-1905">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Open-plan office
+You're in a large open room. Narrow corridors run between grey-walled cubicles. Exits lead east, west, and south.
+
+You can see some sheets of paper, a potted palm, and a dented printer here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-1394">
         <command xml:space="preserve">peck palm</command>
@@ -3042,7 +3082,77 @@ Taken.
         <children><child nodeId="node-1463"></child>
             <child nodeId="node-1240"></child>
             <child nodeId="node-1693"></child>
+            <child nodeId="node-1907"></child>
         </children>
+    </item>
+    <item nodeId="node-1907">
+        <command xml:space="preserve">w</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Conference room
+A large board room with chairs arranged around a central table. Through the open door, you can see the main office to the east.
+
+You can see a project manager, an ipad, and a video camera here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1908"></child>
+        </children>
+    </item>
+    <item nodeId="node-1908">
+        <command xml:space="preserve">honk</command>
+        <result xml:space="preserve">HONK!!!!
+
+Startled, a hapless office worker looks up in alarm.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1909"></child>
+        </children>
+    </item>
+    <item nodeId="node-1909">
+        <command xml:space="preserve">honk</command>
+        <result xml:space="preserve">HONK!!!!
+
+A person near you jumps in fear.
+
+You feel a mighty primal urge to honk, to flap, and to peck things.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1910"></child>
+        </children>
+    </item>
+    <item nodeId="node-1910">
+        <command xml:space="preserve">honk</command>
+        <result xml:space="preserve">HONK!!!!
+
+Someone does a double take as they realize how close you are.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1911"></child>
+        </children>
+    </item>
+    <item nodeId="node-1911">
+        <command xml:space="preserve">flap</command>
+        <result xml:space="preserve">You flap your wings, menacing everything in the near vicinity.
+
+Everyone in the room starts in surprise.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1912"></child>
+        </children>
+    </item>
+    <item nodeId="node-1912">
+        <command xml:space="preserve">flap</command>
+        <result xml:space="preserve">You flap your wings, menacing everything in the near vicinity.
+
+One of your powerful wings clubs someone in the elbow.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-1693">
         <command xml:space="preserve">look printer</command>
@@ -3795,9 +3905,22 @@ Startled, the person looks up in alarm.
     <item nodeId="node-1655">
         <command xml:space="preserve">help</command>
         <result xml:space="preserve">You can honk and flap. Also, you can peck things.
-"look" shows you what's in a room. "x" for examine shows you a long description of an object.
-"i" shows what you are carrying"take" may work on objects light enough for you to pick up.
-After you mess with things, try examining them again!"
+"look" shows you what's in a room
+"x" or examine shows you a long description of an object
+"i" shows what you are carrying
+"take" may work on objects light enough for you to pick up
+After you mess with a thing, try examining it again!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1898"></child>
+        </children>
+    </item>
+    <item nodeId="node-1898">
+        <command xml:space="preserve">bite palm</command>
+        <result xml:space="preserve">You jab your beak at the potted palm.
+
+Dirt spills out. How satisfying. You could probably pick up the whole plant.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>

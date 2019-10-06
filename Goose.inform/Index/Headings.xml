@@ -18,28 +18,28 @@
     </dict>
     <key>2</key><dict>
         <key>Filename</key><string>/Users/ehenry/dev/inform7/goose/Goose.inform/Source/story.ni</string>
-        <key>Line</key><integer>121</integer>
+        <key>Line</key><integer>120</integer>
         <key>Title</key><string>Section 2 - Rules for things</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>3</key><dict>
         <key>Filename</key><string>/Users/ehenry/dev/inform7/goose/Goose.inform/Source/story.ni</string>
-        <key>Line</key><integer>153</integer>
+        <key>Line</key><integer>152</integer>
         <key>Title</key><string>Section 3 - The Office</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>4</key><dict>
         <key>Filename</key><string>/Users/ehenry/dev/inform7/goose/Goose.inform/Source/story.ni</string>
-        <key>Line</key><integer>341</integer>
+        <key>Line</key><integer>340</integer>
         <key>Title</key><string>Section 4 - Wild goose chase</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>5</key><dict>
         <key>Filename</key><string>/Users/ehenry/dev/inform7/goose/Goose.inform/Source/story.ni</string>
-        <key>Line</key><integer>357</integer>
+        <key>Line</key><integer>356</integer>
         <key>Title</key><string>Section 5 - Overly complex inventory rules</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>

@@ -3,12 +3,12 @@
 The story title is "Office Goose". 
 The story author is "Lizzard". 
 The story genre is "Comedy". 
-The release number is 8. 
+The release number is 9. 
 The story description is "It's a beautiful day in the office, and you are a horrible goose." 
 The story creation year is 2019.
 
 Release along with an interpreter and cover art ("a quick line drawing of a goose").
-[Thanks to Danny O'Brien for setting up a web host for this at https://www.endofgreatness.com/officegoose/   Thanks Potch, Laurakeet, Britta Gustafson, Hannah Diaz, and Jim Shepard and Danny O'Brien for playtesting.]
+[Thanks to Danny O'Brien for setting up a web host for this at https://www.endofgreatness.com/officegoose/   Thanks Potch, Laurakeet, Britta Gustafson, Hannah Diaz, and Jim Shepard, Milo Kim, and Danny O'Brien for playtesting.]
 
 use serial comma;
 
@@ -24,13 +24,13 @@ When play begins:
 
 Every turn:
 	if the turn count is four:
-		say "(You feel a mighty primal urge to honk, to flap, and to peck things.)"; 
+		say "You feel a mighty primal urge to honk, to flap, and to peck things."; 
 	if the score is greater than 9:
 		say "Congratulations! You are the most horrible of horrible geese.";
 		say "This start-up office will never be the same.";
 		say "You run outside, ready to wreak mayhem on the rest of the world!";
 		say "* * * * * * * * * * * * * * * * * *";
-		say "Thanks to Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, and Jim Shepard for playtesting.";
+		say "Thanks to Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, Milo Kim, and Jim Shepard for playtesting.";
 		end the story finally.
 
 The carrying capacity of the player is 1.
@@ -69,17 +69,17 @@ Carry out honking:
 	if the player carries something:
 		say "HMMMMMNNNNK!!!";
 		say "You suddenly remember that your beak is full of stuff.";
-	
-		
+			
 After honking:
 	if  more than one person is in the location of the player:
-		say "Startled, a hapless office worker looks up in alarm.";
-				
+		say "[one of]Startled, a hapless office worker looks up in alarm.[or]A person near you jumps in fear.[or]Someone does a double take as they realize how close you are.[or]People in the room freeze as they try to figure out what you'll do next.[then purely at random]";
+		
+			
 Flapping is an action applying to nothing. Understand "flap" as flapping. 
 
 After flapping:
-	if  more than one person is in the location of the player:
-		say "Everyone in the room starts in surprise.";
+	if more than one person is in the location of the player:
+		say "[one of]Everyone in the room starts in surprise.[or]One of your powerful wings clubs someone in the elbow.[or]People leap away from the chaotic hurricane of your wings.[or]Your flurry of wings makes people step back in dismay.[then purely at random]";
 		
 Carry out flapping:
 		say "You flap your wings, menacing everything in the near vicinity.";
@@ -92,17 +92,16 @@ Carry out pecking:
 		say "[The noun] switches on.";
 		now the noun is switched on;
 		stop the action;
-	if the noun is a device and the noun is switched on:
-		say "[The noun] switches off.";
-		now the noun is switched off;
+	if the noun is a device and the noun is switched on and the noun is broken:
+		say "[The noun] seems to be broken now.";
+
 
 A thing can be examined or unexamined. A thing is usually unexamined. Carry out examining something: now the noun is examined. 
 
 Taking inventory is acting confused. Looking is acting confused. Examining an examined thing is acting confused. 
 
 After acting confused for three turns:
-        say "(You feel a mighty primal urge to honk, to flap, and to peck things.)" 
-
+        say "You feel a mighty primal urge to honk, to flap, and to peck things." 
 
 			
 Understand "help" as getting help. Understand the commands "instructions" or "menu" or "info" or "about" as "help". 
@@ -110,12 +109,12 @@ Understand "help" as getting help. Understand the commands "instructions" or "me
 Getting help is an action applying to nothing.
 
 Carry out getting help:
-	say "You can honk and flap. Also, you can peck things.";
-	say "'look' shows you what's in a room. ";
-	say "'x' for examine shows you a long description of an object.";
-	say "'i' shows what you are carrying";
-	say "'take' may work on objects light enough for you to pick up.";
-	say "After you mess with things, try examining them again!'";
+	say "You can honk and flap. Also, you can peck things.[line break]";
+	say "'look' shows you what's in a room[line break]";
+	say "'x' or examine shows you a long description of an object[line break]";
+	say "'i' shows what you are carrying[line break]";
+	say "'take' may work on objects light enough for you to pick up[line break]";
+	say "After you mess with a thing, try examining it again![line break]";
 
 
 Section 2 - Rules for things
@@ -343,12 +342,12 @@ Section 4 - Wild goose chase
 
 Every turn:
 	if a developer is flustered:
-		say "[one of]'Horrible goose,'[or]'Catch it,'[or]'Nnnnnnggggg,'[then purely at random] yells the enraged developer[one of], chasing you.[or]. She trips over you, swearing.[or].[then purely at random]" ;
+		say "[one of]'Horrible goose,'[or]'Catch it,'[or]'Nnnnnnggggg,'[then purely at random] yells the enraged developer[one of], chasing you.[or]. She trips over you, swearing.[or]. She flails, knocking her own glasses onto the floor.[or].[then purely at random]" ;
 		if the location of the developer is not the location of the player:
 			let the way be the best route from the location of the developer to the location of the player, using doors;
 			try the developer going the way;
 	if a project manager is flustered:
-		say "[one of]'What the heck,'[or]'My meeting,'[or]'Get it out of here,'[then purely at random] shrieks the manager[one of], lurching forward.[or]. She falls over a chair.[or].[then purely at random]" ;
+		say "[one of]'What the heck,'[or]'My meeting,'[or]'Get it out of here,'[or]'Aaaaagggghh,'[then purely at random] shrieks the manager[one of], lurching forward.[or]. She falls over a chair.[or].[then purely at random]" ;
 		if the location of a project manager is not the location of the player:
 			let the way be the best route from the location of a project manager to the location of the player, using doors;
 			try a project manager going the way;
