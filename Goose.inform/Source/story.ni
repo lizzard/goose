@@ -271,6 +271,8 @@ A Conference room is west of an open-plan office. The description is "A large bo
 
 A chair is scenery in a conference room. It is a supporter. It is enterable.
 
+A table is scenery in a conference room. It is a supporter. It is enterable.
+
 A project manager is a person in a conference room. The description of a project manager is "A geeky looking person, concentrating deeply."
 
 After pecking a project manager for the first time:
@@ -359,6 +361,13 @@ After pecking a laptop for the first time:
 	now the printed name of a laptop is "broken laptop";
 	now the description of a laptop is "A broken laptop, with messed-up text scrolling through its flickering windows on a cracked screen.";
 	increment the score;
+	
+After taking a laptop for the first time:
+	say "You bite down hard on the laptop. Things crunch inside.";
+	if the laptop is not broken:
+		now the printed name of a laptop is "broken laptop";
+		now the description of a laptop is "A broken laptop with messed-up text scrolling through its flickering windows on a cracked screen.";
+		increment the score;
 
 Some spilled dirt is an object. 
 Some little bits of chewed up paper is an object.
