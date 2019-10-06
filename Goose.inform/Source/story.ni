@@ -3,7 +3,7 @@
 The story title is "Office Goose". 
 The story author is "Lizzard". 
 The story genre is "Comedy". 
-The release number is 5. 
+The release number is 6. 
 The story description is "It's a beautiful day in the office, and you are a horrible goose." 
 The story creation year is 2019.
 
@@ -29,6 +29,8 @@ Every turn:
 		say "Congratulations! You are the most horrible of horrible geese.";
 		say "This start-up office will never be the same.";
 		say "You run outside, ready to wreak mayhem on the rest of the world!";
+		say "* * * * * * * * * * * * * * * * * *";
+		say "Thanks to Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, and Jim Shepard for playtesting.";
 		end the story finally.
 
 The carrying capacity of the player is 1.
