@@ -3,7 +3,7 @@
 The story title is "Office Goose". 
 The story author is "Lizzard". 
 The story genre is "Comedy". 
-The release number is 6. 
+The release number is 7. 
 The story description is "It's a beautiful day in the office, and you are a horrible goose." 
 The story creation year is 2019.
 
@@ -19,7 +19,7 @@ the maximum score is 10;
 When play begins:
     now the left hand status line is
         "[the player's surroundings]";
-    now the right hand status line is "Score: [score]";
+    now the right hand status line is "Score: [score]/[maximum score]";
 	
 
 Every turn:
@@ -35,7 +35,9 @@ Every turn:
 
 The carrying capacity of the player is 1.
 
-After printing the banner text, say "It's a beautiful day in the office, and you are a horrible goose.";
+After printing the banner text: 
+	say "It's a beautiful day in the office, and you are a horrible goose.";
+	say "(If you aren't sure how to play, type 'help' and hit enter.)[paragraph break]"
 
 A person is either flustered or calm. A person is usually calm. 
 
@@ -127,16 +129,17 @@ Check dropping something:
 	if the player is in the office kitchen:
 		if the coffee maker is broken or the sink is broken or the coffee cup is broken:
 			now the noun is wet;
-			
+	
+Instead of eating a person:
+	say "Quite a challenge. A person is more likely to eat a goose, after all!";	
 		
 Section 3 - The Office
 
-An Open-plan office is a room. The description is "A large room with narrow hallways running between grey-walled cubicles. Exits lead east, west, and south."
+An Open-plan office is a room. The description is "You're in a large room with narrow hallways running between grey-walled cubicles. Exits lead east, west, and south."
 
 A potted palm is an object in an open-plan office. The description of a potted palm is "A large indoor plant with luxuriant fronds.[line break]You feel an urge to peck it." Understand "plant", "fronds", and "pot" as the potted palm. 
 
 The printer is a device in an open-plan office. It is fixed in place. The description of the printer is "This large printer has a ton of options for copying, collating, and stapling.[line break] What would happen if you pecked it, hard, with your powerful beak?"
-
 
 After taking a potted palm for the first time:
 	now the description of a potted palm is "A torn up potted plant, on its side with dirt spilling out.";
@@ -219,6 +222,8 @@ After pecking a cup of coffee:
 
 A Conference room is west of an open-plan office. The description is "A large board room with chairs arranged around a central table. Through the open door, you can see the main office to the east."
 
+A chair is scenery in a conference room. It is a supporter. It is enterable.
+
 A project manager is a person in a conference room. The description of a project manager is "A geeky looking person, concentrating deeply."
 
 After pecking a project manager for the first time:
@@ -243,8 +248,16 @@ After pecking an ipad for the first time:
 	now the description of a project manager is "An angry project manager ineptly chasing you.";
 	increment the score;
 	
-Instead of pecking a video camera:
-	say "You leap several feet in the air but fail to peck the video camera.";
+Check pecking a video camera:
+	if the player is on a chair:
+		say "The camera lens cracks.";
+		now the video camera is broken;
+		now the printed name of the video camera is "broken camera, dangling from a frayed cable";
+		increment the score;
+	otherwise:
+		say "You leap several feet in the air but fail to peck the video camera.";
+		stop the action.
+		
 
 Instead of switching on a device:
 	say "A concept somewhat beyond you. Try pecking it instead.";
