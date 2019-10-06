@@ -25,14 +25,14 @@
     </dict>
     <key>3</key><dict>
         <key>Filename</key><string>/Users/ehenry/dev/inform7/goose/Goose.inform/Source/story.ni</string>
-        <key>Line</key><integer>267</integer>
+        <key>Line</key><integer>268</integer>
         <key>Title</key><string>Section 3 - Wild goose chase</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>4</key><dict>
         <key>Filename</key><string>/Users/ehenry/dev/inform7/goose/Goose.inform/Source/story.ni</string>
-        <key>Line</key><integer>286</integer>
+        <key>Line</key><integer>285</integer>
         <key>Title</key><string>Section 4 - Overly complex inventory rules</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>

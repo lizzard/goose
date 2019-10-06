@@ -8,7 +8,7 @@ The story description is "It's a beautiful day in the office, and you are a horr
 The story creation year is 2019.
 
 Release along with an interpreter and cover art ("a quick line drawing of a goose").
-[Thanks to Danny O'Brien for setting up a web host for this at https://www.endofgreatness.com/officegoose/   Thanks Potch and Laurakeet for playtesting.]
+[Thanks to Danny O'Brien for setting up a web host for this at https://www.endofgreatness.com/officegoose/   Thanks Potch, Laurakeet, Hannah Diaz,  for playtesting.]
 
 use serial comma;
 
@@ -155,6 +155,7 @@ Instead of examining a purple-haired developer:
 After pecking a pod-based coffee maker for the first time:
 	say "Coffee sprays out of the coffee maker!";
 	now puddles of spilled coffee is in the location of the player;
+	now the printed name of the coffee maker is "mangled coffee maker";
 	now the developer is flustered;
 	increment the score;
 
@@ -184,7 +185,7 @@ After pecking a cup of coffee:
 		now the description of a developer is "A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.";
 
 
-A Conference room is west of an open-plan office. The description is "A large board room with chairs arranged around a central table. Through the open door, you can see the main office."
+A Conference room is west of an open-plan office. The description is "A large board room with chairs arranged around a central table. Through the open door, you can see the main office to the east."
 
 A project manager is a person in a conference room. The description of a project manager is "A geeky looking person, concentrating deeply."
 
@@ -206,8 +207,8 @@ After pecking an ipad for the first time:
 	say "The conference call participants all start talking at once!";
 	say "Someone yells, 'STOP THAT GOOSE!' and starts to chase you!";
 	now the printed name of an ipad is "battered and scratched ipad";
-	now the printed name of a project manager is "flustered geek, chasing you around the room";
-	now the description of a project manager is "A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.";
+	now the printed name of a project manager is "flustered manager";
+	now the description of a project manager is "An angry project manager ineptly chasing you.";
 	increment the score;
 	
 Instead of pecking a video camera:
@@ -267,10 +268,9 @@ Instead of drinking a liquid:
 Section 3 - Wild goose chase
 
 
-
 Every turn:
 	if a developer is flustered:
-		say "[one of]'Horrible goose,'[or]'Catch it,'[or]'Nnnnnnggggg,'[then purely at random] yells the enraged developer[one of], chasing you.[or]. She trips and falls over, swearing.[or].[then purely at random]" ;
+		say "[one of]'Horrible goose,'[or]'Catch it,'[or]'Nnnnnnggggg,'[then purely at random] yells the enraged developer[one of], chasing you.[or]. She trips over you, swearing.[or].[then purely at random]" ;
 		if the location of the developer is not the location of the player:
 			let the way be the best route from the location of the developer to the location of the player, using doors;
 			try the developer going the way;
@@ -280,7 +280,6 @@ Every turn:
 			let the way be the best route from the location of a project manager to the location of the player, using doors;
 			try a project manager going the way;
 	
-
 		
 
 Section 4 - Overly complex inventory rules

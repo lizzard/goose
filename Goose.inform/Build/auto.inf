@@ -12399,7 +12399,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
     if (debug_rules) DB_Rule(R_832, 832);
     ! [2: if a developer is flustered]
     if ((((Adj_86_t1_v10(I133_purple_haired_developer)))))
-    {! [3: say ~[one of]'Horrible goose,'[or]'Catch it,'[or]'Nnnnnnggggg,'[then purely at random] yells the enraged developer[one of], chasing you.[or]. She trips and falls over, swearing.[or].[then purely at random]~]
+    {! [3: say ~[one of]'Horrible goose,'[or]'Catch it,'[or]'Nnnnnnggggg,'[then purely at random] yells the enraged developer[one of], chasing you.[or]. She trips over you, swearing.[or].[then purely at random]~]
         say__p=1;! [4: one of]
         ParaContent(); 
         	
@@ -12433,8 +12433,8 @@ Array ActionHappened --> 0 0 0 0 0 0;
         {
         		0:! [13: ~, chasing you.~]
         ParaContent(); print ", chasing you."; new_line;! [14: or]
-        ParaContent(); @nop; 1:! [15: ~. She trips and falls over, swearing.~]
-        ParaContent(); print ". She trips and falls over, swearing."; new_line;! [16: or]
+        ParaContent(); @nop; 1:! [15: ~. She trips over you, swearing.~]
+        ParaContent(); print ". She trips over you, swearing."; new_line;! [16: or]
         ParaContent(); @nop; 2:! [17: ~.~]
         ParaContent(); print "."; new_line;! [18: then purely at random]
         ParaContent(); } .L_Say6; .L_SayX6;! [19: if the location of the developer is not the location of the player]
@@ -13147,9 +13147,11 @@ Array ActionHappened --> 0 0 0 0 0 0;
     say__p=1;! [3: ~Coffee sprays out of the coffee maker!~]
     ParaContent(); print "Coffee sprays out of the coffee maker!"; new_line; .L_Say19; .L_SayX19;! [4: now puddles of spilled coffee is in the location of the player]
     MoveObject(I146_puddles_of_spilled_coff,LocationOf(player));
-    ! [5: now the developer is flustered]
+    ! [5: now the printed name of the coffee maker is ~mangled coffee maker~]
+    BlkValueCopy(GProperty(10, I130_pod_based_coffee_maker,short_name), TX_L_83);
+    ! [6: now the developer is flustered]
     (Adj_86_t2_v10(I133_purple_haired_developer));
-    ! [6: increment the score]
+    ! [7: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
     } else if (debug_rules > 1) DB_Rule(R_818, 818, 'action');
@@ -13182,13 +13184,13 @@ Array ActionHappened --> 0 0 0 0 0 0;
     ! [2: say ~The developer shrieks in rage. She comes at you ready to kill.~]
     say__p=1;! [3: ~The developer shrieks in rage. She comes at you ready to kill.~]
     ParaContent(); print "The developer shrieks in rage. She comes at you ready to kill."; new_line; .L_Say21; .L_SayX21;! [4: now the printed name of a purple-haired developer is ~wet, scalded developer~]
-    BlkValueCopy(GProperty(10, I133_purple_haired_developer,short_name), TX_L_83);
+    BlkValueCopy(GProperty(10, I133_purple_haired_developer,short_name), TX_L_84);
     ! [5: now the cup of coffee is in the location of the player]
     MoveObject(I132_cup_of_coffee,LocationOf(player));
     ! [6: now puddles of coffee is in the location of the player]
     MoveObject(I146_puddles_of_spilled_coff,LocationOf(player));
     ! [7: now the printed name of the cup of coffee is ~empty coffee cup~]
-    BlkValueCopy(GProperty(10, I132_cup_of_coffee,short_name), TX_L_84);
+    BlkValueCopy(GProperty(10, I132_cup_of_coffee,short_name), TX_L_85);
     ! [8: now the developer is flustered]
     (Adj_86_t2_v10(I133_purple_haired_developer));
     ! [9: increment the score]
@@ -13210,9 +13212,9 @@ Array ActionHappened --> 0 0 0 0 0 0;
     ParaContent(); print "~OUCH!!! HEY!!!~"; new_line; .L_Say23; .L_SayX23;! [6: say ~The project manager leaps up from her chair!~]
     say__p=1;! [7: ~The project manager leaps up from her chair!~]
     ParaContent(); print "The project manager leaps up from her chair!"; new_line; .L_Say24; .L_SayX24;! [8: now the printed name of a project manager is ~flustered manager~]
-    BlkValueCopy(GProperty(10, I135_project_manager,short_name), TX_L_85);
+    BlkValueCopy(GProperty(10, I135_project_manager,short_name), TX_L_86);
     ! [9: now the description of a project manager is ~A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.~]
-    BlkValueCopy(GProperty(10, I135_project_manager,description), TX_L_86);
+    BlkValueCopy(GProperty(10, I135_project_manager,description), TX_L_87);
     ! [10: now a project manager is flustered]
     (Adj_86_t2_v10(I135_project_manager));
     ! [11: increment the score]
@@ -13234,11 +13236,11 @@ Array ActionHappened --> 0 0 0 0 0 0;
     ParaContent(); print "The conference call participants all start talking at once!"; new_line; .L_Say26; .L_SayX26;! [6: say ~Someone yells, 'STOP THAT GOOSE!' and starts to chase you!~]
     say__p=1;! [7: ~Someone yells, 'STOP THAT GOOSE!' and starts to chase you!~]
     ParaContent(); print "Someone yells, ~STOP THAT GOOSE!~ and starts to chase you!"; new_line; .L_Say27; .L_SayX27;! [8: now the printed name of an ipad is ~battered and scratched ipad~]
-    BlkValueCopy(GProperty(10, I136_ipad,short_name), TX_L_87);
-    ! [9: now the printed name of a project manager is ~flustered geek, chasing you around the room~]
-    BlkValueCopy(GProperty(10, I135_project_manager,short_name), TX_L_88);
-    ! [10: now the description of a project manager is ~A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.~]
-    BlkValueCopy(GProperty(10, I135_project_manager,description), TX_L_86);
+    BlkValueCopy(GProperty(10, I136_ipad,short_name), TX_L_88);
+    ! [9: now the printed name of a project manager is ~flustered manager~]
+    BlkValueCopy(GProperty(10, I135_project_manager,short_name), TX_L_86);
+    ! [10: now the description of a project manager is ~An angry project manager ineptly chasing you.~]
+    BlkValueCopy(GProperty(10, I135_project_manager,description), TX_L_89);
     ! [11: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -13254,9 +13256,9 @@ Array ActionHappened --> 0 0 0 0 0 0;
     ! [2: say ~The desk starts going up and down at random.~]
     say__p=1;! [3: ~The desk starts going up and down at random.~]
     ParaContent(); print "The desk starts going up and down at random."; new_line; .L_Say28; .L_SayX28;! [4: now the printed name of an adjustable desk is ~broken adjustable desk~]
-    BlkValueCopy(GProperty(10, I139_adjustable_desk,short_name), TX_L_89);
+    BlkValueCopy(GProperty(10, I139_adjustable_desk,short_name), TX_L_90);
     ! [5: now the description of an adjustable desk is ~An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.~]
-    BlkValueCopy(GProperty(10, I139_adjustable_desk,description), TX_L_90);
+    BlkValueCopy(GProperty(10, I139_adjustable_desk,description), TX_L_91);
     ! [6: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -13270,9 +13272,9 @@ Array ActionHappened --> 0 0 0 0 0 0;
     self = noun;
     if (debug_rules) DB_Rule(R_828, 828);
     ! [2: now the printed name of a tattered copy of design patterns is ~book with the cover torn off~]
-    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,short_name), TX_L_91);
+    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,short_name), TX_L_92);
     ! [3: now the description of a tattered copy of design patterns is ~A book with the cover torn off, covered in goose spit.~]
-    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,description), TX_L_92);
+    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,description), TX_L_93);
     ! [4: now little bits of chewed up paper is in the location of the player]
     MoveObject(I143_little_bits_of_chewed_u,LocationOf(player));
     ! [5: increment the score]
@@ -13290,9 +13292,9 @@ Array ActionHappened --> 0 0 0 0 0 0;
     ! [2: say ~Tasty! You could pick up the whole book and carry it around!~]
     say__p=1;! [3: ~Tasty! You could pick up the whole book and carry it around!~]
     ParaContent(); print "Tasty! You could pick up the whole book and carry it around!"; new_line; .L_Say29; .L_SayX29;! [4: now the printed name of a tattered copy of design patterns is ~book with the cover torn off~]
-    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,short_name), TX_L_91);
+    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,short_name), TX_L_92);
     ! [5: now the description of a tattered copy of design patterns is ~A book with the cover torn off, covered in goose spit.~]
-    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,description), TX_L_92);
+    BlkValueCopy(GProperty(10, I140_tattered_copy_of_design,description), TX_L_93);
     ! [6: now little bits of chewed up paper is in the location of the player]
     MoveObject(I143_little_bits_of_chewed_u,LocationOf(player));
     RulebookSucceeds(); rtrue;
@@ -13308,9 +13310,9 @@ Array ActionHappened --> 0 0 0 0 0 0;
     ! [2: say ~Your beak mashes the keys and cracks the screen.~]
     say__p=1;! [3: ~Your beak mashes the keys and cracks the screen.~]
     ParaContent(); print "Your beak mashes the keys and cracks the screen."; new_line; .L_Say30; .L_SayX30;! [4: now the printed name of a laptop is ~broken laptop~]
-    BlkValueCopy(GProperty(10, I141_laptop,short_name), TX_L_93);
+    BlkValueCopy(GProperty(10, I141_laptop,short_name), TX_L_94);
     ! [5: now the description of a laptop is ~A broken laptop, with messed-up text scrolling through its flickering windows on a cracked screen.~]
-    BlkValueCopy(GProperty(10, I141_laptop,description), TX_L_94);
+    BlkValueCopy(GProperty(10, I141_laptop,description), TX_L_95);
     ! [6: increment the score]
     score = score + 1;;
     RulebookSucceeds(); rtrue;
@@ -13352,11 +13354,11 @@ Array ActionHappened --> 0 0 0 0 0 0;
         ! [7: now the developer is flustered]
         (Adj_86_t2_v10(I133_purple_haired_developer));
         ! [8: now the printed name of the cup of coffee is ~empty coffee cup~]
-        BlkValueCopy(GProperty(10, I132_cup_of_coffee,short_name), TX_L_84);
+        BlkValueCopy(GProperty(10, I132_cup_of_coffee,short_name), TX_L_85);
         ! [9: now the printed name of a developer is ~wet, scalded developer~]
-        BlkValueCopy(GProperty(10, I133_purple_haired_developer,short_name), TX_L_83);
+        BlkValueCopy(GProperty(10, I133_purple_haired_developer,short_name), TX_L_84);
         ! [10: now the description of a developer is ~A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.~]
-        BlkValueCopy(GProperty(10, I133_purple_haired_developer,description), TX_L_95);
+        BlkValueCopy(GProperty(10, I133_purple_haired_developer,description), TX_L_96);
         }
         RulebookSucceeds(); rtrue;
         } else if (debug_rules > 1) DB_Rule(R_821, 821, 'action');
@@ -20447,7 +20449,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
     if (((((parameter_value ofclass K2_thing))))) { ! Runs only when pattern matches
     if (debug_rules) DB_Rule(R_835, 835);
     ! [2: add ~in your beak~ to the tagline]
-    LIST_OF_TY_InsertItem((MStack-->MstVO(374,0)), BlkValueCopy(I7SFRAME, TX_L_96), 0, 0, 0);
+    LIST_OF_TY_InsertItem((MStack-->MstVO(374,0)), BlkValueCopy(I7SFRAME, TX_L_97), 0, 0, 0);
     } else if (debug_rules > 1) DB_Rule(R_835, 835, 'action');
     rfalse;
 ];
@@ -50954,26 +50956,28 @@ Verb 'help' 'instructions' 'menu' 'info' 'about'
 
 Constant TX_PS_72 = ">";
 Constant TX_PS_60 = "A beautiful ergonomic desk, adjustable with electronic controls.";
-Constant TX_PS_92 = "A book with the cover torn off, covered in goose spit.";
-Array TX_L_92 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_92;
-Constant TX_PS_94 = "A broken laptop, with messed-up text scrolling through its flickering windows on a cracked screen.";
-Array TX_L_94 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_94;
-Constant TX_PS_53 = "A geeky looking person, concentrating deeply.";
-Constant TX_PS_95 = "A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.";
+Constant TX_PS_93 = "A book with the cover torn off, covered in goose spit.";
+Array TX_L_93 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_93;
+Constant TX_PS_95 = "A broken laptop, with messed-up text scrolling through its flickering windows on a cracked screen.";
 Array TX_L_95 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_95;
-Constant TX_PS_86 = "A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.";
-Array TX_L_86 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_86;
+Constant TX_PS_53 = "A geeky looking person, concentrating deeply.";
+Constant TX_PS_96 = "A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.";
+Array TX_L_96 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_96;
+Constant TX_PS_87 = "A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.";
+Array TX_L_87 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_87;
 Constant TX_PS_46 = "A gleaming, tidy sink.";
 Constant TX_PS_64 = "A laptop with several windows open, showing some code.";
-Constant TX_PS_51 = "A large board room with chairs arranged around a central table. Through the open door, you can see the main office.";
+Constant TX_PS_51 = "A large board room with chairs arranged around a central table. Through the open door, you can see the main office to the east.";
 Constant TX_PS_36 = "A large room with narrow hallways running between grey-walled cubicles. Exits lead east, west, and south.";
 Constant TX_PS_49 = "A steaming, very full cup of coffee.";
 Constant TX_PS_80 = "A torn up potted plant, on its side with dirt spilling out.";
 Array TX_L_80 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_80;
 Constant TX_PS_3 = "An Interactive Fiction";
-Constant TX_PS_90 = "An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.";
-Array TX_L_90 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_90;
+Constant TX_PS_91 = "An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.";
+Array TX_L_91 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_91;
 Constant TX_PS_58 = "An adjustable standing/sitting desk dominates this spacious cubicle. The main office is just to the north.";
+Constant TX_PS_89 = "An angry project manager ineptly chasing you.";
+Array TX_L_89 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_89;
 Constant TX_PS_55 = "An ipad with an interface to control a video conference.";
 Constant TX_PS_73 = "Comedy";
 Constant TX_PS_50 = "Conference room";
@@ -50998,14 +51002,14 @@ Constant TX_PS_34 = "Yourself";
 Constant TX_PS_59 = "adjustable desk";
 Constant TX_PS_9 = "animals";
 Constant TX_PS_14 = "backdrops";
-Constant TX_PS_87 = "battered and scratched ipad";
-Array TX_L_87 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_87;
-Constant TX_PS_91 = "book with the cover torn off";
-Array TX_L_91 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_91;
-Constant TX_PS_89 = "broken adjustable desk";
-Array TX_L_89 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_89;
-Constant TX_PS_93 = "broken laptop";
-Array TX_L_93 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_93;
+Constant TX_PS_88 = "battered and scratched ipad";
+Array TX_L_88 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_88;
+Constant TX_PS_92 = "book with the cover torn off";
+Array TX_L_92 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_92;
+Constant TX_PS_90 = "broken adjustable desk";
+Array TX_L_90 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_90;
+Constant TX_PS_94 = "broken laptop";
+Array TX_L_94 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_94;
 Constant TX_PS_11 = "containers";
 Constant TX_PS_48 = "cup of coffee";
 Constant TX_PS_82 = "dented printer";
@@ -51015,19 +51019,19 @@ Constant TX_PS_18 = "directions";
 Constant TX_PS_10 = "doors";
 Constant TX_PS_29 = "down";
 Constant TX_PS_26 = "east";
-Constant TX_PS_84 = "empty coffee cup";
-Array TX_L_84 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_84;
-Constant TX_PS_88 = "flustered geek, chasing you around the room";
-Array TX_L_88 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_88;
-Constant TX_PS_85 = "flustered manager";
+Constant TX_PS_85 = "empty coffee cup";
 Array TX_L_85 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_85;
-Constant TX_PS_96 = "in your beak";
-Array TX_L_96 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_96;
+Constant TX_PS_86 = "flustered manager";
+Array TX_L_86 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_86;
+Constant TX_PS_97 = "in your beak";
+Array TX_L_97 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_97;
 Constant TX_PS_30 = "inside";
 Constant TX_PS_54 = "ipad";
 Constant TX_PS_63 = "laptop";
 Constant TX_PS_16 = "liquids";
 Constant TX_PS_66 = "little bits of chewed up paper";
+Constant TX_PS_83 = "mangled coffee maker";
+Array TX_L_83 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_83;
 Constant TX_PS_7 = "men";
 Constant TX_PS_19 = "north";
 Constant TX_PS_21 = "northeast";
@@ -51060,8 +51064,8 @@ Constant TX_PS_28 = "up";
 Constant TX_PS_12 = "vehicles";
 Constant TX_PS_56 = "video camera";
 Constant TX_PS_27 = "west";
-Constant TX_PS_83 = "wet, scalded developer";
-Array TX_L_83 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_83;
+Constant TX_PS_84 = "wet, scalded developer";
+Array TX_L_84 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_84;
 Constant TX_PS_8 = "women";
 Constant TX_PS_32 = "yourself";
 Array TX_L_32 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_32;
