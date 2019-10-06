@@ -104,8 +104,11 @@ Carry out getting help:
 	say "After you mess with things, try examining them again!'";
 
 
+Section 2 - Rules for things
+
+A thing can be broken or functional. A thing is usually functional.
 		
-Section 2 - The Office
+Section 3 - The Office
 
 An Open-plan office is a room. The description is "A large room with narrow hallways running between grey-walled cubicles. Exits lead east, west, and south."
 
@@ -253,19 +256,25 @@ After pecking a laptop for the first time:
 	now the description of a laptop is "A broken laptop, with messed-up text scrolling through its flickering windows on a cracked screen.";
 	increment the score;
 
+A liquid is a kind of thing.
+Instead of drinking a liquid:
+	say "You drink from the [noun].";
+	
+A thing can be wet or dry. A thing is usually dry.
+
+
+
+Before printing the name of a wet thing: say "wet ". Understand the wet property as describing a thing. 
 
 Some spilled dirt is an object. 
 Some little bits of chewed up paper is an object.
 Some sheets of paper is an object.
 
-A liquid is a kind of thing.
 puddles of spilled coffee is a liquid. 
 puddles of water is a liquid. Understand "water" as puddles of water.
 
-Instead of drinking a liquid:
-	say "You drink from the [noun].";
 
-Section 3 - Wild goose chase
+Section 4 - Wild goose chase
 
 
 Every turn:
@@ -282,7 +291,7 @@ Every turn:
 	
 		
 
-Section 4 - Overly complex inventory rules
+Section 5 - Overly complex inventory rules
 
 [Adds taglines to your inventory for particular things] 
 		
