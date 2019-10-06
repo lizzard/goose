@@ -3,18 +3,18 @@
 The story title is "Office Goose". 
 The story author is "Lizzard". 
 The story genre is "Comedy". 
-The release number is 9. 
+The release number is 10. 
 The story description is "It's a beautiful day in the office, and you are a horrible goose." 
 The story creation year is 2019.
 
 Release along with an interpreter and cover art ("a quick line drawing of a goose").
-[Thanks to Danny O'Brien for setting up a web host for this at https://www.endofgreatness.com/officegoose/   Thanks Potch, Laurakeet, Britta Gustafson, Hannah Diaz, and Jim Shepard, Milo Kim, and Danny O'Brien for playtesting.]
+[Thanks to Danny O'Brien for setting up a web host for this at https://www.endofgreatness.com/officegoose/   Thanks Potch, Laurakeet, Britta Gustafson, Hannah Diaz, and Jim Shepard, Milo Kim, Jack Kukulski, and Danny O'Brien for playtesting.]
 
 use serial comma;
 
 use scoring;
 
-the maximum score is 10;
+the maximum score is 13;
 
 When play begins:
     now the left hand status line is
@@ -25,13 +25,21 @@ When play begins:
 Every turn:
 	if the turn count is four:
 		say "You feel a mighty primal urge to honk, to flap, and to peck things."; 
-	if the score is greater than 9:
-		say "Congratulations! You are the most horrible of horrible geese.";
-		say "This start-up office will never be the same.";
-		say "You run outside, ready to wreak mayhem on the rest of the world!";
-		say "* * * * * * * * * * * * * * * * * *";
-		say "Thanks to Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, Milo Kim, and Jim Shepard for playtesting.";
+	if the sink is broken and the coffee maker is broken and the developer is flustered:
+		now the fire alarm is in An office kitchen;
+	if the fire alarm is broken and the turn count is even:
+		say "oooooOOOOOOoooooo BEEP BEEP BEEP!";
+	if the developer is carrying a fire extinguisher and the developer is in open-plan office:
+		say "The developer slips, dropping the extinguisher.";
+		now the extinguisher is in the location of the player;
+	if the score is greater than 12:
+		say "[paragraph break]Congratulations! You are the most horrible of horrible geese.[line break]";
+		say "This start-up office will never be the same.[line break]";
+		say "You run outside, ready to wreak mayhem on the rest of the world![paragraph break]";
+		say "* * * * * * * * * * * * * * * * * *[paragraph break]";
+		say "Thanks to playtesters Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, Milo Kim, and Jim Shepard.";
 		end the story finally.
+		
 
 The carrying capacity of the player is 1.
 
@@ -146,20 +154,18 @@ Instead of throwing something at something:
 	now the noun is in the location of the player;
 
 
-
-	
 		
 Section 3 - The Office
 
 An Open-plan office is a room. The description is "You're in a large open room. Narrow corridors run between grey-walled cubicles. Exits lead east, west, and south."
 
-A potted palm is an object in an open-plan office. The description of a potted palm is "A large indoor plant with luxuriant fronds.[line break]You feel an urge to peck it." Understand "plant", "fronds", and "pot" as the potted palm. 
+A potted palm is an object in an open-plan office. The description of a potted palm is "A large indoor plant with luxuriant fronds.[line break]You feel an urge to peck it." Understand "plant", "fronds", "tree", and "pot" as the potted palm. 
 
 The printer is a device in an open-plan office. It is fixed in place. The description of the printer is "This large printer has a ton of options for copying, collating, and stapling.[line break] What would happen if you pecked it, hard, with your powerful beak?"
 
 After taking a potted palm for the first time:
 	now the description of a potted palm is "A torn up potted plant, on its side with dirt spilling out.";
-	now the printed name of a potted palm is "torn-up potted palm, lying sideways";
+	now the printed name of a potted palm is "torn-up potted palm tree";
 	now spilled dirt is in the location of the player;
 	now the palm is broken;
 	increment the score;
@@ -170,7 +176,6 @@ After pecking a potted palm:
 	now the printed name of a potted palm is "torn-up potted palm, lying sideways";
 	now the palm is broken;
 	now spilled dirt is in the location of the player;
-
 
 After pecking the printer for the first time:
 	say "Some sheets of paper fly out of the printer and across the room.";
@@ -191,6 +196,25 @@ A pod-based coffee maker is a device in an office kitchen. It is fixed in place.
 A sink is a device in an office kitchen. It is fixed in place. The description is "A gleaming, tidy sink."
 
 A cup of coffee is an object. The description is "A steaming, very full cup of coffee."
+
+A fire alarm is a device. The description is "An unobtrusive red box, mounted high on the kitchen wall." Understand "box" as a fire alarm. 
+
+After pecking the fire alarm:
+	now the fire alarm is switched on;
+	now the fire alarm is broken;
+	say "The glass covering the fire alarm switch breaks."; 
+	say "ooooooOOOOOOooooooo!";
+	say "The developer panics, opens a cupboard and takes out a fire extinguisher.";
+	now the developer is carrying a fire extinguisher;
+	increment the score;
+	
+A fire extinguisher is a device. The description is "A large red cylinder with a trigger handle.";
+
+After pecking the fire extinguisher:
+	now the fire extinguisher is broken;
+	say "Nasty-smelling foam spews out of the extinguisher, coating the walls.";
+	now the printed name of the extinguisher is "fire extinguisher rolling around as it sprays foam everywhere";
+	increment the score;
 
 A purple-haired developer is a person.  She is in an office kitchen.  A purple-haired developer is carrying a cup of coffee.
 
