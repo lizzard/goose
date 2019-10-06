@@ -42,7 +42,7 @@ Array UUID_ARRAY string "UUID://DD12A67A-698C-4117-AC89-763288B49A46//";
 Global Story = BC_0;
 Constant Headline BC_1;
 Constant Story_Author BC_2;
-Release 7;
+Release 8;
 Serial "191005";
 
 Default Story 0;
@@ -11671,7 +11671,7 @@ Array Global_Vars -->
   (BC_298) ! 33 story headline
   (BC_299) ! 34 story genre
   (BC_300) ! 35 story description
-  (7) ! 36 release number
+  (8) ! 36 release number
   (2019) ! 37 story creation year
   (0) ! 45 locale paragraph count
 ;

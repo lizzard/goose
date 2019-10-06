@@ -1606,6 +1606,7 @@ You can see an adjustable desk (on which are a tattered copy of the book 'Design
         <children><child nodeId="node-1893"></child>
             <child nodeId="node-1797"></child>
             <child nodeId="node-1437"></child>
+            <child nodeId="node-1896"></child>
             <child nodeId="node-1840"></child>
             <child nodeId="node-1851"></child>
             <child nodeId="node-1890"></child>
@@ -1772,6 +1773,21 @@ Taken.
     <item nodeId="node-1844">
         <command xml:space="preserve">throw book at laptop</command>
         <result xml:space="preserve">Futile.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1896">
+        <command xml:space="preserve">read code</command>
+        <result xml:space="preserve"> "changesets": 
+ "desc": "Bug 1341190 - Remove .popup-anchor visibility rule. r=mconley, a=lizzard\n\nMozReview-Commit-ID: DFMIKMMnLx5"
+},
+ {
+  "desc": "Bug 1348409 - Stop supporting the showDialog argument for window.find. r=mrbkap, a=lizzard\n\nThe dialog functionality of the non-standard window.find API has been broken\nwith e10s since it shipped, and bug 1182569 or bug 1232432 (or both) have\nbroken it for non-e10s.\n\nThis patch remove showDialog support entirely, for both e10s and non-e10s,\nin a more deliberate way. We now ignore the argument.\n\nMozReview-Commit-ID: 1CTzgEkDhHW" 
+ },
+
+
+Your tiny, walnut-sized brain hurts a bit. Now you want to bite something.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>

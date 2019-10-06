@@ -176,7 +176,7 @@ Phase XIII ... Compilation now complete
 
 CAT "a quick line drawing of a goose"
 Total of 111 files written as streams.
-CPU time: 197 centiseconds
+CPU time: 194 centiseconds
 
 
 That concludes the debugging log from this run of Inform.
