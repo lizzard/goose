@@ -3,12 +3,12 @@
 The story title is "Office Goose". 
 The story author is "Lizzard". 
 The story genre is "Comedy". 
-The release number is 4. 
+The release number is 5. 
 The story description is "It's a beautiful day in the office, and you are a horrible goose." 
 The story creation year is 2019.
 
 Release along with an interpreter and cover art ("a quick line drawing of a goose").
-[Thanks to Danny O'Brien for setting up a web host for this at https://www.endofgreatness.com/officegoose/]
+[Thanks to Danny O'Brien for setting up a web host for this at https://www.endofgreatness.com/officegoose/   Thanks Potch and Laurakeet for playtesting.]
 
 use serial comma;
 
@@ -19,9 +19,12 @@ the maximum score is 10;
 When play begins:
     now the left hand status line is
         "[the player's surroundings]";
-    now the right hand status line is "Score: [score]". 
+    now the right hand status line is "Score: [score]";
+	
 
 Every turn:
+	if the turn count is four:
+		say "(You feel a mighty primal urge to honk, to flap, and to peck things.)"; 
 	if the score is greater than 9:
 		say "Congratulations! You are the most horrible of horrible geese.";
 		say "This start-up office will never be the same.";
@@ -84,7 +87,10 @@ A thing can be examined or unexamined. A thing is usually unexamined. Carry out 
 Taking inventory is acting confused. Looking is acting confused. Examining an examined thing is acting confused. 
 
 After acting confused for three turns:
-        say "(You feel a mighty primal urge to honk, to flap, and to peck things.)" 			
+        say "(You feel a mighty primal urge to honk, to flap, and to peck things.)" 
+
+
+			
 Understand "help" as getting help. Understand the commands "instructions" or "menu" or "info" or "about" as "help". 
 
 Getting help is an action applying to nothing.
@@ -93,7 +99,9 @@ Carry out getting help:
 	say "You can honk and flap. Also, you can peck things.";
 	say "'look' shows you what's in a room. ";
 	say "'x' for examine shows you a long description of an object.";
+	say "'i' shows what you are carrying";
 	say "'take' may work on objects light enough for you to pick up.";
+	say "After you mess with things, try examining them again!'";
 
 
 		
@@ -101,7 +109,7 @@ Section 2 - The Office
 
 An Open-plan office is a room. The description is "A large room with narrow hallways running between grey-walled cubicles. Exits lead east, west, and south."
 
-A potted palm is an object in an open-plan office. The description of a potted palm is "A large indoor plant with luxuriant fronds.[line break]You feel an urge to peck it."
+A potted palm is an object in an open-plan office. The description of a potted palm is "A large indoor plant with luxuriant fronds.[line break]You feel an urge to peck it." Understand "plant", "fronds", and "pot" as the potted palm. 
 
 The printer is a device in an open-plan office. It is fixed in place. The description of the printer is "This large printer has a ton of options for copying, collating, and stapling.[line break] What would happen if you pecked it, hard, with your powerful beak?"
 
@@ -128,6 +136,11 @@ After pecking the printer for the first time:
 
 An Office kitchen is east of an open-plan office. The description is "This mini kitchen has tasty snacks and bad coffee. The main office is just to the east."
 
+The snacks are scenery in an office kitchen. The description of the snacks is "They're just out of your reach. Infuriating. " 
+
+Instead of taking scenery:
+	say "You can't reach it. How infuriating!";
+
 A pod-based coffee maker is a device in an office kitchen. It is fixed in place. The description is "This sturdy machine is ready to make you a bitter cup of plastic swill."
 
 A sink is a device in an office kitchen. It is fixed in place. The description is "A gleaming, tidy sink."
@@ -153,7 +166,7 @@ After pecking a sink for the first time:
 	
 After pecking a purple-haired developer for the first time:
 	say "The developer shrieks in rage. She comes at you ready to kill.";
-	now the printed name of a purple-haired developer is "purple-haired developer trying to catch you";
+	now the printed name of a purple-haired developer is "wet, scalded developer";
 	now the cup of coffee is in the location of the player;
 	now puddles of coffee is in the location of the player;
 	now the printed name of the cup of coffee is "empty coffee cup";
@@ -167,8 +180,8 @@ After pecking a cup of coffee:
 		now puddles of coffee is in the location of the player;
 		now the developer is flustered;
 		now the printed name of the cup of coffee is "empty coffee cup";
-		now the printed name of a project manager is "wet, scalded geek, chasing you around the room.";
-		now the description of a project manager is "A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.";
+		now the printed name of a developer is "wet, scalded developer";
+		now the description of a developer is "A geeky looking person, covered in coffee, coming at you with hands outstretched to grab your neck.";
 
 
 A Conference room is west of an open-plan office. The description is "A large board room with chairs arranged around a central table. Through the open door, you can see the main office."
@@ -179,9 +192,9 @@ After pecking a project manager for the first time:
 	say "You peck her in the butt, feeling a deep sense of satisfaction.";
 	say "'OUCH!!! HEY!!!'";
 	say "The project manager leaps up from her chair!";
-	now the printed name of a project manager is "flustered geek";
+	now the printed name of a project manager is "flustered manager";
 	now the description of a project manager is "A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.";
-	now the project manager is flustered;
+	now a project manager is flustered;
 	increment the score;
 
 An ipad is an object in a conference room. It is fixed in place. The description of an ipad is "An ipad with an interface to control a video conference."
@@ -243,24 +256,29 @@ After pecking a laptop for the first time:
 Some spilled dirt is an object. 
 Some little bits of chewed up paper is an object.
 Some sheets of paper is an object.
-puddles of spilled coffee is an object.
-puddles of water is an object.
+
+A liquid is a kind of thing.
+puddles of spilled coffee is a liquid. 
+puddles of water is a liquid. Understand "water" as puddles of water.
+
+Instead of drinking a liquid:
+	say "You drink from the [noun].";
 
 Section 3 - Wild goose chase
 
 
 
 Every turn:
-	if the developer is flustered:
-		say "[one of]'Horrible goose,'[or]'Catch it,'[or]'Nnnnnnggggg,'[then purely at random] yells the developer[one of], chasing you.[or]. She trips and falls over, swearing.[or].[then purely at random]" ;
+	if a developer is flustered:
+		say "[one of]'Horrible goose,'[or]'Catch it,'[or]'Nnnnnnggggg,'[then purely at random] yells the enraged developer[one of], chasing you.[or]. She trips and falls over, swearing.[or].[then purely at random]" ;
 		if the location of the developer is not the location of the player:
 			let the way be the best route from the location of the developer to the location of the player, using doors;
 			try the developer going the way;
-	if the project manager is flustered:
+	if a project manager is flustered:
 		say "[one of]'What the heck,'[or]'My meeting,'[or]'Get it out of here,'[then purely at random] shrieks the manager[one of], lurching forward.[or]. She falls over a chair.[or].[then purely at random]" ;
-		if the location of the project manager is not the location of the player:
-			let the way be the best route from the location of the project manager to the location of the player, using doors;
-			try the project manager going the way;
+		if the location of a project manager is not the location of the player:
+			let the way be the best route from the location of a project manager to the location of the player, using doors;
+			try a project manager going the way;
 	
 
 		

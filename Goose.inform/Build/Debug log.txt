@@ -1,5 +1,5 @@
 Debugging log of Inform 7
-Inform called as: /Applications/Inform.app/Contents/MacOS/ni -internal /Applications/Inform.app/Contents/Resources/Internal -external /Users/ehenry/Library/Inform -project /Users/ehenry/dev/inform7/goose/Goose.inform -format=ulx
+Inform called as: /Applications/Inform.app/Contents/MacOS/ni -internal /Applications/Inform.app/Contents/Resources/Internal -external /Users/ehenry/Library/Inform -project /Users/ehenry/dev/inform7/goose/Goose.inform -format=ulx -release
 Found language bundle 'German' (built in)
 Found language bundle 'Italian' (built in)
 Found language bundle 'English' (built in)
@@ -14,7 +14,7 @@ Reading language definition from </Applications/Inform.app/Contents/Resources/In
 Phase I ... Lexical analysis
 -----------------------------------------------------
 
-I've now read your source text, which is 2253 words long.
+I've now read your source text, which is 2347 words long.
 
 
 -----------------------------------------------------
@@ -176,7 +176,7 @@ Phase XIII ... Compilation now complete
 
 CAT "a quick line drawing of a goose"
 Total of 111 files written as streams.
-CPU time: 184 centiseconds
+CPU time: 186 centiseconds
 
 
 That concludes the debugging log from this run of Inform.
