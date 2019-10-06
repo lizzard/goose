@@ -8,7 +8,7 @@ The story description is "It's a beautiful day in the office, and you are a horr
 The story creation year is 2019.
 
 Release along with an interpreter and cover art ("a quick line drawing of a goose").
-[Thanks to Danny O'Brien for setting up a web host for this at https://www.endofgreatness.com/officegoose/   Thanks Potch, Laurakeet, Hannah Diaz,  for playtesting.]
+[Thanks to Danny O'Brien for setting up a web host for this at https://www.endofgreatness.com/officegoose/   Thanks Potch, Laurakeet, Britta Gustafson, Hannah Diaz, and Jim Shepard and Danny O'Brien for playtesting.]
 
 use serial comma;
 
@@ -108,9 +108,17 @@ Section 2 - Rules for things
 
 A thing can be broken or functional. A thing is usually functional.
 
+A liquid is a kind of thing.
+Instead of drinking a liquid:
+	say "You drink from the [noun].";
+	
+A thing can be wet or dry. A thing is usually dry.
+
+Before printing the name of a wet thing: say "wet ". Understand the wet property as describing a thing. 
+
 Check dropping something:
 	if the player is in the office kitchen:
-		if the coffee maker is broken or the sink is broken or the coffee cup is  broken:
+		if the coffee maker is broken or the sink is broken or the coffee cup is broken:
 			now the noun is wet;
 			
 		
@@ -173,7 +181,7 @@ After pecking a pod-based coffee maker for the first time:
 
 After pecking a sink for the first time:
 	say "The faucet cracks. Water sprays all over!";
-	now the printed name of the sink is "sink with a broken faucet, spraying water everywhere";
+	now the printed name of the sink is "sink with a broken faucet spraying water everywhere";
 	now the description of the sink is "This sink is in sad shape. It's spraying water from the broken faucet.";
 	now puddles of water is in the location of the player;
 	now the developer is flustered;
@@ -247,18 +255,26 @@ After pecking an adjustable desk for the first time:
 	now the description of an adjustable desk is "An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.";
 	increment the score;
 	
-A tattered copy of Design Patterns is on the adjustable desk. Understand "book" as a tattered copy of Design Patterns. The description is "This book looks absolutely delicious! Maybe you should take it!"
+A tattered copy of the book 'Design Patterns' is on the adjustable desk.  The description is "This book looks absolutely delicious! Maybe you should take it!"
+
+Understand "book" as a tattered copy of the book 'Design Patterns'.
 	
-After taking a tattered copy of Design Patterns for the first time:
-	now the printed name of a tattered copy of Design Patterns is "book with the cover torn off";
-	now the description of a tattered copy of Design Patterns is "A book with the cover torn off, covered in goose spit.";
+Instead of eating the book:
+	say "You shred the book into tiny pieces.";
+	now the book is nowhere;
+	now little bits of chewed up paper is in the location of the player;
+	increment the score;
+
+After taking a book for the first time:
+	now the printed name of a book is "book with the cover torn off";
+	now the description of a book is "A book with the cover torn off, covered in goose spit.";
 	now little bits of chewed up paper is in the location of the player;
 	increment the score;
 	
-After pecking a tattered copy of Design Patterns for the first time:
+After pecking a book for the first time:
 	say "Tasty! You could pick up the whole book and carry it around!";
-	now the printed name of a tattered copy of Design Patterns is "book with the cover torn off";
-	now the description of a tattered copy of Design Patterns is "A book with the cover torn off, covered in goose spit.";
+	now the printed name of a book is "book with the cover torn off";
+	now the description of a book is "A book with the cover torn off, covered in goose spit.";
 	now little bits of chewed up paper is in the location of the player;
 
 	
@@ -270,15 +286,6 @@ After pecking a laptop for the first time:
 	now the description of a laptop is "A broken laptop, with messed-up text scrolling through its flickering windows on a cracked screen.";
 	increment the score;
 
-A liquid is a kind of thing.
-Instead of drinking a liquid:
-	say "You drink from the [noun].";
-	
-A thing can be wet or dry. A thing is usually dry.
-
-
-
-Before printing the name of a wet thing: say "wet ". Understand the wet property as describing a thing. 
 
 Some spilled dirt is an object. 
 Some little bits of chewed up paper is an object.
