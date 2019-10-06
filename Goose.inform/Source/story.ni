@@ -49,9 +49,14 @@ Before going to any room:
 	say "You waddle over with deadly purpose." ;
 
 Before taking:
-	say "You jab your beak at it.";
 	if the player is carrying anything:
+		say "As you open your mouth to bite, you drop some other stuff and immediately forget it.";
 		now everything carried by the player is in the location;
+	otherwise:
+		say "You stretch out your neck, biting and gnashing.";
+
+Carry out taking:
+	say "You grab [the noun] with your powerful beak.";
 		
 Instead of taking an object which is fixed in place:
 	say "It's too big. Maybe you could peck it instead.";
@@ -132,10 +137,22 @@ Check dropping something:
 	
 Instead of eating a person:
 	say "Quite a challenge. A person is more likely to eat a goose, after all!";	
+	
+Instead of eating dirt:
+	say "You take a healthy beakful of dirt and gravel. Good for the digestion.";
+
+Instead of throwing something at something:
+	say "You thrash your neck around, attempting to fling [the noun], but throwing isn't your strong point.";
+	say "Frustrated, you drop [the noun] from your beak.";
+	now the noun is in the location of the player;
+
+
+
+	
 		
 Section 3 - The Office
 
-An Open-plan office is a room. The description is "You're in a large room with narrow hallways running between grey-walled cubicles. Exits lead east, west, and south."
+An Open-plan office is a room. The description is "You're in a large open room. Narrow corridors run between grey-walled cubicles. Exits lead east, west, and south."
 
 A potted palm is an object in an open-plan office. The description of a potted palm is "A large indoor plant with luxuriant fronds.[line break]You feel an urge to peck it." Understand "plant", "fronds", and "pot" as the potted palm. 
 
@@ -273,6 +290,7 @@ After pecking an adjustable desk for the first time:
 	say "The desk starts going up and down at random.";
 	now the printed name of an adjustable desk is "broken adjustable desk";
 	now the description of an adjustable desk is "An adjustable desk with a broken control panel, raising and lowering itself in an alarming fashion.";
+	now the desk is broken;
 	increment the score;
 	
 A tattered copy of the book 'Design Patterns' is on the adjustable desk.  The description is "This book looks absolutely delicious! Maybe you should take it!"
@@ -296,16 +314,21 @@ After pecking a book for the first time:
 	now the printed name of a book is "book with the cover torn off";
 	now the description of a book is "A book with the cover torn off, covered in goose spit.";
 	now little bits of chewed up paper is in the location of the player;
-
 	
 A laptop is an object on the the adjustable desk. The description is "A laptop with several windows open, showing some code."
+
+After examining code:
+	say "Your tiny, walnut-sized brain hurts a bit. Now you want to bite something.";
+
+The code is scenery in a cubicle. The description of the code is " 'changesets': [line break]
+                'desc': 'Bug 1341190 - Remove .popup-anchor visibility rule. r=mconley, a=lizzard\n\nMozReview-Commit-ID: DFMIKMMnLx5'[line break]},[line break] {[line break]  'desc': 'Bug 1348409 - Stop supporting the showDialog argument for window.find. r=mrbkap, a=lizzard\n\nThe dialog functionality of the non-standard window.find API has been broken\nwith e10s since it shipped, and bug 1182569 or bug 1232432 (or both) have\nbroken it for non-e10s.\n\nThis patch remove showDialog support entirely, for both e10s and non-e10s,\nin a more deliberate way. We now ignore the argument.\n\nMozReview-Commit-ID: 1CTzgEkDhHW' [line break] },[line break]";
+
 
 After pecking a laptop for the first time:
 	say "Your beak mashes the keys and cracks the screen.";
 	now the printed name of a laptop is "broken laptop";
 	now the description of a laptop is "A broken laptop, with messed-up text scrolling through its flickering windows on a cracked screen.";
 	increment the score;
-
 
 Some spilled dirt is an object. 
 Some little bits of chewed up paper is an object.

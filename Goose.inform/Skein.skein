@@ -14,7 +14,7 @@ It's a beautiful day in the office, and you are a horrible goose.
 (If you aren't sure how to play, type "help" and hit enter.)
 
 Open-plan office
-You're in a large room with narrow hallways running between grey-walled cubicles. Exits lead east, west, and south.
+You're in a large open room. Narrow corridors run between grey-walled cubicles. Exits lead east, west, and south.
 
 You can see a potted palm and a printer here.
 
@@ -584,7 +584,7 @@ You can see a potted palm and a printer here.
     </item>
     <item nodeId="node-1326">
         <command xml:space="preserve">take printer</command>
-        <result xml:space="preserve">You jab your beak at it.
+        <result xml:space="preserve">You jab your face at it, biting and gnashing.
 
 It's too big. Maybe you could peck it instead.
 
@@ -597,6 +597,10 @@ It's too big. Maybe you could peck it instead.
         <command xml:space="preserve">peck printer</command>
         <result xml:space="preserve">You jab your beak at the printer.
 The printer switches on.
+
+Some sheets of paper fly out of the printer and across the room.
+
+[Your score has just gone up by one point.]
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -719,7 +723,9 @@ You can see a potted palm, a project manager and a video camera here.
     </item>
     <item nodeId="node-1244">
         <command xml:space="preserve">take palm</command>
-        <result xml:space="preserve">You jab your beak at it.
+        <result xml:space="preserve">You jab your beak at it, biting and gnashing.
+
+You grab the potted palm with your powerful beak.
 
 [Your score has just gone up by one point.]
 
@@ -728,6 +734,8 @@ You can see a potted palm, a project manager and a video camera here.
         <children><child nodeId="node-1801"></child>
             <child nodeId="node-1245"></child>
             <child nodeId="node-1280"></child>
+            <child nodeId="node-1858"></child>
+            <child nodeId="node-1829"></child>
             <child nodeId="node-1261"></child>
         </children>
     </item>
@@ -772,6 +780,118 @@ You can see a potted palm, a project manager and a video camera here.
         <command xml:space="preserve">i</command>
         <result xml:space="preserve">You are carrying: 
   an ipad (in your beak)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1829">
+        <command xml:space="preserve">throw palm</command>
+        <result xml:space="preserve">Dropped.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1832"></child>
+            <child nodeId="node-1837"></child>
+        </children>
+    </item>
+    <item nodeId="node-1837">
+        <command xml:space="preserve">take palm</command>
+        <result xml:space="preserve">You jab your beak at it.
+
+Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1838"></child>
+        </children>
+    </item>
+    <item nodeId="node-1838">
+        <command xml:space="preserve">throw palm at printer</command>
+        <result xml:space="preserve">You thrash your neck around, attempting to fling the torn-up potted palm, lying sideways.
+It's too heavy for that.
+
+(You feel a mighty primal urge to honk, to flap, and to peck things.)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1832">
+        <command xml:space="preserve">showme</command>
+        <result xml:space="preserve">Open-plan office - room
+    torn-up potted palm, lying sideways
+    spilled dirt
+    yourself - person
+    printer - device
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1833"></child>
+        </children>
+    </item>
+    <item nodeId="node-1833">
+        <command xml:space="preserve">take palm</command>
+        <result xml:space="preserve">You jab your beak at it.
+
+Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1834"></child>
+        </children>
+    </item>
+    <item nodeId="node-1834">
+        <command xml:space="preserve">throw palm</command>
+        <result xml:space="preserve">Dropped.
+
+(You feel a mighty primal urge to honk, to flap, and to peck things.)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1858">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Cubicle
+An adjustable standing/sitting desk dominates this spacious cubicle. The main office is just to the north.
+
+You can see an adjustable desk (on which are a tattered copy of the book 'Design Patterns' and a laptop) here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1859"></child>
+        </children>
+    </item>
+    <item nodeId="node-1859">
+        <command xml:space="preserve">take laptop</command>
+        <result xml:space="preserve">As you open your beak to bite, you drop some other stuff and immediately forget it.
+
+You grab the laptop with your powerful beak.
+
+Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1860"></child>
+        </children>
+    </item>
+    <item nodeId="node-1860">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying nothing.
+
+(You feel a mighty primal urge to honk, to flap, and to peck things.)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1861"></child>
+        </children>
+    </item>
+    <item nodeId="node-1861">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Cubicle
+An adjustable standing/sitting desk dominates this spacious cubicle. The main office is just to the north.
+
+You can see a laptop and an adjustable desk (on which is a tattered copy of the book 'Design Patterns') here.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -974,7 +1094,7 @@ You can see a project manager, an ipad, and a video camera here.
     <item nodeId="node-1245">
         <command xml:space="preserve">i</command>
         <result xml:space="preserve">You are carrying: 
-  a potted palm (in your beak)
+  a torn-up potted palm, lying sideways (in your beak)
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -1044,14 +1164,25 @@ You can see a potted palm, a project manager and a video camera here.
         <result xml:space="preserve">You waddle over with deadly purpose.
 
 Cubicle
-An adjustable standing/sitting desk dominates this spacious cubicle.
+An adjustable standing/sitting desk dominates this spacious cubicle. The main office is just to the north.
 
-You can see an adjustable desk here.
+You can see an adjustable desk (on which are a tattered copy of the book 'Design Patterns' and a laptop) here.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
-        <children><child nodeId="node-1255"></child>
+        <children><child nodeId="node-1876"></child>
+            <child nodeId="node-1255"></child>
+            <child nodeId="node-1865"></child>
         </children>
+    </item>
+    <item nodeId="node-1865">
+        <command xml:space="preserve">take laptop</command>
+        <result xml:space="preserve">You're carrying too many things already.
+
+(You feel a mighty primal urge to honk, to flap, and to peck things.)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-1255">
         <command xml:space="preserve">n</command>
@@ -1114,6 +1245,51 @@ You can see a project manager, an ipad and a video camera here.
         <result xml:space="preserve">You jab your beak at it.
 
 You're carrying too many things already.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1876">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying: 
+  a torn-up potted palm, lying sideways (in your beak)
+
+(You feel a mighty primal urge to honk, to flap, and to peck things.)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1877"></child>
+        </children>
+    </item>
+    <item nodeId="node-1877">
+        <command xml:space="preserve">take laptop</command>
+        <result xml:space="preserve">You jab your beak at it, biting and gnashing.
+
+You grab the laptop with your powerful beak.
+
+Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1878"></child>
+        </children>
+    </item>
+    <item nodeId="node-1878">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying: 
+  a laptop (in your beak)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1879"></child>
+        </children>
+    </item>
+    <item nodeId="node-1879">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Cubicle
+An adjustable standing/sitting desk dominates this spacious cubicle. The main office is just to the north.
+
+You can see a torn-up potted palm, lying sideways and an adjustable desk (on which is a tattered copy of the book 'Design Patterns') here.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
@@ -1427,9 +1603,178 @@ You can see an adjustable desk (on which are a tattered copy of the book 'Design
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
-        <children><child nodeId="node-1797"></child>
+        <children><child nodeId="node-1893"></child>
+            <child nodeId="node-1797"></child>
             <child nodeId="node-1437"></child>
+            <child nodeId="node-1840"></child>
+            <child nodeId="node-1851"></child>
+            <child nodeId="node-1890"></child>
         </children>
+    </item>
+    <item nodeId="node-1890">
+        <command xml:space="preserve">x laptop</command>
+        <result xml:space="preserve">A laptop with several windows open, showing some code.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1891"></child>
+        </children>
+    </item>
+    <item nodeId="node-1891">
+        <command xml:space="preserve">read code</command>
+        <result xml:space="preserve">class XULTreeAccessible : public AccessibleWrap {
+ public:
+ XULTreeAccessible(nsIContent* aContent, DocAccessible* aDoc,
+ nsTreeBodyFrame* aTreeframe);
+
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1851">
+        <command xml:space="preserve">take laptop</command>
+        <result xml:space="preserve">You stretch out your neck, biting and gnashing.
+
+You grab the laptop with your powerful beak.
+
+Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1887"></child>
+            <child nodeId="node-1852"></child>
+        </children>
+    </item>
+    <item nodeId="node-1852">
+        <command xml:space="preserve">throw laptop</command>
+        <result xml:space="preserve">Dropped.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1853"></child>
+        </children>
+    </item>
+    <item nodeId="node-1853">
+        <command xml:space="preserve">take laptop</command>
+        <result xml:space="preserve">You jab your beak at it.
+
+Taken.
+
+(You feel a mighty primal urge to honk, to flap, and to peck things.)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1854"></child>
+        </children>
+    </item>
+    <item nodeId="node-1854">
+        <command xml:space="preserve">throw laptop at desk</command>
+        <result xml:space="preserve">You thrash your neck around, attempting to fling the laptop, but throwing isn't your strong point.
+Frustrated, you drop the laptop.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1855"></child>
+        </children>
+    </item>
+    <item nodeId="node-1855">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Cubicle
+An adjustable standing/sitting desk dominates this spacious cubicle. The main office is just to the north.
+
+You can see a laptop and an adjustable desk (on which is a tattered copy of the book 'Design Patterns') here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1856"></child>
+        </children>
+    </item>
+    <item nodeId="node-1856">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying nothing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1887">
+        <command xml:space="preserve">drop laptop</command>
+        <result xml:space="preserve">Dropped.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1888"></child>
+        </children>
+    </item>
+    <item nodeId="node-1888">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Cubicle
+An adjustable standing/sitting desk dominates this spacious cubicle. The main office is just to the north.
+
+You can see a laptop and an adjustable desk (on which is a tattered copy of the book 'Design Patterns') here.
+
+(You feel a mighty primal urge to honk, to flap, and to peck things.)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1840">
+        <command xml:space="preserve">take book</command>
+        <result xml:space="preserve">You jab your beak at it.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1841"></child>
+            <child nodeId="node-1847"></child>
+        </children>
+    </item>
+    <item nodeId="node-1847">
+        <command xml:space="preserve">throw book at desk</command>
+        <result xml:space="preserve">You thrash your neck around, attempting to fling the book with the cover torn off.
+It's too heavy for that.
+You drop it.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1841">
+        <command xml:space="preserve">throw book</command>
+        <result xml:space="preserve">Dropped.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1842"></child>
+        </children>
+    </item>
+    <item nodeId="node-1842">
+        <command xml:space="preserve">take book</command>
+        <result xml:space="preserve">You jab your beak at it.
+
+Taken.
+
+(You feel a mighty primal urge to honk, to flap, and to peck things.)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1843"></child>
+        </children>
+    </item>
+    <item nodeId="node-1843">
+        <command xml:space="preserve">throw book at desk</command>
+        <result xml:space="preserve">Futile.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1844"></child>
+        </children>
+    </item>
+    <item nodeId="node-1844">
+        <command xml:space="preserve">throw book at laptop</command>
+        <result xml:space="preserve">Futile.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-1437">
         <command xml:space="preserve">peck desk</command>
@@ -1503,6 +1848,28 @@ An adjustable standing/sitting desk dominates this spacious cubicle. The main of
 You can see some little bits of chewed up paper and an adjustable desk (on which is a laptop) here.
 
 (You feel a mighty primal urge to honk, to flap, and to peck things.)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1893">
+        <command xml:space="preserve">look laptop</command>
+        <result xml:space="preserve">A laptop with several windows open, showing some code.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1894"></child>
+        </children>
+    </item>
+    <item nodeId="node-1894">
+        <command xml:space="preserve">read code</command>
+        <result xml:space="preserve"> "changesets": 
+ "desc": "Bug 1341190 - Remove .popup-anchor visibility rule. r=mconley, a=lizzard\n\nMozReview-Commit-ID: DFMIKMMnLx5"
+},
+ {
+  "desc": "Bug 1348409 - Stop supporting the showDialog argument for window.find. r=mrbkap, a=lizzard\n\nThe dialog functionality of the non-standard window.find API has been broken\nwith e10s since it shipped, and bug 1182569 or bug 1232432 (or both) have\nbroken it for non-e10s.\n\nThis patch remove showDialog support entirely, for both e10s and non-e10s,\nin a more deliberate way. We now ignore the argument.\n\nMozReview-Commit-ID: 1CTzgEkDhHW" 
+ },
+
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
