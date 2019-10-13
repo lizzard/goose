@@ -43,7 +43,7 @@ Global Story = BC_0;
 Constant Headline BC_1;
 Constant Story_Author BC_2;
 Release 11;
-Serial "191006";
+Serial "191012";
 
 Default Story 0;
 Default Headline 0;
@@ -11210,7 +11210,7 @@ Object -> I128_printer ""
     with vector 0
     has mark_as_thing
     with IK2_Count 2
-    with IK2_Link I130_snacks
+    with IK2_Link I131_pod_based_coffee_maker
     with IK13_Count 0
     with IK13_Link I131_pod_based_coffee_maker
     with KD_Count 13
@@ -11238,29 +11238,10 @@ Object I129_office_kitchen ""
     with article BC_175
 ;
 
-Object -> I130_snacks ""
-    class K2_thing
-    with short_name BC_176
-    with description BC_177
-    has static
-    has scenery
-    with vector 0
-    has mark_as_thing
-    with IK2_Count 3
-    with IK2_Link I131_pod_based_coffee_maker
-    with KD_Count 2
-    with name 'snacks' 'things//p' 
-    with action_bitmap 0 0 0 0 0 0 
-    with initial BC_178
-    with list_together BC_179
-    with plural BC_180
-    with article BC_181
-;
-
 Object -> I131_pod_based_coffee_maker ""
     class K13_device
-    with short_name BC_182
-    with description BC_183
+    with short_name BC_176
+    with description BC_177
     has static
     with vector 0
     has mark_as_thing
@@ -11271,16 +11252,16 @@ Object -> I131_pod_based_coffee_maker ""
     with KD_Count 13
     with name 'pod-based' 'coffee' 'maker' 'devices//p' 
     with action_bitmap 0 0 0 0 0 0 
-    with initial BC_184
-    with list_together BC_185
-    with plural BC_186
-    with article BC_187
+    with initial BC_178
+    with list_together BC_179
+    with plural BC_180
+    with article BC_181
 ;
 
 Object -> I132_sink ""
     class K13_device
-    with short_name BC_188
-    with description BC_189
+    with short_name BC_182
+    with description BC_183
     has static
     with vector 0
     has mark_as_thing
@@ -11291,15 +11272,15 @@ Object -> I132_sink ""
     with KD_Count 13
     with name 'sink' 'devices//p' 
     with action_bitmap 0 0 0 0 0 0 
-    with initial BC_190
-    with list_together BC_191
-    with plural BC_192
-    with article BC_193
+    with initial BC_184
+    with list_together BC_185
+    with plural BC_186
+    with article BC_187
 ;
 
 Object -> I135_cabinet ""
     class K5_container
-    with short_name BC_194
+    with short_name BC_188
     has ~open
     has openable
     has lockable
@@ -11313,17 +11294,18 @@ Object -> I135_cabinet ""
     with KD_Count 5
     with name 'cabinet' 'containers//p' 
     with action_bitmap 0 0 0 0 0 0 
-    with description BC_195
-    with initial BC_196
-    with list_together BC_197
-    with plural BC_198
-    with article BC_199
+    with description BC_189
+    with initial BC_190
+    with list_together BC_191
+    with plural BC_192
+    with article BC_193
 ;
 
 Object -> -> I136_tasty_snacks ""
     class K2_thing
-    with short_name BC_200
+    with short_name BC_194
     has pluralname
+    has edible
     with vector 0
     has mark_as_thing
     with IK2_Count 9
@@ -11331,16 +11313,16 @@ Object -> -> I136_tasty_snacks ""
     with KD_Count 2
     with name 'tasty' 'snacks' 'things//p' 
     with action_bitmap 0 0 0 0 0 0 
-    with description BC_201
-    with initial BC_202
-    with list_together BC_203
-    with plural BC_204
-    with article BC_205
+    with description BC_195
+    with initial BC_196
+    with list_together BC_197
+    with plural BC_198
+    with article BC_199
 ;
 
 Object -> I138_purple_haired_developer ""
     class K8_person
-    with short_name BC_206
+    with short_name BC_200
     with vector 0
     has mark_as_thing
     with IK2_Count 11
@@ -11350,24 +11332,43 @@ Object -> I138_purple_haired_developer ""
     with KD_Count 8
     with name 'purple-haired' 'developer' 'people//p' 
     with action_bitmap 0 0 0 0 0 0 
+    with description BC_201
+    with initial BC_202
+    with list_together BC_203
+    with plural BC_204
+    with article BC_205
+;
+
+Object -> -> I133_cup_of_coffee ""
+    class K2_thing
+    with short_name BC_206
     with description BC_207
+    has ~static
+    with vector 0
+    has mark_as_thing
+    with IK2_Count 6
+    with IK2_Link I130_snacks
+    with KD_Count 2
+    with name 'cup' 'of' 'coffee' 'things//p' 
+    with action_bitmap 0 0 0 0 0 0 
     with initial BC_208
     with list_together BC_209
     with plural BC_210
     with article BC_211
 ;
 
-Object -> -> I133_cup_of_coffee ""
+Object I130_snacks ""
     class K2_thing
     with short_name BC_212
     with description BC_213
-    has ~static
+    has static
+    has scenery
     with vector 0
     has mark_as_thing
-    with IK2_Count 6
+    with IK2_Count 3
     with IK2_Link I134_fire_alarm
     with KD_Count 2
-    with name 'cup' 'of' 'coffee' 'things//p' 
+    with name 'snacks' 'things//p' 
     with action_bitmap 0 0 0 0 0 0 
     with initial BC_214
     with list_together BC_215
@@ -12646,9 +12647,9 @@ Array ActionHappened --> 0 0 0 0 0 0;
         ParaContent(); DivideParagraphPoint(); new_line; .L_Say7; .L_SayX7;! [25: say ~* * * * * * * * * * * * * * * * * *[paragraph break]~]
         say__p=1;! [26: ~* * * * * * * * * * * * * * * * * *~]
         ParaContent(); print "* * * * * * * * * * * * * * * * * *";! [27: paragraph break]
-        ParaContent(); DivideParagraphPoint(); new_line; .L_Say8; .L_SayX8;! [28: say ~Thanks to playtesters Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, Milo Kim, and Jim Shepard.~]
-        say__p=1;! [29: ~Thanks to playtesters Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, Milo Kim, and Jim Shepard.~]
-        ParaContent(); print "Thanks to playtesters Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, Milo Kim, and Jim Shepard."; new_line; .L_Say9; .L_SayX9;! [30: end the story finally]
+        ParaContent(); DivideParagraphPoint(); new_line; .L_Say8; .L_SayX8;! [28: say ~Thanks to playtesters Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, Milo Kim, Sigrid Ellis, and Jim Shepard.~]
+        say__p=1;! [29: ~Thanks to playtesters Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, Milo Kim, Sigrid Ellis, and Jim Shepard.~]
+        ParaContent(); print "Thanks to playtesters Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, Milo Kim, Sigrid Ellis, and Jim Shepard."; new_line; .L_Say9; .L_SayX9;! [30: end the story finally]
         deadflag=3; story_complete=true;
         }
         rfalse;
@@ -20900,20 +20901,23 @@ Array ActionHappened --> 0 0 0 0 0 0;
     if ((( (actor==player) && ((noun == I144_video_camera) && (true))))) { ! Runs only when pattern matches
     self = noun;
     if (debug_rules) DB_Rule(R_833, 833);
-    ! [2: if the player is on a chair]
-    if (((I140_chair == SupporterOf(player))))
-    {! [3: say ~The camera lens cracks.~]
-        say__p=1;! [4: ~The camera lens cracks.~]
-        ParaContent(); print "The camera lens cracks."; new_line; .L_Say348; .L_SayX348;! [5: now the video camera is broken]
+    ! [2: if the player is on a chair or the player is on the table]
+    if ((((I140_chair == SupporterOf(player)))) || (((I141_table == SupporterOf(player)))))
+    {! [3: if the video camera is not broken]
+        if (((~~(((Adj_90_t1_v10(I144_video_camera)))))))
+        {! [4: increment the score]
+            score = score + 1;;
+            }
+        ! [5: say ~The camera lens cracks.~]
+        say__p=1;! [6: ~The camera lens cracks.~]
+        ParaContent(); print "The camera lens cracks."; new_line; .L_Say348; .L_SayX348;! [7: now the video camera is broken]
         (Adj_90_t2_v10(I144_video_camera));
-        ! [6: now the printed name of the video camera is ~broken camera, dangling from a frayed cable~]
+        ! [8: now the printed name of the video camera is ~broken camera dangling from the ceiling~]
         BlkValueCopy(GProperty(10, I144_video_camera,short_name), TX_L_113);
-        ! [7: increment the score]
-        score = score + 1;;
         } else {
-        ! [8: say ~You leap several feet in the air but fail to peck the video camera.~]
-        say__p=1;! [9: ~You leap several feet in the air but fail to peck the video camera.~]
-        ParaContent(); print "You leap several feet in the air but fail to peck the video camera."; new_line; .L_Say349; .L_SayX349;! [10: stop the action]
+        ! [9: say ~You leap several feet in the air but fail to peck the video camera.~]
+        say__p=1;! [10: ~You leap several feet in the air but fail to peck the video camera.~]
+        ParaContent(); print "You leap several feet in the air but fail to peck the video camera."; new_line; .L_Say349; .L_SayX349;! [11: stop the action]
         rtrue;
         }
         } else if (debug_rules > 1) DB_Rule(R_833, 833, 'action');
@@ -51962,11 +51966,11 @@ Constant TX_PS_112 = "A geeky looking person, covered in coffee, coming at you w
 Array TX_L_112 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_112;
 Constant TX_PS_99 = "A geeky looking person, upset and disheveled, coming at you with hands outstretched to grab your neck.";
 Array TX_L_99 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_99;
-Constant TX_PS_46 = "A gleaming, tidy sink.";
+Constant TX_PS_44 = "A gleaming, tidy sink.";
 Constant TX_PS_72 = "A laptop with several windows open, showing some code.";
 Constant TX_PS_57 = "A large board room with chairs arranged around a central table. Through the open door, you can see the main office to the east.";
 Constant TX_PS_55 = "A large red cylinder with a trigger handle.";
-Constant TX_PS_51 = "A steaming, very full cup of coffee.";
+Constant TX_PS_49 = "A steaming, very full cup of coffee.";
 Constant TX_PS_89 = "A torn up potted plant, on its side with dirt spilling out.";
 Array TX_L_89 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_89;
 Constant TX_PS_3 = "An Interactive Fiction";
@@ -51990,12 +51994,12 @@ Constant TX_PS_80 = "Puddles of water";
 Constant TX_PS_87 = "QUIT";
 Constant TX_PS_84 = "RESTART";
 Constant TX_PS_85 = "RESTORE a saved game";
-Constant TX_PS_42 = "They're locked up in a high cabinet. Infuriating. ";
+Constant TX_PS_51 = "They're locked up in a high cabinet. Infuriating.";
 Constant TX_PS_70 = "This book looks absolutely delicious! Maybe you should take it!";
 Constant TX_PS_40 = "This mini kitchen has tasty snacks and bad coffee. The main office is just to the west.";
 Constant TX_PS_95 = "This sink is in sad shape. It's spraying water from the broken faucet.";
 Array TX_L_95 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_95;
-Constant TX_PS_44 = "This sturdy machine is ready to make you a bitter cup of plastic swill.";
+Constant TX_PS_42 = "This sturdy machine is ready to make you a bitter cup of plastic swill.";
 Constant TX_PS_88 = "UNDO the last command";
 Constant TX_PS_36 = "You're in a large open room. Narrow corridors run between grey-walled cubicles. Exits lead east, west, and south.";
 Constant TX_PS_33 = "You're large, you're white, and you're waddling.";
@@ -52009,15 +52013,15 @@ Constant TX_PS_104 = "book with the cover torn off";
 Array TX_L_104 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_104;
 Constant TX_PS_102 = "broken adjustable desk";
 Array TX_L_102 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_102;
-Constant TX_PS_113 = "broken camera, dangling from a frayed cable";
+Constant TX_PS_113 = "broken camera dangling from the ceiling";
 Array TX_L_113 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_113;
 Constant TX_PS_106 = "broken laptop";
 Array TX_L_106 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_106;
-Constant TX_PS_47 = "cabinet";
+Constant TX_PS_45 = "cabinet";
 Constant TX_PS_58 = "chair";
 Constant TX_PS_73 = "code";
 Constant TX_PS_11 = "containers";
-Constant TX_PS_50 = "cup of coffee";
+Constant TX_PS_48 = "cup of coffee";
 Constant TX_PS_91 = "dented printer";
 Array TX_L_91 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_91;
 Constant TX_PS_15 = "devices";
@@ -52053,27 +52057,27 @@ Array TX_L_92 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_92;
 Constant TX_PS_31 = "outside";
 Constant TX_PS_6 = "people";
 Constant TX_PS_13 = "player's holdalls";
-Constant TX_PS_43 = "pod-based coffee maker";
+Constant TX_PS_41 = "pod-based coffee maker";
 Constant TX_PS_37 = "potted palm";
 Constant TX_PS_38 = "printer";
 Constant TX_PS_60 = "project manager";
 Constant TX_PS_77 = "puddles of spilled coffee";
 Constant TX_PS_79 = "puddles of water";
-Constant TX_PS_49 = "purple-haired developer";
+Constant TX_PS_47 = "purple-haired developer";
 Constant TX_PS_17 = "regions";
 Constant TX_PS_86 = "see some suggestions for AMUSING things to do";
 Constant TX_PS_76 = "sheets of paper";
 Constant TX_PS_94 = "sink with a broken faucet spraying water everywhere";
 Array TX_L_94 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_94;
-Constant TX_PS_45 = "sink";
-Constant TX_PS_41 = "snacks";
+Constant TX_PS_43 = "sink";
+Constant TX_PS_50 = "snacks";
 Constant TX_PS_23 = "south";
 Constant TX_PS_24 = "southeast";
 Constant TX_PS_25 = "southwest";
 Constant TX_PS_74 = "spilled dirt";
 Constant TX_PS_5 = "supporters";
 Constant TX_PS_59 = "table";
-Constant TX_PS_48 = "tasty snacks";
+Constant TX_PS_46 = "tasty snacks";
 Constant TX_PS_69 = "tattered copy of the book 'Design Patterns'";
 Constant TX_PS_20 = "the";
 Constant TX_PS_90 = "torn-up potted palm tree";
@@ -59431,7 +59435,7 @@ Array BC_176 --> PACKED_TEXT_STORAGE TX_PS_41;
 Array BC_177 --> PACKED_TEXT_STORAGE TX_PS_42;
 Array BC_178 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_179 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_180 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_180 --> PACKED_TEXT_STORAGE TX_PS_15;
 Array BC_181 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_182 --> PACKED_TEXT_STORAGE TX_PS_43;
 Array BC_183 --> PACKED_TEXT_STORAGE TX_PS_44;
@@ -59440,28 +59444,28 @@ Array BC_185 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_186 --> PACKED_TEXT_STORAGE TX_PS_15;
 Array BC_187 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_188 --> PACKED_TEXT_STORAGE TX_PS_45;
-Array BC_189 --> PACKED_TEXT_STORAGE TX_PS_46;
+Array BC_189 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_190 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_191 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_192 --> PACKED_TEXT_STORAGE TX_PS_15;
+Array BC_192 --> PACKED_TEXT_STORAGE TX_PS_11;
 Array BC_193 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_194 --> PACKED_TEXT_STORAGE TX_PS_47;
+Array BC_194 --> PACKED_TEXT_STORAGE TX_PS_46;
 Array BC_195 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_196 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_197 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_198 --> PACKED_TEXT_STORAGE TX_PS_11;
+Array BC_198 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_199 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_200 --> PACKED_TEXT_STORAGE TX_PS_48;
+Array BC_200 --> PACKED_TEXT_STORAGE TX_PS_47;
 Array BC_201 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_202 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_203 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_204 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_204 --> PACKED_TEXT_STORAGE TX_PS_6;
 Array BC_205 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_206 --> PACKED_TEXT_STORAGE TX_PS_49;
-Array BC_207 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_206 --> PACKED_TEXT_STORAGE TX_PS_48;
+Array BC_207 --> PACKED_TEXT_STORAGE TX_PS_49;
 Array BC_208 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_209 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_210 --> PACKED_TEXT_STORAGE TX_PS_6;
+Array BC_210 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_211 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_212 --> PACKED_TEXT_STORAGE TX_PS_50;
 Array BC_213 --> PACKED_TEXT_STORAGE TX_PS_51;

@@ -8,7 +8,7 @@ The story description is "It's a beautiful day in the office, and you are a horr
 The story creation year is 2019.
 
 Release along with an interpreter and cover art ("a quick line drawing of a goose").
-[Thanks to Danny O'Brien for setting up a web host for this at https://www.endofgreatness.com/officegoose/   Thanks Potch, Laurakeet, Britta Gustafson, Hannah Diaz, and Jim Shepard, Milo Kim, Jack Kukulski, and Danny O'Brien for playtesting.]
+[Thanks to Danny O'Brien for setting up a web host for this at https://www.endofgreatness.com/officegoose/   Thanks Potch, Laurakeet, Britta Gustafson, Hannah Diaz, Jim Shepard, Milo Kim, Jack Kukulski, Sigrid Ellis, and Danny O'Brien for playtesting.]
 
 use serial comma;
 
@@ -37,7 +37,7 @@ Every turn:
 		say "This start-up office will never be the same.[line break]";
 		say "You run outside, ready to wreak mayhem on the rest of the world![paragraph break]";
 		say "* * * * * * * * * * * * * * * * * *[paragraph break]";
-		say "Thanks to playtesters Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, Milo Kim, and Jim Shepard.";
+		say "Thanks to playtesters Laura Kukulski, Danny O'Brien, Potch, Britta Gustafson, Hannah Diaz, Milo Kim, Sigrid Ellis, and Jim Shepard.";
 		end the story finally.
 		
 
@@ -186,7 +186,7 @@ After pecking the printer for the first time:
 
 An Office kitchen is east of an open-plan office. The description is "This mini kitchen has tasty snacks and bad coffee. The main office is just to the west."
 
-The snacks are scenery in an office kitchen. The description of the snacks is "They're locked up in a high cabinet. Infuriating. " 
+The snacks are scenery. The description of the snacks is "They're locked up in a high cabinet. Infuriating." 
 
 Instead of taking scenery:
 	say "You can't reach it. How infuriating!";
@@ -212,7 +212,9 @@ After pecking the fire alarm for the first time:
 	
 A cabinet is a container in the office kitchen. It is closed and locked. 
 
-Some tasty snacks are in the cabinet.
+Some tasty snacks are in the cabinet. Some tasty snacks are edible. 
+
+
  
 
 A fire extinguisher is a device. The description is "A large red cylinder with a trigger handle.";
@@ -298,11 +300,12 @@ After pecking an ipad for the first time:
 	increment the score;
 	
 Check pecking a video camera:
-	if the player is on a chair:
+	if the player is on a chair or the player is on the table:
+		if the video camera is not broken:
+			increment the score;
 		say "The camera lens cracks.";
 		now the video camera is broken;
-		now the printed name of the video camera is "broken camera, dangling from a frayed cable";
-		increment the score;
+		now the printed name of the video camera is "broken camera dangling from the ceiling";
 	otherwise:
 		say "You leap several feet in the air but fail to peck the video camera.";
 		stop the action.
