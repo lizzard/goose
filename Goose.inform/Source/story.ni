@@ -95,13 +95,18 @@ Carry out flapping:
 Pecking is an action applying to one thing. Understand "peck [something]" as pecking. Understand "bite [something]" as pecking.
 		
 Carry out pecking:
-	say "You jab your beak at [the noun].";
-	if the noun is a device and the noun is switched off:
-		say "[The noun] switches on.";
-		now the noun is switched on;
-		stop the action;
-	if the noun is a device and the noun is switched on and the noun is broken:
-		say "[The noun] seems to be broken now.";
+	if the player carries nothing:
+		say "You jab your beak at [the noun].";
+		if the noun is a device and the noun is switched off:
+			say "[The noun] switches on.";
+			now the noun is switched on;
+			stop the action;
+		if the noun is a device and the noun is switched on and the noun is broken:
+			say "[The noun] seems to be broken now.";
+	if the player carries something (called X):
+		say "You drop the [X] and jab viciously.";
+		now X is in the location of the player;
+		continue the action;
 
 
 A thing can be examined or unexamined. A thing is usually unexamined. Carry out examining something: now the noun is examined. 
