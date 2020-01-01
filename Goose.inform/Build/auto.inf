@@ -43,7 +43,7 @@ Global Story = BC_0;
 Constant Headline BC_1;
 Constant Story_Author BC_2;
 Release 11;
-Serial "191231";
+Serial "200101";
 
 Default Story 0;
 Default Headline 0;

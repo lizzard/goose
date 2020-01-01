@@ -6521,8 +6521,6 @@ The sink switches on.
 
 The faucet cracks. Water sprays all over!
 
-You suddenly notice a bright red fire alarm high up on the wall.
-
 "Catch it," yells the enraged developer. She trips over you, swearing.
 
 [Your score has just gone up by one point.]
@@ -6539,7 +6537,6 @@ You suddenly notice a bright red fire alarm high up on the wall.
 The developer shrieks in rage. She comes at you ready to kill.
 
 You feel a mighty primal urge to honk, to flap, and to peck things.
-You suddenly notice a bright red fire alarm high up on the wall.
 
 "Nnnnnnggggg," yells the enraged developer. She flails, knocking her own glasses onto the floor.
 
@@ -6548,6 +6545,7 @@ You suddenly notice a bright red fire alarm high up on the wall.
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
         <children><child nodeId="node-1491"></child>
+            <child nodeId="node-1616"></child>
             <child nodeId="node-1595"></child>
         </children>
     </item>
@@ -6575,6 +6573,114 @@ You can see a fire alarm, puddles of spilled coffee, an empty coffee cup, puddle
 You suddenly notice a bright red fire alarm high up on the wall.
 
 "Horrible goose," yells the enraged developer. She flails, knocking her own glasses onto the floor.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1616">
+        <command xml:space="preserve">peck alarm</command>
+        <result xml:space="preserve">You jab your beak at the fire alarm.
+The fire alarm switches on.
+
+The glass covering the fire alarm switch breaks.
+ooooooOOOOOOooooooo!
+The developer panics, opens a cupboard and takes out a fire extinguisher.
+
+"Horrible goose," yells the enraged developer.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1617"></child>
+        </children>
+    </item>
+    <item nodeId="node-1617">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Office kitchen
+This mini kitchen has tasty snacks and bad coffee. The main office is just to the west.
+
+You can see a fire alarm, puddles of spilled coffee, an empty coffee cup, puddles of water, a mangled coffee maker, a sink with a broken faucet spraying water everywhere, an open cabinet (in which are some tasty snacks), and a wet, scalded developer here.
+
+oooooOOOOOOoooooo BEEP BEEP BEEP!
+
+"Horrible goose," yells the enraged developer.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1618"></child>
+        </children>
+    </item>
+    <item nodeId="node-1618">
+        <command xml:space="preserve">take snacks</command>
+        <result xml:space="preserve">You stretch out your neck, biting and gnashing.
+
+You grab the tasty snacks with your powerful beak.
+
+Taken.
+
+"Horrible goose," yells the enraged developer. She flails, knocking her own glasses onto the floor.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1619"></child>
+        </children>
+    </item>
+    <item nodeId="node-1619">
+        <command xml:space="preserve">i</command>
+        <result xml:space="preserve">You are carrying: 
+  some tasty snacks (in your beak)
+
+oooooOOOOOOoooooo BEEP BEEP BEEP!
+
+"Nnnnnnggggg," yells the enraged developer, chasing you.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1620"></child>
+        </children>
+    </item>
+    <item nodeId="node-1620">
+        <command xml:space="preserve">peck developer</command>
+        <result xml:space="preserve">You drop the tasty snacks and jab viciously.
+
+She slips and falls, dropping the extinguisher.
+
+"Horrible goose," yells the enraged developer. She flails, knocking her own glasses onto the floor.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1621"></child>
+        </children>
+    </item>
+    <item nodeId="node-1621">
+        <command xml:space="preserve">peck extinguisher</command>
+        <result xml:space="preserve">You jab your beak at the fire extinguisher.
+The fire extinguisher switches on.
+
+Nasty-smelling foam spews out of the extinguisher, coating the walls.
+
+oooooOOOOOOoooooo BEEP BEEP BEEP!
+
+"Nnnnnnggggg," yells the enraged developer, chasing you.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1622"></child>
+        </children>
+    </item>
+    <item nodeId="node-1622">
+        <command xml:space="preserve">eat snacks</command>
+        <result xml:space="preserve">(first taking the tasty snacks)
+You stretch out your neck, biting and gnashing.
+
+You grab the tasty snacks with your powerful beak.
+
+You eat the tasty snacks. Not bad.
+
+"Nnnnnnggggg," yells the enraged developer. She flails, knocking her own glasses onto the floor.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
