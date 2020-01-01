@@ -2895,7 +2895,9 @@ Dirt spills out. How satisfying. You could probably pick up the whole plant.
     </item>
     <item nodeId="node-1240">
         <command xml:space="preserve">take palm</command>
-        <result xml:space="preserve">You jab your beak at it.
+        <result xml:space="preserve">You stretch out your neck, biting and gnashing.
+
+You grab the torn-up potted palm with your powerful beak.
 
 [Your score has just gone up by one point.]
 
@@ -2903,7 +2905,19 @@ Dirt spills out. How satisfying. You could probably pick up the whole plant.
         <commentary xml:space="preserve"></commentary>
         <children><child nodeId="node-1243"></child>
             <child nodeId="node-1241"></child>
+            <child nodeId="node-1581"></child>
         </children>
+    </item>
+    <item nodeId="node-1581">
+        <command xml:space="preserve">peck printer</command>
+        <result xml:space="preserve">You drop the torn-up potted palm tree and jab viciously.
+
+Some sheets of paper fly out of the printer and across the room.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-1241">
         <command xml:space="preserve">l</command>
@@ -5829,11 +5843,163 @@ Startled, the person looks up in alarm.
 "i" shows what you are carrying
 "take" may work on objects light enough for you to pick up
 After you mess with a thing, try examining it again!
+n, e, s, w to go north, east, south, west.
+It may help to jot down what rooms are where, in a small map.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
         <children><child nodeId="node-1456"></child>
+            <child nodeId="node-1602"></child>
         </children>
+    </item>
+    <item nodeId="node-1602">
+        <command xml:space="preserve">e</command>
+        <result xml:space="preserve">You waddle over with deadly purpose.
+
+Office kitchen
+This mini kitchen has tasty snacks and bad coffee. The main office is just to the west.
+
+You can see a pod-based coffee maker, a sink, a cabinet (closed), and a purple-haired developer here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1603"></child>
+        </children>
+    </item>
+    <item nodeId="node-1603">
+        <command xml:space="preserve">peck maker</command>
+        <result xml:space="preserve">You jab your beak at the pod-based coffee maker.
+The pod-based coffee maker switches on.
+
+Coffee sprays out of the coffee maker!
+
+"Horrible goose," yells the enraged developer, chasing you.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1604"></child>
+        </children>
+    </item>
+    <item nodeId="node-1604">
+        <command xml:space="preserve">peck developer</command>
+        <result xml:space="preserve">You jab your beak at the purple-haired developer.
+
+The developer shrieks in rage. She comes at you ready to kill.
+
+You feel a mighty primal urge to honk, to flap, and to peck things.
+
+"Catch it," yells the enraged developer. She trips over you, swearing.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1605"></child>
+        </children>
+    </item>
+    <item nodeId="node-1605">
+        <command xml:space="preserve">peck sink</command>
+        <result xml:space="preserve">You jab your beak at the sink.
+The sink switches on.
+
+The faucet cracks. Water sprays all over!
+
+"Nnnnnnggggg," yells the enraged developer. She flails, knocking her own glasses onto the floor.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1606"></child>
+        </children>
+    </item>
+    <item nodeId="node-1606">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Office kitchen
+This mini kitchen has tasty snacks and bad coffee. The main office is just to the west.
+
+You can see a fire alarm, puddles of water, puddles of spilled coffee, an empty coffee cup, a mangled coffee maker, a sink with a broken faucet spraying water everywhere, a cabinet (closed), and a wet, scalded developer here.
+
+"Horrible goose," yells the enraged developer.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1607"></child>
+        </children>
+    </item>
+    <item nodeId="node-1607">
+        <command xml:space="preserve">peck fire alarm</command>
+        <result xml:space="preserve">You jab your beak at the fire alarm.
+The fire alarm switches on.
+
+The glass covering the fire alarm switch breaks.
+ooooooOOOOOOooooooo!
+The developer panics, opens a cupboard and takes out a fire extinguisher.
+
+"Nnnnnnggggg," yells the enraged developer.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1608"></child>
+        </children>
+    </item>
+    <item nodeId="node-1608">
+        <command xml:space="preserve">peck developer</command>
+        <result xml:space="preserve">You jab your beak at the wet, scalded developer.
+
+oooooOOOOOOoooooo BEEP BEEP BEEP!
+
+"Nnnnnnggggg," yells the enraged developer. She flails, knocking her own glasses onto the floor.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1609"></child>
+        </children>
+    </item>
+    <item nodeId="node-1609">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Office kitchen
+This mini kitchen has tasty snacks and bad coffee. The main office is just to the west.
+
+You can see a fire alarm, puddles of water, puddles of spilled coffee, an empty coffee cup, a mangled coffee maker, a sink with a broken faucet spraying water everywhere, an open cabinet (in which are some tasty snacks), and a wet, scalded developer here.
+
+"Catch it," yells the enraged developer. She trips over you, swearing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1610"></child>
+        </children>
+    </item>
+    <item nodeId="node-1610">
+        <command xml:space="preserve">x developer</command>
+        <result xml:space="preserve">The wet, scalded developer is carrying a fire extinguisher.
+
+oooooOOOOOOoooooo BEEP BEEP BEEP!
+
+"Nnnnnnggggg," yells the enraged developer. She trips over you, swearing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1611"></child>
+        </children>
+    </item>
+    <item nodeId="node-1611">
+        <command xml:space="preserve">peck extinguisher</command>
+        <result xml:space="preserve">You jab your beak at the fire extinguisher.
+The fire extinguisher switches on.
+
+Nasty-smelling foam spews out of the extinguisher, coating the walls.
+
+"Nnnnnnggggg," yells the enraged developer.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-1456">
         <command xml:space="preserve">bite palm</command>
@@ -6018,14 +6184,106 @@ Hot coffee spills all over the developer. She yells and drops the cup.
     </item>
     <item nodeId="node-1472">
         <command xml:space="preserve">take snacks</command>
-        <result xml:space="preserve">You jab your beak at it.
-
-It's too big. Maybe you could peck it instead.
+        <result xml:space="preserve">You can't see any such thing.
 
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
         <children><child nodeId="node-1473"></child>
+            <child nodeId="node-1584"></child>
         </children>
+    </item>
+    <item nodeId="node-1584">
+        <command xml:space="preserve">open cabinet</command>
+        <result xml:space="preserve">It seems to be locked.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1585"></child>
+        </children>
+    </item>
+    <item nodeId="node-1585">
+        <command xml:space="preserve">unlock cabinet</command>
+        <result xml:space="preserve">What do you want to unlock the cabinet with?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1586"></child>
+        </children>
+    </item>
+    <item nodeId="node-1586">
+        <command xml:space="preserve">peck developer</command>
+        <result xml:space="preserve">You jab your beak at the purple-haired developer.
+
+The developer shrieks in rage. She comes at you ready to kill.
+
+"Horrible goose," yells the enraged developer, chasing you.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1587"></child>
+        </children>
+    </item>
+    <item nodeId="node-1587">
+        <command xml:space="preserve">peck sink</command>
+        <result xml:space="preserve">You jab your beak at the sink.
+The sink switches on.
+
+The faucet cracks. Water sprays all over!
+
+You feel a mighty primal urge to honk, to flap, and to peck things.
+
+"Catch it," yells the enraged developer. She trips over you, swearing.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1588"></child>
+        </children>
+    </item>
+    <item nodeId="node-1588">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Office kitchen
+This mini kitchen has tasty snacks and bad coffee. The main office is just to the west.
+
+You can see puddles of water, puddles of spilled coffee, an empty coffee cup, a pod-based coffee maker, a sink with a broken faucet spraying water everywhere, a cabinet (closed), and a wet, scalded developer here.
+
+"Nnnnnnggggg," yells the enraged developer. She flails, knocking her own glasses onto the floor.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1589"></child>
+        </children>
+    </item>
+    <item nodeId="node-1589">
+        <command xml:space="preserve">peck coffee maker</command>
+        <result xml:space="preserve">You jab your beak at the pod-based coffee maker.
+The pod-based coffee maker switches on.
+
+Coffee sprays out of the coffee maker!
+
+"Catch it," yells the enraged developer.
+
+[Your score has just gone up by one point.]
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1590"></child>
+        </children>
+    </item>
+    <item nodeId="node-1590">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Office kitchen
+This mini kitchen has tasty snacks and bad coffee. The main office is just to the west.
+
+You can see a fire alarm, puddles of spilled coffee, puddles of water, an empty coffee cup, a mangled coffee maker, a sink with a broken faucet spraying water everywhere, a cabinet (closed), and a wet, scalded developer here.
+
+"Nnnnnnggggg," yells the enraged developer. She flails, knocking her own glasses onto the floor.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-1473">
         <command xml:space="preserve">look snacks</command>
@@ -6263,7 +6521,7 @@ The sink switches on.
 
 The faucet cracks. Water sprays all over!
 
-Hey, what's that little red box on the wall?
+You suddenly notice a bright red fire alarm high up on the wall.
 
 "Catch it," yells the enraged developer. She trips over you, swearing.
 
@@ -6281,7 +6539,7 @@ Hey, what's that little red box on the wall?
 The developer shrieks in rage. She comes at you ready to kill.
 
 You feel a mighty primal urge to honk, to flap, and to peck things.
-Hey, what's that little red box on the wall?
+You suddenly notice a bright red fire alarm high up on the wall.
 
 "Nnnnnnggggg," yells the enraged developer. She flails, knocking her own glasses onto the floor.
 
@@ -6290,7 +6548,36 @@ Hey, what's that little red box on the wall?
 &gt;</result>
         <commentary xml:space="preserve"></commentary>
         <children><child nodeId="node-1491"></child>
+            <child nodeId="node-1595"></child>
         </children>
+    </item>
+    <item nodeId="node-1595">
+        <command xml:space="preserve">peck maker</command>
+        <result xml:space="preserve">You jab your beak at the mangled coffee maker.
+The mangled coffee maker seems to be broken now.
+
+You suddenly notice a bright red fire alarm high up on the wall.
+
+"Catch it," yells the enraged developer.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1596"></child>
+        </children>
+    </item>
+    <item nodeId="node-1596">
+        <command xml:space="preserve">l</command>
+        <result xml:space="preserve">Office kitchen
+This mini kitchen has tasty snacks and bad coffee. The main office is just to the west.
+
+You can see a fire alarm, puddles of spilled coffee, an empty coffee cup, puddles of water, a mangled coffee maker, a sink with a broken faucet spraying water everywhere, a cabinet (closed), and a wet, scalded developer here.
+
+You suddenly notice a bright red fire alarm high up on the wall.
+
+"Horrible goose," yells the enraged developer. She flails, knocking her own glasses onto the floor.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
     </item>
     <item nodeId="node-1491">
         <command xml:space="preserve">l</command>

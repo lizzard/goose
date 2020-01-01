@@ -25,7 +25,7 @@ When play begins:
 Every turn:
 	if the turn count is four:
 		say "You feel a mighty primal urge to honk, to flap, and to peck things."; 
-	if the sink is broken and the coffee maker is broken and the developer is flustered:
+	if the sink is broken and the coffee maker is broken and the developer is flustered :
 		now the fire alarm is in An office kitchen;
 	if the fire alarm is broken and the turn count is even:
 		say "oooooOOOOOOoooooo BEEP BEEP BEEP!";
@@ -128,6 +128,8 @@ Carry out getting help:
 	say "'i' shows what you are carrying[line break]";
 	say "'take' may work on objects light enough for you to pick up[line break]";
 	say "After you mess with a thing, try examining it again![line break]";
+	say "n, e, s, w to go north, east, south, west.";
+	say "It may help to jot down what rooms are where, in a small map.";
 
 
 Section 2 - Rules for things
@@ -191,7 +193,6 @@ After pecking the printer for the first time:
 
 An Office kitchen is east of an open-plan office. The description is "This mini kitchen has tasty snacks and bad coffee. The main office is just to the west."
 
-The snacks are scenery. The description of the snacks is "They're locked up in a high cabinet. Infuriating." 
 
 Instead of taking scenery:
 	say "You can't reach it. How infuriating!";
@@ -217,10 +218,9 @@ After pecking the fire alarm for the first time:
 	
 A cabinet is a container in the office kitchen. It is closed and locked. 
 
-Some tasty snacks are in the cabinet. Some tasty snacks are edible. 
+Some tasty snacks are in the cabinet. Some tasty snacks are edible. The description of some tasty snacks is "They're locked up in a high cabinet. Infuriating." 
 
 
- 
 
 A fire extinguisher is a device. The description is "A large red cylinder with a trigger handle.";
 
@@ -261,6 +261,11 @@ After pecking a purple-haired developer for the first time:
 	now the coffee cup is broken;
 	now the developer is flustered;
 	increment the score;
+	
+After pecking a purple-haired developer:
+	if the developer is carrying the fire extinguisher:
+		say "She slips and falls, dropping the extinguisher.";
+		now the extinguisher is in the location of the player;
 
 After pecking a cup of coffee:
 	if the cup of coffee is carried by the developer:
